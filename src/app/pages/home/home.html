@@ -1,0 +1,268 @@
+<div class="bg-white dark:bg-[#121212] text-[#2C2C2C] dark:text-[#F5F5F5] font-sans min-h-screen transition-colors duration-300">
+
+  <!-- FULL-WIDTH HERO BANNER WITH SOPHISTICATED GOLDEN OVERLAY & FADE -->
+  <section class="relative min-h-screen flex items-center justify-center bg-[#121212] text-white overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90" 
+        alt="Ramyug Architectural Hero" 
+        class="w-full h-full object-cover scale-105 animate-pulse transition-transform duration-10000 opacity-80"
+      />
+      <!-- Jumeirah Gold & Charcoal Gradient Tint -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/75 to-[#121212]/45 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#C5A059]/20 via-transparent to-[#121212]/80 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C5A059]/15 via-transparent to-transparent pointer-events-none"></div>
+    </div>
+
+    <!-- Hero Content Box -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-24 relative z-10 text-center space-y-8">
+      
+      <div class="inline-flex items-center gap-3 px-5 py-2 border border-[#C5A059]/60 bg-[#121212]/85 backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-[#C5A059] animate-ping"></span>
+        <span class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
+          Architectural Legacy & Bespoke Living
+        </span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.08] max-w-5xl mx-auto">
+        Crafting Timeless <span class="gold-gradient-text font-serif italic font-normal">Architectural</span> Masterpieces
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-white/90 font-light leading-relaxed">
+        Ramyug designs and engineers ultra-luxury private estates, commercial sky monuments, and cultural landmarks across the globe.
+      </p>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-5">
+        <a 
+          href="#projects-overview" 
+          class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#C5A059] to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#C5A059] text-[#121212] text-xs font-semibold uppercase tracking-[0.25em] shadow-gold-glow transition-all duration-300 transform hover:-translate-y-0.5"
+        >
+          Explore Projects Overview
+        </a>
+        <a 
+          routerLink="/contact" 
+          class="w-full sm:w-auto px-8 py-4 border border-[#C5A059] hover:bg-[#C5A059] text-white hover:text-[#121212] text-xs font-semibold uppercase tracking-[0.25em] transition-all duration-300 backdrop-blur-sm"
+        >
+          Schedule Private Consultation
+        </a>
+      </div>
+
+      <div class="pt-16 flex flex-col items-center gap-2 opacity-80 animate-bounce">
+        <span class="text-[0.65rem] uppercase tracking-[0.3em] text-[#C5A059]">Scroll To Explore</span>
+        <svg class="w-4 h-4 text-[#C5A059] fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- KEY STATS & HERITAGE HIGHLIGHTS BAR -->
+  <section class="bg-[#121212] text-white py-12 border-y border-[#C5A059]/30">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div *ngFor="let stat of stats" class="space-y-1">
+          <p class="font-serif text-2xl md:text-4xl font-bold text-[#C5A059] m-0">{{ stat.value }}</p>
+          <p class="text-[0.7rem] uppercase tracking-widest text-white/70 m-0 font-light">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BRAND PHILOSOPHY SECTION (Pure White Background with Generous Whitespace) -->
+  <section class="bg-white dark:bg-[#121212] max-w-7xl mx-auto px-6 md:px-12 py-24 transition-colors duration-300">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-6 space-y-6">
+        <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
+          The Atelier Philosophy
+        </h6>
+        <h2 class="font-serif text-3xl md:text-5xl text-[#2C2C2C] dark:text-white font-bold tracking-tight leading-tight">
+          Where Structural Precision Meets Aesthetic Royalty
+        </h2>
+        <div class="w-16 h-[2px] bg-[#C5A059]"></div>
+        <p class="text-sm md:text-base text-[#2C2C2C]/85 dark:text-white/80 leading-relaxed font-light">
+          At Ramyug, we believe that true luxury lies in harmony—the seamless convergence of structural integrity, environmental sustainability, and timeless artistic expression. Every contour, marble vein, and glass reflection is meticulously engineered.
+        </p>
+        <p class="text-sm md:text-base text-[#2C2C2C]/85 dark:text-white/80 leading-relaxed font-light">
+          Our global team of architects, structural engineers, and heritage restorers work in unison with private clients and governments to create enduring monuments of distinction.
+        </p>
+
+        <div class="pt-4 flex items-center gap-6">
+          <a routerLink="/team" class="text-xs font-semibold uppercase tracking-[0.2em] text-[#2C2C2C] dark:text-white hover:text-[#C5A059] flex items-center gap-2 group">
+            <span>Discover Leadership & Team</span>
+            <svg class="w-4 h-4 stroke-current fill-none stroke-2 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 relative">
+        <div class="relative z-10 border-2 border-[#C5A059] overflow-hidden shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
+            alt="Ramyug Architectural Interior" 
+            class="w-full h-[350px] sm:h-[450px] object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-full h-full border-2 border-[#B89D5E]/40 pointer-events-none z-0 hidden sm:block"></div>
+        <div class="absolute top-6 right-6 bg-[#121212] text-white p-6 border-l-4 border-[#C5A059] z-20 shadow-xl max-w-xs">
+          <span class="font-serif text-3xl font-bold text-[#C5A059] block">25+</span>
+          <span class="text-xs text-white/80 uppercase tracking-widest font-light">Years of Architectural Distinction</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECTS OVERVIEW SECTION (Soft Pearl/Sand Secondary Background #F9F8F6) -->
+  <section class="bg-[#F9F8F6] dark:bg-[#1A1A1A] py-24 border-t border-[#E5E5E5] dark:border-[#2A2A2A] transition-colors duration-300" id="projects-overview">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-2">
+            Selected Works
+          </h6>
+          <h2 class="font-serif text-3xl md:text-5xl font-bold text-[#2C2C2C] dark:text-white tracking-tight">
+            Projects Overview
+          </h2>
+          <p class="text-sm text-[#2C2C2C]/80 dark:text-white/80 font-light mt-2 max-w-xl">
+            Examine a curated selection of our landmark residential, commercial, and heritage restoration portfolios.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <button 
+            *ngFor="let cat of categories" 
+            (click)="setFilter(cat)"
+            class="px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-300 border focus:outline-none cursor-pointer"
+            [ngClass]="activeFilter() === cat ? 'bg-[#121212] text-[#C5A059] border-[#C5A059]' : 'bg-white dark:bg-[#121212] text-[#2C2C2C] dark:text-white border-[#E5E5E5] dark:border-gray-700 hover:border-[#C5A059]'"
+          >
+            {{ cat }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid with Subtle Scale Transformations -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let project of filteredProjects"
+          (click)="openProjectModal(project)"
+          class="bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/30 shadow-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1.5 hover:shadow-xl relative flex flex-col"
+        >
+          <div class="relative h-72 overflow-hidden bg-[#121212]">
+            <img 
+              [src]="project.image" 
+              [alt]="project.title" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
+            
+            <span class="absolute top-4 left-4 bg-[#121212]/90 text-[#C5A059] border border-[#C5A059]/40 text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm">
+              {{ project.category }}
+            </span>
+
+            <span class="absolute top-4 right-4 bg-[#C5A059] text-[#121212] text-[0.65rem] uppercase tracking-widest px-2.5 py-1 font-bold">
+              {{ project.year }}
+            </span>
+          </div>
+
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[#2C2C2C]/60 dark:text-white/60 font-light mb-1">
+                <span>{{ project.location }}</span>
+                <span>{{ project.area }}</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-[#2C2C2C] dark:text-white group-hover:text-[#C5A059] transition-colors">
+                {{ project.title }}
+              </h3>
+            </div>
+
+            <p class="text-xs text-[#2C2C2C]/80 dark:text-white/80 leading-relaxed font-light line-clamp-2 m-0">
+              {{ project.description }}
+            </p>
+
+            <div class="pt-4 border-t border-[#E5E5E5] dark:border-[#C5A059]/20 flex items-center justify-between text-xs font-semibold text-[#B89D5E] dark:text-[#C5A059] group-hover:text-[#2C2C2C] dark:group-hover:text-white transition-colors uppercase tracking-wider">
+              <span>Inspect Architectural Blueprint</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECT DETAIL MODAL LIGHTBOX -->
+  <div 
+    *ngIf="selectedProject()" 
+    class="fixed inset-0 z-50 bg-[#121212]/85 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in"
+  >
+    <div class="bg-white dark:bg-[#121212] border-2 border-[#C5A059] max-w-4xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto">
+      
+      <button 
+        (click)="closeProjectModal()" 
+        type="button"
+        class="absolute top-4 right-4 z-20 w-10 h-10 bg-[#121212] text-white hover:text-[#C5A059] flex items-center justify-center border border-[#C5A059] transition-colors cursor-pointer"
+      >
+        <svg class="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-7 h-64 sm:h-80 lg:h-full relative bg-[#121212]">
+          <img [src]="selectedProject()?.image" [alt]="selectedProject()?.title" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="lg:col-span-5 p-8 space-y-4">
+          <span class="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold">
+            {{ selectedProject()?.category }} &bull; {{ selectedProject()?.year }}
+          </span>
+          <h2 class="font-serif text-2xl md:text-3xl text-[#2C2C2C] dark:text-white font-bold m-0">
+            {{ selectedProject()?.title }}
+          </h2>
+          <p class="text-xs text-[#B89D5E] dark:text-[#C5A059] font-semibold uppercase tracking-wider m-0">
+            {{ selectedProject()?.location }} &bull; {{ selectedProject()?.area }}
+          </p>
+
+          <hr class="border-[#E5E5E5] dark:border-[#C5A059]/30 my-4" />
+
+          <p class="text-xs text-[#2C2C2C]/85 dark:text-white/85 leading-relaxed font-light m-0">
+            {{ selectedProject()?.description }}
+          </p>
+
+          <div class="pt-4 space-y-2">
+            <h5 class="text-xs uppercase tracking-wider font-semibold text-[#2C2C2C] dark:text-white">Architectural Highlights</h5>
+            <ul class="text-xs text-[#2C2C2C]/80 dark:text-white/80 space-y-1 font-light list-disc list-inside">
+              <li>Custom double-glazed acoustic structural framing</li>
+              <li>Rare mineral finishes & sustainably sourced timber</li>
+              <li>Smart thermal regulation & energy autonomous grid</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 flex items-center justify-between">
+            <a 
+              routerLink="/contact" 
+              (click)="closeProjectModal()"
+              class="px-6 py-2.5 bg-[#C5A059] text-[#121212] text-xs uppercase tracking-widest font-semibold hover:bg-[#B89D5E] transition-colors"
+            >
+              Inquire About Similar Project
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

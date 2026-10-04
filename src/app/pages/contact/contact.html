@@ -1,0 +1,300 @@
+<!-- Location & Contact Module -->
+<div class="bg-white dark:bg-[#121212] text-[#2C2C2C] dark:text-[#F5F5F5] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300">
+
+  <!-- Header Banner -->
+  <section class="relative py-20 bg-[#121212] text-white border-b border-[#C5A059]/30 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#C5A059]/10 blur-[140px] pointer-events-none rounded-full"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+      <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-3">
+        Global Presence & Inquiries
+      </h6>
+      <h1 class="font-serif text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
+        Location & Contact Desk
+      </h1>
+      <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-6"></div>
+      <p class="max-w-2xl mx-auto text-sm md:text-base text-white/85 font-light leading-relaxed">
+        Connect directly with our global ateliers in Mumbai, Dubai, and London, or navigate directly to our Main Headquarters detail view.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- SECTION 1: INTEGRATED INTERACTIVE MAP MODULE WITH MAIN OFFICE CARD -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-20">
+    <div class="space-y-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-2">
+            Interactive Global Map
+          </h6>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-white tracking-tight">
+            Our Atelier Hubs
+          </h2>
+        </div>
+
+        <p class="text-xs text-[#2C2C2C]/75 dark:text-white/75 max-w-md font-light">
+          Click any map pin or hub card below to inspect location blueprints and access our dedicated Main Office Concierge.
+        </p>
+      </div>
+
+      <!-- Interactive Map Visual Container -->
+      <div class="relative bg-[#121212] border-2 border-[#C5A059] shadow-2xl h-[420px] sm:h-[520px] rounded-none overflow-hidden group">
+        <div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-[#121212]/60"></div>
+        
+        <svg class="absolute inset-0 w-full h-full opacity-15 pointer-events-none stroke-[#C5A059] fill-none stroke-[0.5]" viewBox="0 0 1000 500">
+          <path d="M150,150 Q300,100 450,150 T750,150 M200,250 Q400,200 600,250 T900,250 M100,350 Q350,300 650,350 T950,350"/>
+          <line x1="0" y1="125" x2="1000" y2="125"/>
+          <line x1="0" y1="250" x2="1000" y2="250"/>
+          <line x1="0" y1="375" x2="1000" y2="375"/>
+          <line x1="250" y1="0" x2="250" y2="500"/>
+          <line x1="500" y1="0" x2="500" y2="500"/>
+          <line x1="750" y1="0" x2="750" y2="500"/>
+        </svg>
+
+        <!-- Interactive Map Pins -->
+        <div 
+          *ngFor="let office of offices"
+          (click)="selectOffice(office)"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20 group/pin"
+          [style.left.%]="office.coordinates.x"
+          [style.top.%]="office.coordinates.y"
+        >
+          <span 
+            class="absolute -inset-2 rounded-full bg-[#C5A059]/40 animate-ping"
+            [ngClass]="selectedOffice()?.id === office.id ? 'opacity-100' : 'opacity-0 group-hover/pin:opacity-75'"
+          ></span>
+
+          <div 
+            class="relative w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 shadow-gold-glow"
+            [ngClass]="selectedOffice()?.id === office.id ? 'bg-[#C5A059] border-white scale-125' : 'bg-[#121212] border-[#C5A059] hover:scale-110'"
+          >
+            <span 
+              class="font-serif text-xs font-bold"
+              [ngClass]="selectedOffice()?.id === office.id ? 'text-[#121212]' : 'text-[#C5A059]'"
+            >
+              {{ office.city.charAt(0) }}
+            </span>
+          </div>
+
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#121212] text-white border border-[#C5A059] text-[0.65rem] uppercase tracking-widest px-2.5 py-1 whitespace-nowrap opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none">
+            {{ office.name }}
+          </div>
+        </div>
+
+        <!-- OVERLAY CARD FOR SELECTED OFFICE -->
+        <div 
+          *ngIf="selectedOffice()"
+          class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#121212]/95 text-white border-2 border-[#C5A059] p-5 sm:p-6 shadow-2xl z-30 backdrop-blur-md animate-in fade-in"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[0.65rem] uppercase tracking-[0.25em] text-[#C5A059] font-semibold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#C5A059]"></span>
+              {{ selectedOffice()?.isMainOffice ? 'Global Headquarters' : 'Regional Atelier' }}
+            </span>
+
+            <span class="text-[0.65rem] text-white/60 font-light">
+              {{ selectedOffice()?.city }} Hub
+            </span>
+          </div>
+
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+            {{ selectedOffice()?.name }}
+          </h3>
+
+          <p class="text-xs text-white/80 leading-relaxed font-light mb-3 m-0">
+            {{ selectedOffice()?.address }}
+          </p>
+
+          <div class="space-y-1 text-xs text-white/90 font-light mb-4 border-t border-white/10 pt-3">
+            <p class="m-0"><strong class="text-[#C5A059]">Direct Line:</strong> {{ selectedOffice()?.phone }}</p>
+            <p class="m-0"><strong class="text-[#C5A059]">VIP Desk:</strong> {{ selectedOffice()?.email }}</p>
+            <p class="m-0"><strong class="text-[#C5A059]">Atelier Hours:</strong> {{ selectedOffice()?.hours }}</p>
+          </div>
+
+          <div class="pt-2 border-t border-[#C5A059]/30 flex items-center justify-between gap-3">
+            <a 
+              routerLink="/office-details" 
+              class="w-full py-2.5 px-4 bg-gradient-to-r from-[#C5A059] to-[#B89D5E] text-[#121212] text-xs font-semibold uppercase tracking-[0.2em] text-center hover:opacity-95 transition-opacity shadow-md flex items-center justify-center gap-2"
+            >
+              <span>Explore Main Office Details</span>
+              <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Hub Selector Cards Row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <div 
+          *ngFor="let off of offices"
+          (click)="selectOffice(off)"
+          class="p-6 bg-[#F9F8F6] dark:bg-[#1A1A1A] border cursor-pointer transition-all duration-300 relative group"
+          [ngClass]="selectedOffice()?.id === off.id ? 'border-[#C5A059] shadow-gold-glow bg-white dark:bg-[#121212]' : 'border-[#E5E5E5] dark:border-gray-800 hover:border-[#C5A059]'"
+        >
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-white">{{ off.city }}</span>
+            <span *ngIf="off.isMainOffice" class="text-[0.6rem] uppercase tracking-widest bg-[#C5A059] text-[#121212] font-bold px-2 py-0.5">
+              HQ
+            </span>
+          </div>
+          <p class="text-xs text-[#2C2C2C]/75 dark:text-white/75 font-light line-clamp-2 m-0 mb-3">{{ off.address }}</p>
+          <span class="text-[0.7rem] uppercase tracking-wider text-[#B89D5E] dark:text-[#C5A059] font-semibold group-hover:text-[#2C2C2C] dark:group-hover:text-white transition-colors">
+            Select on Map &rarr;
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION 2: VIP CONSULTATION & INQUIRY FORM -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+    <div class="bg-[#F9F8F6] dark:bg-[#1A1A1A] border border-[#E5E5E5] dark:border-[#C5A059]/40 p-6 sm:p-8 md:p-14 shadow-xl relative transition-colors duration-300">
+      
+      <div class="max-w-3xl mx-auto space-y-8">
+        
+        <div class="text-center space-y-3">
+          <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
+            Confidential Client Intake
+          </h6>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-white">
+            Schedule Private Consultation
+          </h2>
+          <p class="text-sm text-[#2C2C2C]/75 dark:text-white/75 font-light">
+            Our principal architects and executive partners remain available for private estate briefings and commercial commissions.
+          </p>
+        </div>
+
+        <div 
+          *ngIf="formSubmitted()" 
+          class="bg-[#121212] text-white p-8 border-2 border-[#C5A059] text-center space-y-4 animate-in fade-in"
+        >
+          <div class="w-12 h-12 rounded-full border-2 border-[#C5A059] text-[#C5A059] flex items-center justify-center mx-auto text-xl font-serif font-bold">
+            &check;
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-[#C5A059]">Inquiry Registered Successfully</h3>
+          <p class="text-xs text-white/90 font-light max-w-md mx-auto leading-relaxed">
+            Thank you, {{ formData.fullName }}. A senior partner from the RAMYUG Executive Client Desk will contact you within 24 business hours.
+          </p>
+          <button 
+            (click)="resetForm()" 
+            type="button"
+            class="px-6 py-2 bg-[#C5A059] text-[#121212] text-xs uppercase tracking-widest font-semibold cursor-pointer"
+          >
+            Submit Another Inquiry
+          </button>
+        </div>
+
+        <form *ngIf="!formSubmitted()" (ngSubmit)="submitInquiry()" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="space-y-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+                Full Name / Entity *
+              </label>
+              <input 
+                type="text" 
+                [(ngModel)]="formData.fullName" 
+                name="fullName" 
+                required 
+                placeholder="e.g. Lord Alistair Sterling / Sterling Group" 
+                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+                Corporate / VIP Email *
+              </label>
+              <input 
+                type="email" 
+                [(ngModel)]="formData.email" 
+                name="email" 
+                required 
+                placeholder="client@domain.com" 
+                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+                Direct Contact Phone
+              </label>
+              <input 
+                type="tel" 
+                [(ngModel)]="formData.phone" 
+                name="phone" 
+                placeholder="+1 (555) 000-0000" 
+                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+                Project Classification
+              </label>
+              <select 
+                [(ngModel)]="formData.projectType" 
+                name="projectType" 
+                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              >
+                <option value="Luxury Estate Residence">Ultra-Luxury Estate Residence</option>
+                <option value="Commercial Tower / Skyline">Commercial Skyscraper Landmark</option>
+                <option value="Heritage Restoration">Heritage Restoration & Conservation</option>
+                <option value="Cultural Institution">Cultural / Philharmonic Masterpiece</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              Estimated Commission Capital Range
+            </label>
+            <select 
+              [(ngModel)]="formData.budgetRange" 
+              name="budgetRange" 
+              class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+            >
+              <option value="$5M - $10M">$5 Million - $10 Million</option>
+              <option value="$10M - $25M">$10 Million - $25 Million</option>
+              <option value="$25M - $50M">$25 Million - $50 Million</option>
+              <option value="$50M+">$50 Million+ (Bespoke Commission)</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              Brief Project Scope & Vision
+            </label>
+            <textarea 
+              rows="4" 
+              [(ngModel)]="formData.message" 
+              name="message" 
+              placeholder="Outline site parameters, architectural preferences, or timelines..." 
+              class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-4 bg-[#121212] dark:bg-[#C5A059] hover:bg-[#C5A059] dark:hover:bg-[#B89D5E] text-white dark:text-[#121212] hover:text-[#121212] text-xs font-semibold uppercase tracking-[0.25em] transition-all duration-300 border border-[#C5A059] shadow-md cursor-pointer"
+          >
+            Dispatch Private Briefing Request
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>

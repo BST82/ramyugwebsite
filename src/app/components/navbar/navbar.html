@@ -1,0 +1,231 @@
+<header 
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-sans"
+  [ngClass]="{
+    'bg-white/95 dark:bg-[#121212]/95 backdrop-blur-md py-4 shadow-sm border-b border-[#C5A059]/30': isScrolled(),
+    'bg-gradient-to-b from-[#1A1A1A]/80 via-[#1A1A1A]/30 to-transparent py-6': !isScrolled()
+  }"
+>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+    
+    <!-- Brand Emblem & Logo -->
+    <a routerLink="/home" class="flex items-center gap-3 group focus:outline-none">
+      <div class="w-10 h-10 border border-[#C5A059] flex items-center justify-center relative transition-transform duration-500 group-hover:rotate-45 bg-[#1A1A1A]">
+        <span class="text-[#C5A059] font-serif text-xl font-bold tracking-widest transition-transform duration-500 group-hover:-rotate-45">R</span>
+        <span class="absolute -top-1 -left-1 w-1.5 h-1.5 bg-[#C5A059]"></span>
+        <span class="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-[#C5A059]"></span>
+      </div>
+      <div class="flex flex-col">
+        <span 
+          class="font-serif text-2xl font-bold tracking-[0.2em] transition-colors duration-300"
+          [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white' : 'text-white'"
+        >
+          RAMYUG
+        </span>
+        <span class="text-[0.65rem] tracking-[0.3em] uppercase text-[#C5A059] font-medium">
+          Architectural Legacy
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-8">
+      <a 
+        routerLink="/home" 
+        routerLinkActive="text-[#C5A059] font-semibold"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#C5A059] relative py-1 group"
+        [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white/90' : 'text-white/90'"
+      >
+        Home
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+
+      <a 
+        routerLink="/projects" 
+        routerLinkActive="text-[#C5A059] font-semibold"
+        class="text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#C5A059] relative py-1 group"
+        [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white/90' : 'text-white/90'"
+      >
+        Projects
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+
+      <a 
+        routerLink="/team" 
+        routerLinkActive="text-[#C5A059] font-semibold"
+        class="text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#C5A059] relative py-1 group"
+        [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white/90' : 'text-white/90'"
+      >
+        Leadership & Team
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+
+      <a 
+        routerLink="/contact" 
+        routerLinkActive="text-[#C5A059] font-semibold"
+        class="text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#C5A059] relative py-1 group"
+        [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white/90' : 'text-white/90'"
+      >
+        Location & Contact
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+
+      <a 
+        routerLink="/office-details" 
+        routerLinkActive="text-[#C5A059] font-semibold"
+        class="text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:text-[#C5A059] relative py-1 group"
+        [ngClass]="isScrolled() ? 'text-[#2C2C2C] dark:text-white/90' : 'text-white/90'"
+      >
+        Main Office
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </nav>
+
+    <!-- Right Controls: Theme Toggle & VIP Action Button -->
+    <div class="hidden lg:flex items-center gap-5">
+      
+      <!-- Luxury Dark/Light Theme Toggle Button -->
+      <button 
+        (click)="toggleTheme()"
+        type="button"
+        class="p-2.5 border border-[#C5A059]/50 rounded-none bg-black/10 hover:bg-[#C5A059]/20 text-[#C5A059] transition-all duration-300 focus:outline-none cursor-pointer relative group"
+        [title]="themeService.isDarkMode() ? 'Switch to Jumeirah Light Theme' : 'Switch to Dark Theme'"
+        aria-label="Toggle Theme Mode"
+      >
+        <!-- Sun Icon (Active when in Dark Mode) -->
+        <svg *ngIf="themeService.isDarkMode()" class="w-4 h-4 fill-current stroke-current transform transition-transform duration-500 group-hover:rotate-90" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <path stroke-width="2" stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+
+        <!-- Moon Icon (Active when in Light Mode) -->
+        <svg *ngIf="!themeService.isDarkMode()" class="w-4 h-4 fill-current transform transition-transform duration-500 group-hover:-rotate-12" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- VIP Action Button -->
+      <a 
+        routerLink="/contact" 
+        class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-medium uppercase tracking-[0.2em] text-[#1A1A1A] bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#C5A059] rounded-none shadow-md overflow-hidden group transition-all duration-500 hover:shadow-gold-glow"
+      >
+        <span class="relative z-10 font-semibold group-hover:text-white transition-colors duration-300">
+          Book Consultation
+        </span>
+        <div class="absolute inset-0 bg-[#1A1A1A] transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"></div>
+      </a>
+    </div>
+
+    <!-- Mobile Controls: Theme Toggle & Hamburger Button -->
+    <div class="lg:hidden flex items-center gap-3">
+      
+      <!-- Mobile Theme Toggle -->
+      <button 
+        (click)="toggleTheme()"
+        type="button"
+        class="p-2 border border-[#C5A059]/50 text-[#C5A059] bg-[#1A1A1A]/30 focus:outline-none cursor-pointer"
+        aria-label="Toggle Theme Mode"
+      >
+        <svg *ngIf="themeService.isDarkMode()" class="w-4 h-4 fill-current stroke-current" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <path stroke-width="2" stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg *ngIf="!themeService.isDarkMode()" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Hamburger Button -->
+      <button 
+        (click)="toggleMobileMenu()"
+        type="button"
+        class="p-2 focus:outline-none"
+        [aria-label]="mobileMenuOpen() ? 'Close Menu' : 'Open Menu'"
+      >
+        <div class="w-6 h-5 flex flex-col justify-between relative">
+          <span 
+            class="w-full h-0.5 transition-all duration-300"
+            [ngClass]="[
+              mobileMenuOpen() ? 'rotate-45 translate-y-2 bg-[#C5A059]' : '',
+              !mobileMenuOpen() && isScrolled() ? 'bg-[#2C2C2C] dark:bg-white' : '',
+              !mobileMenuOpen() && !isScrolled() ? 'bg-white' : ''
+            ]"
+          ></span>
+          <span 
+            class="w-full h-0.5 transition-all duration-300"
+            [ngClass]="[
+              mobileMenuOpen() ? 'opacity-0 bg-[#C5A059]' : '',
+              !mobileMenuOpen() && isScrolled() ? 'bg-[#2C2C2C] dark:bg-white' : '',
+              !mobileMenuOpen() && !isScrolled() ? 'bg-white' : ''
+            ]"
+          ></span>
+          <span 
+            class="w-full h-0.5 transition-all duration-300"
+            [ngClass]="[
+              mobileMenuOpen() ? '-rotate-45 -translate-y-2 bg-[#C5A059]' : '',
+              !mobileMenuOpen() && isScrolled() ? 'bg-[#2C2C2C] dark:bg-white' : '',
+              !mobileMenuOpen() && !isScrolled() ? 'bg-white' : ''
+            ]"
+          ></span>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div 
+    *ngIf="mobileMenuOpen()" 
+    class="lg:hidden fixed inset-0 top-[73px] bg-[#1A1A1A]/95 dark:bg-[#0A0A0A]/98 backdrop-blur-xl border-t border-[#C5A059]/30 text-white flex flex-col justify-between p-8 z-40 transition-all duration-300 overflow-y-auto"
+  >
+    <div class="flex flex-col gap-6 font-serif text-2xl pt-2">
+      <a routerLink="/home" (click)="closeMobileMenu()" class="hover:text-[#C5A059] transition-colors py-2 border-b border-white/10 flex justify-between items-center">
+        <span>Home</span>
+        <span class="text-xs font-sans tracking-widest text-[#C5A059] uppercase">01</span>
+      </a>
+      <a routerLink="/projects" (click)="closeMobileMenu()" class="hover:text-[#C5A059] transition-colors py-2 border-b border-white/10 flex justify-between items-center">
+        <span>Projects Portfolio</span>
+        <span class="text-xs font-sans tracking-widest text-[#C5A059] uppercase">02</span>
+      </a>
+      <a routerLink="/team" (click)="closeMobileMenu()" class="hover:text-[#C5A059] transition-colors py-2 border-b border-white/10 flex justify-between items-center">
+        <span>Leadership & Team</span>
+        <span class="text-xs font-sans tracking-widest text-[#C5A059] uppercase">03</span>
+      </a>
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="hover:text-[#C5A059] transition-colors py-2 border-b border-white/10 flex justify-between items-center">
+        <span>Location & Contact</span>
+        <span class="text-xs font-sans tracking-widest text-[#C5A059] uppercase">04</span>
+      </a>
+      <a routerLink="/office-details" (click)="closeMobileMenu()" class="hover:text-[#C5A059] transition-colors py-2 border-b border-white/10 flex justify-between items-center">
+        <span>Main Office Details</span>
+        <span class="text-xs font-sans tracking-widest text-[#C5A059] uppercase">05</span>
+      </a>
+    </div>
+
+    <div class="flex flex-col gap-4 pt-6 border-t border-white/10">
+      <div class="flex items-center justify-between py-2 px-4 bg-white/5 border border-white/10">
+        <span class="text-xs font-sans uppercase tracking-widest text-cream-200 font-light">
+          Theme: <strong class="text-[#C5A059]">{{ themeService.isDarkMode() ? 'Dark Theme' : 'Jumeirah Light' }}</strong>
+        </span>
+        <button 
+          (click)="toggleTheme()"
+          type="button"
+          class="px-3 py-1 bg-[#C5A059] text-[#1A1A1A] text-xs uppercase font-semibold tracking-wider cursor-pointer"
+        >
+          Toggle
+        </button>
+      </div>
+
+      <a 
+        routerLink="/contact" 
+        (click)="closeMobileMenu()"
+        class="w-full text-center py-3 bg-gradient-to-r from-[#C5A059] to-[#D4AF37] text-[#1A1A1A] text-xs font-sans font-semibold uppercase tracking-[0.2em]"
+      >
+        Private Consultation
+      </a>
+      <p class="text-xs text-cream-300/60 font-sans text-center m-0">
+        RAMYUG Corporate Headquarters &bull; Architectural Excellence
+      </p>
+    </div>
+  </div>
+</header>

@@ -1,13 +1,53 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Ramyug</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>RAMYUG | Luxury Architectural Legacy</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ramyug is a premier luxury architectural and engineering firm sculpting iconic residential estates, commercial towers, and heritage monuments." />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    
+    <!-- Google Fonts Integration: Playfair Display (Headings) & Montserrat (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Immediate Light Mode Default Guarantee Script (Prevents Any Dark Mode Flash) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('ramyug-theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            // Strictly defaults to light mode for all new visitors
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-[#121212] text-[#2C2C2C] dark:text-[#F5F5F5] font-sans antialiased selection:bg-[#C5A059] selection:text-white min-h-screen flex flex-col transition-colors duration-300">
+    
+    <!-- Application Root with Embedded Luxury Pre-loader -->
+    <app-root>
+      <div class="ramyug-preloader">
+        <div class="ramyug-preloader-content">
+          <div class="ramyug-logo-box">
+            <span class="ramyug-monogram">R</span>
+            <div class="ramyug-ring"></div>
+          </div>
+          <div class="ramyug-brand-text">RAMYUG</div>
+          <div class="ramyug-sub-text">ARCHITECTURAL LEGACY</div>
+          <div class="ramyug-progress-bar">
+            <div class="ramyug-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </app-root>
+
+  </body>
 </html>
