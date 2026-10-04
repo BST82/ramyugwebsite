@@ -1,4 +1,41 @@
-<div class="min-h-screen flex flex-col bg-[#FDFBF7] text-[#222222]">
+<!-- Full Luxury Pre-Loader Overlay with Smooth Fade-Out -->
+<div 
+  *ngIf="isLoading()"
+  class="fixed inset-0 z-[9999] bg-[#1A1815] flex items-center justify-center font-sans transition-all duration-700 ease-out"
+  [ngClass]="{
+    'opacity-0 pointer-events-none scale-105': isFadingOut(),
+    'opacity-100': !isFadingOut()
+  }"
+>
+  <div class="flex flex-col items-center gap-5 text-center px-4">
+    <!-- Rotating Gold Ring & Pulsing Monogram Box -->
+    <div class="relative w-20 h-20 border border-[#C5A059] flex items-center justify-center bg-[#26221E] shadow-gold-glow">
+      <span class="font-serif text-3xl font-bold text-[#C5A059] tracking-widest animate-pulse">R</span>
+      <!-- Golden Corner Flairs -->
+      <span class="absolute -top-1 -left-1 w-2 h-2 bg-[#C5A059]"></span>
+      <span class="absolute -bottom-1 -right-1 w-2 h-2 bg-[#C5A059]"></span>
+      <!-- Spinning Outer Ring -->
+      <div class="ramyug-ring"></div>
+    </div>
+
+    <!-- Brand Typography -->
+    <div class="space-y-1">
+      <h2 class="font-serif text-2xl md:text-3xl font-bold tracking-[0.3em] text-[#FAF6F0] m-0">
+        RAMYUG
+      </h2>
+      <p class="text-[0.65rem] font-semibold tracking-[0.35em] text-[#C5A059] uppercase m-0">
+        Architectural Legacy
+      </p>
+    </div>
+
+    <!-- Animated Gold Progress Line -->
+    <div class="w-40 h-[2px] bg-white/10 overflow-hidden relative mt-2">
+      <div class="w-full h-full bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#C5A059] ramyug-progress-fill"></div>
+    </div>
+  </div>
+</div>
+
+<div class="min-h-screen flex flex-col bg-white dark:bg-[#1A1815] text-[#2C2C2C] dark:text-[#FAF6F0] transition-colors duration-300">
   <!-- Global Sticky Navbar -->
   <app-navbar></app-navbar>
 

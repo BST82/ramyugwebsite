@@ -1,8 +1,8 @@
 <!-- Location & Contact Module -->
-<div class="bg-white dark:bg-[#121212] text-[#2C2C2C] dark:text-[#F5F5F5] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300">
+<div class="bg-white dark:bg-[#1A1815] text-[#2C2C2C] dark:text-[#FAF6F0] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300">
 
   <!-- Header Banner -->
-  <section class="relative py-20 bg-[#121212] text-white border-b border-[#C5A059]/30 overflow-hidden">
+  <section class="relative py-20 bg-[#1A1815] text-white border-b border-[#C5A059]/30 overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#C5A059]/10 blur-[140px] pointer-events-none rounded-full"></div>
     
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
@@ -29,20 +29,20 @@
           <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-2">
             Interactive Global Map
           </h6>
-          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-white tracking-tight">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0] tracking-tight">
             Our Atelier Hubs
           </h2>
         </div>
 
-        <p class="text-xs text-[#2C2C2C]/75 dark:text-white/75 max-w-md font-light">
+        <p class="text-xs text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 max-w-md font-light">
           Click any map pin or hub card below to inspect location blueprints and access our dedicated Main Office Concierge.
         </p>
       </div>
 
       <!-- Interactive Map Visual Container -->
-      <div class="relative bg-[#121212] border-2 border-[#C5A059] shadow-2xl h-[420px] sm:h-[520px] rounded-none overflow-hidden group">
+      <div class="relative bg-[#26221E] border-2 border-[#C5A059] shadow-2xl h-[420px] sm:h-[520px] rounded-none overflow-hidden group">
         <div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-[#121212]/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1815] via-transparent to-[#1A1815]/60"></div>
         
         <svg class="absolute inset-0 w-full h-full opacity-15 pointer-events-none stroke-[#C5A059] fill-none stroke-[0.5]" viewBox="0 0 1000 500">
           <path d="M150,150 Q300,100 450,150 T750,150 M200,250 Q400,200 600,250 T900,250 M100,350 Q350,300 650,350 T950,350"/>
@@ -69,17 +69,17 @@
 
           <div 
             class="relative w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 shadow-gold-glow"
-            [ngClass]="selectedOffice()?.id === office.id ? 'bg-[#C5A059] border-white scale-125' : 'bg-[#121212] border-[#C5A059] hover:scale-110'"
+            [ngClass]="selectedOffice()?.id === office.id ? 'bg-[#C5A059] border-white scale-125' : 'bg-[#26221E] border-[#C5A059] hover:scale-110'"
           >
             <span 
               class="font-serif text-xs font-bold"
-              [ngClass]="selectedOffice()?.id === office.id ? 'text-[#121212]' : 'text-[#C5A059]'"
+              [ngClass]="selectedOffice()?.id === office.id ? 'text-[#1A1815]' : 'text-[#C5A059]'"
             >
               {{ office.city.charAt(0) }}
             </span>
           </div>
 
-          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#121212] text-white border border-[#C5A059] text-[0.65rem] uppercase tracking-widest px-2.5 py-1 whitespace-nowrap opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none">
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#1A1815] text-[#FAF6F0] border border-[#C5A059] text-[0.65rem] uppercase tracking-widest px-2.5 py-1 whitespace-nowrap opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none">
             {{ office.name }}
           </div>
         </div>
@@ -87,7 +87,7 @@
         <!-- OVERLAY CARD FOR SELECTED OFFICE -->
         <div 
           *ngIf="selectedOffice()"
-          class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#121212]/95 text-white border-2 border-[#C5A059] p-5 sm:p-6 shadow-2xl z-30 backdrop-blur-md animate-in fade-in"
+          class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#26221E]/95 text-[#FAF6F0] border-2 border-[#C5A059] p-5 sm:p-6 shadow-2xl z-30 backdrop-blur-md animate-in fade-in"
         >
           <div class="flex items-center justify-between mb-3">
             <span class="text-[0.65rem] uppercase tracking-[0.25em] text-[#C5A059] font-semibold flex items-center gap-1.5">
@@ -95,20 +95,20 @@
               {{ selectedOffice()?.isMainOffice ? 'Global Headquarters' : 'Regional Atelier' }}
             </span>
 
-            <span class="text-[0.65rem] text-white/60 font-light">
+            <span class="text-[0.65rem] text-[#FAF6F0]/60 font-light">
               {{ selectedOffice()?.city }} Hub
             </span>
           </div>
 
-          <h3 class="font-serif text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-[#FAF6F0] mb-2 leading-snug">
             {{ selectedOffice()?.name }}
           </h3>
 
-          <p class="text-xs text-white/80 leading-relaxed font-light mb-3 m-0">
+          <p class="text-xs text-[#FAF6F0]/80 leading-relaxed font-light mb-3 m-0">
             {{ selectedOffice()?.address }}
           </p>
 
-          <div class="space-y-1 text-xs text-white/90 font-light mb-4 border-t border-white/10 pt-3">
+          <div class="space-y-1 text-xs text-[#FAF6F0]/90 font-light mb-4 border-t border-[#3D362F] pt-3">
             <p class="m-0"><strong class="text-[#C5A059]">Direct Line:</strong> {{ selectedOffice()?.phone }}</p>
             <p class="m-0"><strong class="text-[#C5A059]">VIP Desk:</strong> {{ selectedOffice()?.email }}</p>
             <p class="m-0"><strong class="text-[#C5A059]">Atelier Hours:</strong> {{ selectedOffice()?.hours }}</p>
@@ -117,7 +117,7 @@
           <div class="pt-2 border-t border-[#C5A059]/30 flex items-center justify-between gap-3">
             <a 
               routerLink="/office-details" 
-              class="w-full py-2.5 px-4 bg-gradient-to-r from-[#C5A059] to-[#B89D5E] text-[#121212] text-xs font-semibold uppercase tracking-[0.2em] text-center hover:opacity-95 transition-opacity shadow-md flex items-center justify-center gap-2"
+              class="w-full py-2.5 px-4 bg-gradient-to-r from-[#C5A059] to-[#B89D5E] text-[#1A1815] text-xs font-semibold uppercase tracking-[0.2em] text-center hover:opacity-95 transition-opacity shadow-md flex items-center justify-center gap-2"
             >
               <span>Explore Main Office Details</span>
               <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
@@ -135,16 +135,16 @@
         <div 
           *ngFor="let off of offices"
           (click)="selectOffice(off)"
-          class="p-6 bg-[#F9F8F6] dark:bg-[#1A1A1A] border cursor-pointer transition-all duration-300 relative group"
-          [ngClass]="selectedOffice()?.id === off.id ? 'border-[#C5A059] shadow-gold-glow bg-white dark:bg-[#121212]' : 'border-[#E5E5E5] dark:border-gray-800 hover:border-[#C5A059]'"
+          class="p-6 bg-[#F9F8F6] dark:bg-[#26221E] border cursor-pointer transition-all duration-300 relative group"
+          [ngClass]="selectedOffice()?.id === off.id ? 'border-[#C5A059] shadow-gold-glow bg-white dark:bg-[#1A1815]' : 'border-[#E5E5E5] dark:border-[#3D362F] hover:border-[#C5A059]'"
         >
           <div class="flex items-center justify-between mb-2">
-            <span class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-white">{{ off.city }}</span>
-            <span *ngIf="off.isMainOffice" class="text-[0.6rem] uppercase tracking-widest bg-[#C5A059] text-[#121212] font-bold px-2 py-0.5">
+            <span class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">{{ off.city }}</span>
+            <span *ngIf="off.isMainOffice" class="text-[0.6rem] uppercase tracking-widest bg-[#C5A059] text-[#1A1815] font-bold px-2 py-0.5">
               HQ
             </span>
           </div>
-          <p class="text-xs text-[#2C2C2C]/75 dark:text-white/75 font-light line-clamp-2 m-0 mb-3">{{ off.address }}</p>
+          <p class="text-xs text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light line-clamp-2 m-0 mb-3">{{ off.address }}</p>
           <span class="text-[0.7rem] uppercase tracking-wider text-[#B89D5E] dark:text-[#C5A059] font-semibold group-hover:text-[#2C2C2C] dark:group-hover:text-white transition-colors">
             Select on Map &rarr;
           </span>
@@ -157,7 +157,7 @@
 
   <!-- SECTION 2: VIP CONSULTATION & INQUIRY FORM -->
   <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
-    <div class="bg-[#F9F8F6] dark:bg-[#1A1A1A] border border-[#E5E5E5] dark:border-[#C5A059]/40 p-6 sm:p-8 md:p-14 shadow-xl relative transition-colors duration-300">
+    <div class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] p-6 sm:p-8 md:p-14 shadow-xl relative transition-colors duration-300">
       
       <div class="max-w-3xl mx-auto space-y-8">
         
@@ -165,29 +165,29 @@
           <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
             Confidential Client Intake
           </h6>
-          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-white">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">
             Schedule Private Consultation
           </h2>
-          <p class="text-sm text-[#2C2C2C]/75 dark:text-white/75 font-light">
+          <p class="text-sm text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light">
             Our principal architects and executive partners remain available for private estate briefings and commercial commissions.
           </p>
         </div>
 
         <div 
           *ngIf="formSubmitted()" 
-          class="bg-[#121212] text-white p-8 border-2 border-[#C5A059] text-center space-y-4 animate-in fade-in"
+          class="bg-[#1A1815] text-[#FAF6F0] p-8 border-2 border-[#C5A059] text-center space-y-4 animate-in fade-in"
         >
           <div class="w-12 h-12 rounded-full border-2 border-[#C5A059] text-[#C5A059] flex items-center justify-center mx-auto text-xl font-serif font-bold">
             &check;
           </div>
           <h3 class="font-serif text-2xl font-bold text-[#C5A059]">Inquiry Registered Successfully</h3>
-          <p class="text-xs text-white/90 font-light max-w-md mx-auto leading-relaxed">
+          <p class="text-xs text-[#FAF6F0]/90 font-light max-w-md mx-auto leading-relaxed">
             Thank you, {{ formData.fullName }}. A senior partner from the RAMYUG Executive Client Desk will contact you within 24 business hours.
           </p>
           <button 
             (click)="resetForm()" 
             type="button"
-            class="px-6 py-2 bg-[#C5A059] text-[#121212] text-xs uppercase tracking-widest font-semibold cursor-pointer"
+            class="px-6 py-2 bg-[#C5A059] text-[#1A1815] text-xs uppercase tracking-widest font-semibold cursor-pointer"
           >
             Submit Another Inquiry
           </button>
@@ -197,7 +197,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             <div class="space-y-2">
-              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
                 Full Name / Entity *
               </label>
               <input 
@@ -206,12 +206,12 @@
                 name="fullName" 
                 required 
                 placeholder="e.g. Lord Alistair Sterling / Sterling Group" 
-                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+                class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
               />
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
                 Corporate / VIP Email *
               </label>
               <input 
@@ -220,12 +220,12 @@
                 name="email" 
                 required 
                 placeholder="client@domain.com" 
-                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+                class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
               />
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
                 Direct Contact Phone
               </label>
               <input 
@@ -233,18 +233,18 @@
                 [(ngModel)]="formData.phone" 
                 name="phone" 
                 placeholder="+1 (555) 000-0000" 
-                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+                class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
               />
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
                 Project Classification
               </label>
               <select 
                 [(ngModel)]="formData.projectType" 
                 name="projectType" 
-                class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+                class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
               >
                 <option value="Luxury Estate Residence">Ultra-Luxury Estate Residence</option>
                 <option value="Commercial Tower / Skyline">Commercial Skyscraper Landmark</option>
@@ -256,13 +256,13 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
               Estimated Commission Capital Range
             </label>
             <select 
               [(ngModel)]="formData.budgetRange" 
               name="budgetRange" 
-              class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
             >
               <option value="$5M - $10M">$5 Million - $10 Million</option>
               <option value="$10M - $25M">$10 Million - $25 Million</option>
@@ -272,7 +272,7 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-white block">
+            <label class="text-xs font-semibold uppercase tracking-wider text-[#2C2C2C] dark:text-[#FAF6F0] block">
               Brief Project Scope & Vision
             </label>
             <textarea 
@@ -280,13 +280,13 @@
               [(ngModel)]="formData.message" 
               name="message" 
               placeholder="Outline site parameters, architectural preferences, or timelines..." 
-              class="w-full bg-white dark:bg-[#121212] border border-[#E5E5E5] dark:border-[#C5A059]/40 px-4 py-3 text-xs text-[#2C2C2C] dark:text-white focus:outline-none focus:border-[#C5A059]"
+              class="w-full bg-white dark:bg-[#1A1815] border border-[#E5E5E5] dark:border-[#3D362F] px-4 py-3 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] focus:outline-none focus:border-[#C5A059]"
             ></textarea>
           </div>
 
           <button 
             type="submit" 
-            class="w-full py-4 bg-[#121212] dark:bg-[#C5A059] hover:bg-[#C5A059] dark:hover:bg-[#B89D5E] text-white dark:text-[#121212] hover:text-[#121212] text-xs font-semibold uppercase tracking-[0.25em] transition-all duration-300 border border-[#C5A059] shadow-md cursor-pointer"
+            class="w-full py-4 bg-[#1A1815] dark:bg-[#C5A059] hover:bg-[#C5A059] dark:hover:bg-[#B89D5E] text-white dark:text-[#1A1815] hover:text-[#1A1815] text-xs font-semibold uppercase tracking-[0.25em] transition-all duration-300 border border-[#C5A059] shadow-md cursor-pointer"
           >
             Dispatch Private Briefing Request
           </button>

@@ -13,10 +13,13 @@
   --color-jumeirah-charcoal: #2C2C2C;
   --color-jumeirah-border: #E5E5E5;
 
-  --color-dark-bg: #121212;
-  --color-dark-card: #1A1A1A;
-  --color-dark-border: #2A2A2A;
-  --color-dark-text: #F5F5F5;
+  /* Warm Luxury Dark Theme Colors (No Black, No Blue) */
+  --color-warm-dark-bg: #1A1815;
+  --color-warm-dark-card: #26221E;
+  --color-warm-dark-elevated: #332D28;
+  --color-warm-dark-border: #3D362F;
+  --color-warm-dark-text: #FAF6F0;
+  --color-warm-dark-muted: #D6CCC0;
 
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
@@ -30,6 +33,7 @@
 
   html.dark {
     color-scheme: dark;
+    background-color: #1A1815;
   }
 
   body {
@@ -45,11 +49,11 @@
   }
 
   html.dark body {
-    background-color: #121212;
-    color: #F5F5F5;
+    background-color: #1A1815;
+    color: #FAF6F0;
   }
 
-  /* Headings: Playfair Display Serif with Jumeirah Champagne Gold / Charcoal */
+  /* Headings: Playfair Display Serif */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', Georgia, serif;
     color: #2C2C2C;
@@ -64,7 +68,7 @@
   html.dark h4, 
   html.dark h5, 
   html.dark h6 {
-    color: #FFFFFF;
+    color: #FAF6F0;
   }
 
   h1 { font-size: 2.75rem; line-height: 1.15; font-weight: 700; }
@@ -94,7 +98,7 @@
     h3 { font-size: 2.5rem; }
   }
 
-  /* Body Paragraphs: Montserrat with Deep Charcoal / Off-white */
+  /* Body Paragraphs */
   p {
     font-family: 'Montserrat', sans-serif;
     color: #2C2C2C;
@@ -106,7 +110,7 @@
   }
 
   html.dark p {
-    color: #E5E5E5;
+    color: #D6CCC0;
   }
 
   /* Interactive Anchors */
@@ -121,7 +125,7 @@
   }
 
   html.dark hr {
-    border-color: rgba(197, 160, 89, 0.25);
+    border-color: #3D362F;
   }
 
   button, input, select, textarea {
@@ -153,7 +157,7 @@
   background: #FFFFFF;
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #1A1815;
 }
 ::-webkit-scrollbar-thumb {
   background: #C5A059;
@@ -167,7 +171,7 @@ html.dark ::-webkit-scrollbar-track {
 .ramyug-preloader {
   position: fixed;
   inset: 0;
-  background-color: #121212;
+  background-color: #1A1815;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -191,7 +195,7 @@ html.dark ::-webkit-scrollbar-track {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1A1A1A;
+  background-color: #26221E;
   box-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
 }
 
@@ -219,7 +223,7 @@ html.dark ::-webkit-scrollbar-track {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: 0.3em;
-  color: #FFFFFF;
+  color: #FAF6F0;
 }
 
 .ramyug-sub-text {
@@ -233,7 +237,7 @@ html.dark ::-webkit-scrollbar-track {
 .ramyug-progress-bar {
   width: 140px;
   height: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(250, 246, 240, 0.15);
   overflow: hidden;
   position: relative;
 }

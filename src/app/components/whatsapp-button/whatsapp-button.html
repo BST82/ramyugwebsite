@@ -3,20 +3,20 @@
   <!-- Popover Preview Box -->
   <div 
     *ngIf="isOpen()" 
-    class="mb-4 w-80 bg-[#121212] text-white rounded-none border border-[#C5A059]/50 shadow-2xl overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+    class="mb-4 w-80 bg-[#1A1815] text-[#FAF6F0] rounded-none border border-[#C5A059]/50 shadow-2xl overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
   >
     <!-- Card Header -->
-    <div class="bg-gradient-to-r from-[#C5A059] to-[#D4AF37] text-[#121212] p-4 flex items-center justify-between">
+    <div class="bg-gradient-to-r from-[#C5A059] to-[#D4AF37] text-[#1A1815] p-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-[#121212] text-[#C5A059] flex items-center justify-center font-serif font-bold text-sm">
+        <div class="w-8 h-8 rounded-full bg-[#1A1815] text-[#C5A059] flex items-center justify-center font-serif font-bold text-sm">
           R
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm m-0 leading-tight">RAMYUG Concierge</h4>
-          <span class="text-[0.65rem] uppercase tracking-wider text-[#121212]/80 font-medium">Online &bull; VIP Desk</span>
+          <span class="text-[0.65rem] uppercase tracking-wider text-[#1A1815]/80 font-medium">Online &bull; VIP Desk</span>
         </div>
       </div>
-      <button (click)="toggleWidget()" type="button" class="text-[#121212] hover:opacity-75 focus:outline-none cursor-pointer">
+      <button (click)="toggleWidget()" type="button" class="text-[#1A1815] hover:opacity-75 focus:outline-none cursor-pointer">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -24,11 +24,11 @@
     </div>
 
     <!-- Card Body -->
-    <div class="p-4 space-y-3 bg-[#121212]">
-      <div class="bg-[#1A1A1A] p-3 border-l-2 border-[#C5A059] text-xs text-white/90 font-light leading-relaxed">
+    <div class="p-4 space-y-3 bg-[#1A1815]">
+      <div class="bg-[#26221E] p-3 border-l-2 border-[#C5A059] text-xs text-[#FAF6F0]/90 font-light leading-relaxed">
         "Welcome to RAMYUG. Speak directly with our executive architectural client manager regarding your residential or commercial vision."
       </div>
-      <p class="text-[0.7rem] text-white/60 m-0">Typically responds within minutes.</p>
+      <p class="text-[0.7rem] text-[#FAF6F0]/60 m-0">Typically responds within minutes.</p>
 
       <a 
         [href]="whatsappUrl"
@@ -48,7 +48,7 @@
   <button 
     (click)="toggleWidget()"
     type="button"
-    class="relative group w-14 h-14 rounded-full bg-[#121212] border-2 border-[#C5A059] flex items-center justify-center text-[#25D366] shadow-2xl transition-all duration-500 hover:scale-110 focus:outline-none cursor-pointer"
+    class="relative group w-14 h-14 rounded-full bg-[#1A1815] border-2 border-[#C5A059] flex items-center justify-center text-[#25D366] shadow-2xl transition-all duration-500 hover:scale-110 focus:outline-none cursor-pointer"
     aria-label="Open WhatsApp Chat"
   >
     <span class="absolute inset-0 rounded-full bg-[#C5A059]/30 animate-ping pointer-events-none opacity-75"></span>

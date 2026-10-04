@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -9,14 +10,19 @@ import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-b
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, WhatsappButtonComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, WhatsappButtonComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   private titleService = inject(Title);
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+  private platformId = inject(PLATFORM_ID);
+
+  // Pre-loader lifecycle state
+  isLoading = signal<boolean>(true);
+  isFadingOut = signal<boolean>(false);
 
   constructor() {
     // Dynamic Browser Tab Title Listener (RAMYUG | [Page Name])
@@ -30,5 +36,19 @@ export class App {
       const pageTitle = currentRoute.snapshot.data['title'] || 'Bespoke Architecture';
       this.titleService.setTitle(`RAMYUG | ${pageTitle}`);
     });
+  }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Extended luxury brand entrance timer (2.2 seconds display + 0.6s smooth fade-out)
+      setTimeout(() => {
+        this.isFadingOut.set(true);
+        setTimeout(() => {
+          this.isLoading.set(false);
+        }, 600);
+      }, 2200);
+    } else {
+      this.isLoading.set(false);
+    }
   }
 }
