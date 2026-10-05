@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, inject, OnInit, signal, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute, RouterOutlet } from '@angular/router';
@@ -20,7 +20,7 @@ export class App implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   private platformId = inject(PLATFORM_ID);
 
-  // Pre-loader lifecycle state
+  // Luxury Pre-loader lifecycle state
   isLoading = signal<boolean>(true);
   isFadingOut = signal<boolean>(false);
 
@@ -40,13 +40,13 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Extended luxury brand entrance timer (2.2 seconds display + 0.6s smooth fade-out)
+      // Luxury entrance duration with smooth fade-out
       setTimeout(() => {
         this.isFadingOut.set(true);
         setTimeout(() => {
           this.isLoading.set(false);
-        }, 600);
-      }, 2200);
+        }, 700);
+      }, 1400);
     } else {
       this.isLoading.set(false);
     }
