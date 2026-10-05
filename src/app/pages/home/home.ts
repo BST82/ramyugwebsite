@@ -10,6 +10,7 @@ export interface Project {
   year: string;
   image: string;
   area: string;
+  client?: string;
   description: string;
   featured?: boolean;
 }
@@ -39,6 +40,7 @@ export class HomeComponent {
       location: 'Dubai Riviera, UAE',
       year: '2025',
       area: '28,000 Sq.Ft',
+      client: 'Royal Private Office',
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
       description: 'A palatial private coastline estate crafted with Greek Thassos marble, glass floor-to-ceiling facades, and private superyacht mooring berths.',
       featured: true
@@ -50,6 +52,7 @@ export class HomeComponent {
       location: 'Financial District, Mumbai',
       year: '2024',
       area: '850,000 Sq.Ft',
+      client: 'Aura Capital Global',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       description: 'A 68-story commercial icon featuring dynamic gold titanium louvers, double-height sky lobbies, and LEED Platinum net-zero certification.',
       featured: true
@@ -61,6 +64,7 @@ export class HomeComponent {
       location: 'Mayfair, London, UK',
       year: '2024',
       area: '18,500 Sq.Ft',
+      client: 'Heritage Trust UK',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
       description: 'Restoration and luxury modernization of an 18th-century grade-I listed mansion, combining hand-carved stone with subterranean wellness suites.',
       featured: true
@@ -72,6 +76,7 @@ export class HomeComponent {
       location: 'Monaco Coast',
       year: '2025',
       area: '15,200 Sq.Ft',
+      client: 'Private VIP Family',
       image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80',
       description: 'Cliffside cantilevered villas designed with integrated infinity water features, brass detailing, and automated solar shading.',
       featured: false
@@ -83,7 +88,8 @@ export class HomeComponent {
       location: 'Geneva, Switzerland',
       year: '2023',
       area: '42,000 Sq.Ft',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80',
+      client: 'Geneva Arts Foundation',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       description: 'An acoustic masterpiece sculpted in timber and gold leaf, engineered to host world-renowned philharmonic orchestras.',
       featured: false
     },
@@ -94,11 +100,21 @@ export class HomeComponent {
       location: 'Doha, Qatar',
       year: '2025',
       area: '620,000 Sq.Ft',
-      image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80',
+      client: 'Sovereign Wealth Fund',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       description: 'An architectural beacon reflecting traditional Islamic geometric lattices infused with futuristic smart glass technology.',
       featured: false
     }
   ];
+
+  defaultFallbackImage = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    if (target && target.src !== this.defaultFallbackImage) {
+      target.src = this.defaultFallbackImage;
+    }
+  }
 
   categories = ['All', 'Residences', 'Commercial', 'Heritage', 'Cultural'];
 

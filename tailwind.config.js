@@ -7,53 +7,70 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Jumeirah-Inspired Luxury Light Colors
-        jumeirah: {
-          white: '#FFFFFF',       // Main Pristine Background
-          pearl: '#F9F8F6',       // Secondary Pearl/Sand Background
-          gold: '#C5A059',        // Primary Champagne Gold Accent
-          goldDark: '#B89D5E',    // Deep Champagne Gold
-          charcoal: '#2C2C2C',    // Deep Charcoal Body Text
-          border: '#E5E5E5',      // Subtle Light Grey / Gold Border
+        // Jumeirah-Inspired Luxury Editorial Warm Cream & Stone Colors
+        cream: {
+          50: '#FDFBF7',
+          100: '#FAF7F2', // Signature Warm Cream Base
+          200: '#F4EFE6', // Editorial Warm Card Surface
+          300: '#ECE5D8', // Warm Sand Divider
+          400: '#E2D7C5',
+          500: '#D5C7B0',
         },
-        // Warm Luxury Dark Theme (Warm Espresso & Roasted Mocha - ZERO Blue, ZERO Pure Black)
+        jumeirah: {
+          cream: '#FAF7F2',       // Warm Cream Background (replaces standard white)
+          card: '#F4EFE6',        // Soft Alabaster Card Background
+          pearl: '#F8F5F0',       // Pearl Sand Tint
+          gold: '#B89358',        // Refined Editorial Champagne Bronze
+          goldDark: '#9E7B3E',    // Deep Rich Bronze Accent
+          goldLight: '#D1B27C',   // Luminous Gold Accent
+          charcoal: '#1D1C1A',    // High-Contrast Dark Espresso Text
+          muted: '#6E6962',       // Refined Muted Editorial Text
+          border: '#E5DFD5',      // Subtle Warm Sand Neutral Border
+        },
+        editorial: {
+          dark: '#1D1C1A',
+          muted: '#6E6962',
+          border: '#E5DFD5',
+        },
+        // Warm Luxury Dark Theme (Warm Roasted Espresso & Mocha)
         warmDark: {
-          bg: '#1A1815',          // Deep Warm Espresso (Warm velvety background)
-          card: '#26221E',        // Roasted Mocha Card Background
-          elevated: '#332D28',    // Elevated Bronze Container
-          border: '#3D362F',      // Warm Bronze Gold Border
-          text: '#FAF6F0',        // Soft Warm Ivory Linen Text
-          muted: '#D6CCC0',       // Warm Sand Muted Text
+          bg: '#141311',          // Velvet Espresso Deep Background
+          card: '#1E1B18',        // Mocha Atelier Card Background
+          elevated: '#292521',    // Elevated Container
+          border: '#2F2B26',      // Subtle Warm Charcoal Border
+          text: '#FAF7F2',        // Warm Linen Cream Text
+          muted: '#C8C0B5',       // Warm Muted Sand Text
         },
         gold: {
-          50: '#FAF6E6',
-          100: '#F4E9C0',
-          200: '#E8D48D',
-          300: '#DCC05A',
-          400: '#D7B442',
-          500: '#C5A059', // Champagne Gold
-          600: '#B89D5E', // Deep Champagne Gold
-          700: '#9B7B38',
-          800: '#755A25',
-          900: '#4D3A15',
+          50: '#FBF8F0',
+          100: '#F6EEDB',
+          200: '#EBDCB7',
+          300: '#DFCA93',
+          400: '#CBAB6E',
+          500: '#B89358', // Champagne Gold / Bronze
+          600: '#9E7B3E', // Deep Bronze
+          700: '#7E602F',
+          800: '#5F4620',
+          900: '#3D2C12',
         },
         charcoal: {
-          50: '#F5F5F5',
-          100: '#E6E6E6',
-          200: '#CCCCCC',
-          500: '#666666',
-          700: '#3D3D3D',
-          800: '#2C2C2C',
-          900: '#1A1815',
+          50: '#F6F5F4',
+          100: '#EBE9E6',
+          200: '#D6D2CC',
+          500: '#6E6962',
+          700: '#3A3632',
+          800: '#24221F',
+          900: '#1D1C1A',
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+        serif: ['"Bressay Display"', '"Old Standard TT"', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', '"Montserrat"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'gold-glow': '0 10px 30px -10px rgba(197, 160, 89, 0.3)',
-        'luxury': '0 20px 40px -15px rgba(38, 34, 30, 0.12)',
+        'subtle-luxury': '0 10px 30px -10px rgba(29, 28, 26, 0.06)',
+        'luxury': '0 20px 45px -15px rgba(29, 28, 26, 0.08)',
+        'gold-subtle': '0 10px 25px -10px rgba(184, 147, 88, 0.25)',
       }
     },
   },

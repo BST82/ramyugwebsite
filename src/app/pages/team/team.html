@@ -1,294 +1,265 @@
 <!-- Leadership & Team Module -->
-<div class="bg-white dark:bg-[#1A1815] text-[#2C2C2C] dark:text-[#FAF6F0] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300">
-
-  <!-- Subpage Header Banner -->
-  <section class="relative py-20 bg-[#1A1815] text-white border-b border-[#C5A059]/30 overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#C5A059]/10 blur-[140px] pointer-events-none rounded-full"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
-      <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-3">
-        Governance & Vision
-      </h6>
-      <h1 class="font-serif text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
-        Leadership & Atelier Team
-      </h1>
-      <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-6"></div>
-      <p class="max-w-2xl mx-auto text-sm md:text-base text-white/85 font-light leading-relaxed">
-        Guided by decades of structural mastery and an unyielding commitment to perfection, our leaders transform ambitious architectural visions into immortal physical reality.
-      </p>
+<div
+  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-24 pb-24 font-sans transition-colors duration-300"
+>
+  <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
+  <section
+    class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
+        alt="Luminous Architectural Glass Tower Building Media"
+        class="w-full h-full object-cover opacity-100 dark:opacity-85 transition-all duration-500"
+        (error)="onImageError($event)"
+      />
+      <!-- Dark mode overlay only for readability -->
+      <div
+        class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"
+      ></div>
     </div>
   </section>
 
-
-  <!-- SECTION 1: DIRECTOR PROFILE (Jumeirah Soft Pearl Light / Roasted Mocha Dark) -->
+  <!-- SECTION 1: DIRECTOR PROFILE (Warm Cream Editorial Spread) -->
   <section class="max-w-7xl mx-auto px-6 md:px-12 py-20">
-    <div class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] shadow-xl p-6 sm:p-8 md:p-14 relative overflow-hidden transition-colors duration-300">
-      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#C5A059]/15 to-transparent pointer-events-none"></div>
-
+    <div
+      class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-14 relative shadow-subtle-luxury transition-colors duration-300"
+    >
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Large Portrait Layout -->
+        <!-- Large Portrait Layout (Natural Light) -->
         <div class="lg:col-span-5 relative group">
-          <div class="relative z-10 overflow-hidden border-2 border-[#C5A059] shadow-gold-glow">
-            <img 
-              [src]="director.portrait" 
-              [alt]="director.name"
-              class="w-full h-[400px] sm:h-[480px] md:h-[560px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1A1815]/80 via-transparent to-transparent opacity-60"></div>
-          </div>
-          
-          <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#B89D5E]/30 pointer-events-none z-0 hidden sm:block"></div>
+          <a
+            [routerLink]="['/team', director.id]"
+            class="block cursor-pointer relative"
+          >
+            <div
+              class="relative z-10 overflow-hidden border border-[#E5DFD5] dark:border-[#2F2B26] bg-[#ECE5D8]"
+            >
+              <img
+                [src]="director.image"
+                [alt]="director.name"
+                class="w-full h-[400px] sm:h-[480px] md:h-[540px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                (error)="onImageError($event)"
+              />
+              <div
+                class="hidden dark:block absolute inset-0 bg-gradient-to-t from-[#141311]/75 via-transparent to-transparent pointer-events-none"
+              ></div>
+            </div>
 
-          <div class="absolute bottom-6 left-6 right-6 bg-[#26221E]/95 text-white p-4 border-l-4 border-[#C5A059] z-20 backdrop-blur-md">
-            <h4 class="font-serif text-lg text-white font-semibold m-0 leading-tight">{{ director.name }}</h4>
-            <p class="text-xs text-[#C5A059] font-medium m-0 tracking-wider uppercase mt-1">{{ director.title }}</p>
-          </div>
+            <div
+              class="absolute -bottom-3 -right-3 w-full h-full border border-[#B89358]/40 pointer-events-none z-0 hidden sm:block"
+            ></div>
+
+            <div
+              class="absolute bottom-6 left-6 right-6 bg-[#FAF7F2]/95 dark:bg-[#141311]/95 text-[#1D1C1A] dark:text-[#FAF7F2] p-4 border-l-2 border-[#B89358] z-20 backdrop-blur-md shadow-sm"
+            >
+              <h4 class="font-serif text-lg font-bold m-0 leading-tight group-hover:text-[#B89358] transition-colors">
+                {{ director.name }}
+              </h4>
+              <p class="text-xs text-[#B89358] font-medium m-0 tracking-wider uppercase mt-1">
+                {{ director.title }}
+              </p>
+            </div>
+          </a>
         </div>
 
-        <!-- Director Narrative & Quote Block -->
-        <div class="lg:col-span-7 space-y-8">
-          
+        <!-- Director Narrative & Static Editorial Quote Block -->
+        <div class="lg:col-span-7 space-y-7">
           <div>
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] text-[#C5A059] block mb-2">
+            <span
+              class="text-xs font-semibold uppercase tracking-[0.25em] text-[#B89358] block mb-2"
+            >
               Managing Director's Statement
             </span>
-            <h2 class="font-serif text-3xl md:text-4xl text-[#2C2C2C] dark:text-[#FAF6F0] font-bold tracking-tight">
+            <h2
+              class="font-serif text-3xl md:text-4xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold tracking-tight"
+            >
               Sculpting Monuments That Define Generations
             </h2>
           </div>
 
-          <!-- Quote Block -->
-          <div class="relative bg-white dark:bg-[#1A1815] p-6 sm:p-8 border-l-4 border-[#C5A059] shadow-sm my-6 transition-colors duration-300">
-            <svg class="absolute top-4 right-4 w-12 h-12 text-[#C5A059]/15 fill-current" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-            </svg>
-            <p class="font-serif text-xl md:text-2xl text-[#2C2C2C] dark:text-[#FAF6F0] italic leading-relaxed m-0 font-medium">
+          <!-- Clean Editorial Quote Block (Static Typography) -->
+          <div
+            class="relative bg-[#F4EFE6] dark:bg-[#141311] p-6 sm:p-8 border-l-2 border-[#B89358] shadow-sm my-6 transition-colors duration-300"
+          >
+            <p
+              class="font-serif text-xl md:text-2xl text-[#1D1C1A] dark:text-[#FAF7F2] italic leading-relaxed m-0 font-normal"
+            >
               "{{ director.quote }}"
             </p>
             <div class="mt-4 flex items-center gap-3">
-              <div class="w-10 h-[1px] bg-[#C5A059]"></div>
-              <span class="text-xs uppercase tracking-widest text-[#B89D5E] dark:text-[#C5A059] font-semibold">{{ director.name }}</span>
+              <div class="w-8 h-[1px] bg-[#B89358]"></div>
+              <span
+                class="text-xs uppercase tracking-widest text-[#9E7B3E] dark:text-[#B89358] font-semibold"
+                >{{ director.name }}</span
+              >
             </div>
           </div>
 
-          <p class="text-sm text-[#2C2C2C]/85 dark:text-[#FAF6F0]/85 leading-relaxed font-light m-0">
+          <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
             {{ director.bio }}
           </p>
 
-          <div class="pt-4 border-t border-[#E5E5E5] dark:border-[#3D362F]">
-            <h5 class="font-serif text-base text-[#2C2C2C] dark:text-[#FAF6F0] font-semibold mb-3">Key Distinction & Accolades</h5>
-            <ul class="space-y-2 text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 font-light">
+          <div class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26]">
+            <h5 class="font-serif text-base text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold mb-3">
+              Key Distinction & Accolades
+            </h5>
+            <ul class="space-y-2.5 text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
               <li *ngFor="let ach of director.achievements" class="flex items-start gap-2.5">
-                <span class="w-1.5 h-1.5 bg-[#C5A059] rounded-full mt-1.5 shrink-0"></span>
+                <span class="w-1.5 h-1.5 bg-[#B89358] rounded-full mt-1.5 shrink-0"></span>
                 <span>{{ ach }}</span>
               </li>
             </ul>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-6 pt-4">
-            <div>
-              <span class="font-serif italic text-2xl text-[#C5A059] tracking-widest">Vikramaditya R.</span>
-              <p class="text-[0.65rem] uppercase tracking-widest text-[#2C2C2C]/50 dark:text-[#FAF6F0]/50 m-0">Executive Chairman Sign-off</p>
-            </div>
+            <a
+              [routerLink]="['/team', director.id]"
+              class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 shadow-sm inline-flex items-center gap-2 cursor-pointer"
+            >
+              <span>Explore Director Dossier & Projects</span>
+              <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
 
-            <a 
-              routerLink="/contact" 
-              class="px-6 py-3 bg-[#1A1815] dark:bg-[#C5A059] hover:bg-[#C5A059] dark:hover:bg-[#B89D5E] text-white dark:text-[#1A1815] hover:text-[#1A1815] text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 border border-[#C5A059]"
+            <a
+              routerLink="/contact"
+              class="px-6 py-3 border border-[#1D1C1A] dark:border-[#FAF7F2] hover:bg-[#1D1C1A] dark:hover:bg-[#FAF7F2] text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-white dark:hover:text-[#1D1C1A] text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200"
             >
               Request Executive Meeting
             </a>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
 
-
   <!-- SECTION 2: ANCHORED & CATEGORIZED TEAM MODULE -->
   <section class="max-w-7xl mx-auto px-6 md:px-12 py-16" id="team-roster">
-    
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <h6 class="text-xs uppercase tracking-[0.3em] text-[#C5A059] font-semibold mb-2">
+      <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
         The Atelier Guild
       </h6>
-      <h2 class="font-serif text-3xl md:text-5xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0] tracking-tight">
+      <h2
+        class="font-serif text-3xl md:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
+      >
         Architects of Distinction
       </h2>
-      <p class="text-sm text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light mt-3">
-        Explore our multidisciplinary experts strictly categorized across Senior Governance and Main Atelier execution teams.
+      <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light mt-3">
+        Explore our multidisciplinary leaders and specialists. Click any profile to view their full professional dossier and architectural portfolio.
       </p>
     </div>
 
-    <!-- Category Filter Tabs -->
+    <!-- Category Filter Tabs (Warm Stone & Cream Style) -->
     <div class="flex justify-center mb-16">
-      <div class="inline-flex p-1.5 bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] shadow-inner max-w-md w-full">
-        <button 
+      <div
+        class="inline-flex p-1 bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] max-w-md w-full"
+      >
+        <button
           (click)="setCategory('senior')"
           type="button"
-          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 relative focus:outline-none cursor-pointer"
-          [ngClass]="activeCategory() === 'senior' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] shadow-md' : 'text-[#2C2C2C] dark:text-white hover:text-[#C5A059]'"
+          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
+          [ngClass]="
+            activeCategory() === 'senior'
+              ? 'bg-[#FAF7F2] dark:bg-[#292521] text-[#1D1C1A] dark:text-[#FAF7F2] shadow-sm border border-[#E5DFD5] dark:border-[#2F2B26]'
+              : 'text-[#6E6962] dark:text-[#C8C0B5] hover:text-[#1D1C1A]'
+          "
         >
           Senior Leadership
-          <span class="ml-1 text-[0.65rem] opacity-75">(03)</span>
+          <span class="ml-1 text-[0.65rem] text-[#B89358]">(03)</span>
         </button>
 
-        <button 
+        <button
           (click)="setCategory('main')"
           type="button"
-          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 relative focus:outline-none cursor-pointer"
-          [ngClass]="activeCategory() === 'main' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] shadow-md' : 'text-[#2C2C2C] dark:text-white hover:text-[#C5A059]'"
+          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
+          [ngClass]="
+            activeCategory() === 'main'
+              ? 'bg-[#FAF7F2] dark:bg-[#292521] text-[#1D1C1A] dark:text-[#FAF7F2] shadow-sm border border-[#E5DFD5] dark:border-[#2F2B26]'
+              : 'text-[#6E6962] dark:text-[#C8C0B5] hover:text-[#1D1C1A]'
+          "
         >
           Main Atelier Team
-          <span class="ml-1 text-[0.65rem] opacity-75">(04)</span>
+          <span class="ml-1 text-[0.65rem] text-[#B89358]">(04)</span>
         </button>
       </div>
     </div>
 
-    <!-- Team Cards Grid -->
+    <!-- Team Cards Grid (Warm Cream Alabaster Cards linking directly to /team/:id) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div 
+      <a
         *ngFor="let member of filteredTeam"
-        (click)="openModal(member)"
-        class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] shadow-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl relative flex flex-col"
+        [routerLink]="['/team', member.id]"
+        class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-subtle-luxury overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-[#B89358] relative flex flex-col no-underline text-inherit"
       >
-        <div class="relative h-80 overflow-hidden bg-[#1A1815]">
-          <img 
-            [src]="member.image" 
+        <div class="relative h-80 overflow-hidden bg-[#ECE5D8]">
+          <img
+            [src]="member.image"
             [alt]="member.name"
-            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-90"
+            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            (error)="onImageError($event)"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#1A1815] via-transparent to-transparent opacity-80"></div>
-          
-          <span class="absolute top-4 left-4 bg-[#1A1815]/90 text-[#C5A059] border border-[#C5A059]/50 text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm">
+          <div
+            class="hidden dark:block absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent pointer-events-none"
+          ></div>
+
+          <span
+            class="absolute top-4 left-4 bg-[#FAF7F2]/90 dark:bg-[#141311]/90 text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm"
+          >
             {{ member.category === 'senior' ? 'Senior Board' : 'Main Atelier' }}
           </span>
 
-          <span class="absolute bottom-4 right-4 bg-[#C5A059] text-[#1A1815] text-[0.65rem] uppercase tracking-wider font-bold px-2.5 py-1">
-            {{ member.experience }} Exp.
+          <span
+            class="absolute bottom-4 right-4 bg-[#B89358] text-white text-[0.65rem] uppercase tracking-wider font-bold px-2.5 py-1 shadow-sm"
+          >
+            {{ member.experience }}
           </span>
         </div>
 
         <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
           <div>
-            <h3 class="font-serif text-xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0] group-hover:text-[#C5A059] transition-colors mb-1">
+            <h3
+              class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors mb-1"
+            >
               {{ member.name }}
             </h3>
-            <p class="text-xs text-[#C5A059] font-semibold uppercase tracking-wider m-0">
+            <p class="text-xs text-[#B89358] font-semibold uppercase tracking-wider m-0">
               {{ member.role }}
             </p>
-            <p class="text-[0.75rem] text-[#2C2C2C]/60 dark:text-[#FAF6F0]/60 italic mt-1 font-light">
+            <p class="text-[0.75rem] text-[#6E6962] dark:text-[#C8C0B5] italic mt-1 font-light">
               {{ member.credentials }}
             </p>
           </div>
 
-          <p class="text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 leading-relaxed font-light line-clamp-2 m-0">
+          <p
+            class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light line-clamp-2 m-0"
+          >
             {{ member.bio }}
           </p>
 
           <div class="flex flex-wrap gap-1.5 pt-2">
-            <span 
-              *ngFor="let spec of member.specialties" 
-              class="text-[0.65rem] bg-white dark:bg-[#1A1815] text-[#2C2C2C] dark:text-[#FAF6F0] px-2 py-0.5 border border-[#E5E5E5] dark:border-[#3D362F] font-light"
+            <span
+              *ngFor="let spec of member.specialties"
+              class="text-[0.65rem] bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] px-2.5 py-1 border border-[#E5DFD5] dark:border-[#2F2B26] font-light"
             >
               {{ spec }}
             </span>
           </div>
 
-          <div class="pt-4 border-t border-[#E5E5E5] dark:border-[#3D362F] flex items-center justify-between text-xs text-[#B89D5E] dark:text-[#C5A059] font-semibold uppercase tracking-wider group-hover:text-[#2C2C2C] dark:group-hover:text-white transition-colors">
-            <span>View Executive Profile</span>
-            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          <div
+            class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider group-hover:text-[#1D1C1A] dark:group-hover:text-white transition-colors"
+          >
+            <span>View Full Details & Projects</span>
+            <svg
+              class="w-4 h-4 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </div>
         </div>
-
-      </div>
+      </a>
     </div>
-
   </section>
-
-
-  <!-- MEMBER BIO LIGHTBOX MODAL -->
-  <div 
-    *ngIf="selectedMember()" 
-    class="fixed inset-0 z-50 bg-[#1A1815]/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in"
-  >
-    <div class="bg-white dark:bg-[#1A1815] border-2 border-[#C5A059] max-w-3xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto">
-      
-      <button 
-        (click)="closeModal()" 
-        type="button"
-        class="absolute top-4 right-4 z-20 w-10 h-10 bg-[#26221E] text-white hover:text-[#C5A059] flex items-center justify-center border border-[#C5A059] transition-colors cursor-pointer"
-      >
-        <svg class="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <div class="grid grid-cols-1 md:grid-cols-12">
-        <div class="md:col-span-5 h-64 sm:h-72 md:h-full relative bg-[#1A1815]">
-          <img [src]="selectedMember()?.image" [alt]="selectedMember()?.name" class="w-full h-full object-cover object-top" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#1A1815] via-transparent to-transparent"></div>
-        </div>
-
-        <div class="md:col-span-7 p-6 sm:p-8 space-y-4">
-          <span class="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold">
-            {{ selectedMember()?.category === 'senior' ? 'Senior Executive Leader' : 'Main Atelier Specialist' }}
-          </span>
-          <h2 class="font-serif text-2xl md:text-3xl text-[#2C2C2C] dark:text-[#FAF6F0] font-bold m-0">
-            {{ selectedMember()?.name }}
-          </h2>
-          <p class="text-xs text-[#B89D5E] dark:text-[#C5A059] font-semibold uppercase tracking-wider m-0">
-            {{ selectedMember()?.role }}
-          </p>
-          <p class="text-xs text-[#2C2C2C]/60 dark:text-[#FAF6F0]/60 italic m-0">
-            {{ selectedMember()?.credentials }} &bull; {{ selectedMember()?.experience }} Industry Mastery
-          </p>
-
-          <hr class="border-[#E5E5E5] dark:border-[#3D362F] my-4" />
-
-          <p class="text-xs text-[#2C2C2C]/85 dark:text-[#FAF6F0]/85 leading-relaxed font-light m-0">
-            {{ selectedMember()?.bio }}
-          </p>
-
-          <div class="pt-2">
-            <h5 class="text-xs uppercase tracking-wider font-semibold text-[#2C2C2C] dark:text-[#FAF6F0] mb-2">Core Specializations</h5>
-            <div class="flex flex-wrap gap-2">
-              <span *ngFor="let spec of selectedMember()?.specialties" class="text-xs bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] px-3 py-1 font-medium text-[#2C2C2C] dark:text-[#FAF6F0]">
-                {{ spec }}
-              </span>
-            </div>
-          </div>
-
-          <div class="pt-4 flex items-center justify-between">
-            <a 
-              [href]="selectedMember()?.linkedin" 
-              target="_blank" 
-              rel="noopener"
-              class="inline-flex items-center gap-2 text-xs text-[#2C2C2C] dark:text-[#FAF6F0] font-semibold hover:text-[#C5A059] transition-colors"
-            >
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-              </svg>
-              <span>Connect on LinkedIn</span>
-            </a>
-
-            <button 
-              (click)="closeModal()" 
-              type="button"
-              class="px-4 py-2 bg-[#26221E] text-[#FAF6F0] text-xs uppercase tracking-widest font-semibold cursor-pointer"
-            >
-              Close
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
 </div>

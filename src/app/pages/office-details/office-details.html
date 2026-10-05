@@ -1,224 +1,320 @@
 <!-- Main Office Details Dedicated View -->
-<div class="bg-white dark:bg-[#1A1815] text-[#2C2C2C] dark:text-[#FAF6F0] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300">
-
-  <!-- Header Banner -->
-  <section class="relative py-20 bg-[#1A1815] text-white border-b border-[#C5A059]/30 overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#C5A059]/10 blur-[140px] pointer-events-none rounded-full"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-[#C5A059] bg-[#26221E] mb-4">
-        <span class="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse"></span>
-        <span class="text-[0.65rem] uppercase tracking-[0.3em] text-[#C5A059] font-semibold">
-          Flagship Global Headquarters
-        </span>
-      </div>
-
-      <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight mb-4">
-        Main Office Specification & Blueprint
-      </h1>
-      <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto my-6"></div>
-      <p class="max-w-2xl mx-auto text-sm md:text-base text-white/85 font-light leading-relaxed">
-        Comprehensive details, floor directories, arrival security protocols, and concierge access for Ramyug Tower.
-      </p>
+<div
+  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-24 pb-24 font-sans transition-colors duration-300"
+>
+  <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
+  <section
+    class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
+        alt="Flagship Global Headquarters Atrium Building Media"
+        class="w-full h-full object-cover opacity-100 dark:opacity-85 transition-all duration-500"
+        (error)="onImageError($event)"
+      />
+      <!-- Dark mode overlay only for readability -->
+      <div
+        class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"
+      ></div>
     </div>
   </section>
 
-
   <!-- MAIN CONTENT CONTAINER -->
   <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
-    
-    <!-- Navigation Tabs -->
-    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 border-b border-[#E5E5E5] dark:border-[#3D362F] pb-4">
-      <button 
+    <!-- Navigation Tabs (Warm Stone & Cream Style) -->
+    <div
+      class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-4"
+    >
+      <button
         (click)="setTab('overview')"
         type="button"
         class="px-4 sm:px-6 py-2.5 sm:py-3 text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold transition-all border focus:outline-none cursor-pointer"
-        [ngClass]="activeTab() === 'overview' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] border-[#C5A059]' : 'bg-[#F9F8F6] dark:bg-[#26221E] text-[#2C2C2C] dark:text-[#FAF6F0] border-[#E5E5E5] dark:border-[#3D362F] hover:border-[#C5A059]'"
+        [ngClass]="
+          activeTab() === 'overview'
+            ? 'bg-[#1D1C1A] dark:bg-[#B89358] text-white dark:text-[#1D1C1A] border-[#1D1C1A] dark:border-[#B89358]'
+            : 'bg-[#F4EFE6] dark:bg-[#1E1B18] text-[#1D1C1A] dark:text-[#FAF7F2] border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358]'
+        "
       >
         Headquarters Overview
       </button>
 
-      <button 
+      <button
         (click)="setTab('departments')"
         type="button"
         class="px-4 sm:px-6 py-2.5 sm:py-3 text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold transition-all border focus:outline-none cursor-pointer"
-        [ngClass]="activeTab() === 'departments' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] border-[#C5A059]' : 'bg-[#F9F8F6] dark:bg-[#26221E] text-[#2C2C2C] dark:text-[#FAF6F0] border-[#E5E5E5] dark:border-[#3D362F] hover:border-[#C5A059]'"
+        [ngClass]="
+          activeTab() === 'departments'
+            ? 'bg-[#1D1C1A] dark:bg-[#B89358] text-white dark:text-[#1D1C1A] border-[#1D1C1A] dark:border-[#B89358]'
+            : 'bg-[#F4EFE6] dark:bg-[#1E1B18] text-[#1D1C1A] dark:text-[#FAF7F2] border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358]'
+        "
       >
         Department Directory
       </button>
 
-      <button 
+      <button
         (click)="setTab('arrival')"
         type="button"
         class="px-4 sm:px-6 py-2.5 sm:py-3 text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold transition-all border focus:outline-none cursor-pointer"
-        [ngClass]="activeTab() === 'arrival' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] border-[#C5A059]' : 'bg-[#F9F8F6] dark:bg-[#26221E] text-[#2C2C2C] dark:text-[#FAF6F0] border-[#E5E5E5] dark:border-[#3D362F] hover:border-[#C5A059]'"
+        [ngClass]="
+          activeTab() === 'arrival'
+            ? 'bg-[#1D1C1A] dark:bg-[#B89358] text-white dark:text-[#1D1C1A] border-[#1D1C1A] dark:border-[#B89358]'
+            : 'bg-[#F4EFE6] dark:bg-[#1E1B18] text-[#1D1C1A] dark:text-[#FAF7F2] border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358]'
+        "
       >
         Arrival & Security Protocols
       </button>
 
-      <button 
+      <button
         (click)="setTab('tour')"
         type="button"
         class="px-4 sm:px-6 py-2.5 sm:py-3 text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold transition-all border focus:outline-none cursor-pointer"
-        [ngClass]="activeTab() === 'tour' ? 'bg-[#1A1815] dark:bg-[#C5A059] text-[#C5A059] dark:text-[#1A1815] border-[#C5A059]' : 'bg-[#F9F8F6] dark:bg-[#26221E] text-[#2C2C2C] dark:text-[#FAF6F0] border-[#E5E5E5] dark:border-[#3D362F] hover:border-[#C5A059]'"
+        [ngClass]="
+          activeTab() === 'tour'
+            ? 'bg-[#1D1C1A] dark:bg-[#B89358] text-white dark:text-[#1D1C1A] border-[#1D1C1A] dark:border-[#B89358]'
+            : 'bg-[#F4EFE6] dark:bg-[#1E1B18] text-[#1D1C1A] dark:text-[#FAF7F2] border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358]'
+        "
       >
         Virtual Office Gallery
       </button>
     </div>
 
-
-    <!-- TAB 1: OVERVIEW -->
+    <!-- TAB 1: OVERVIEW (Warm Cream Editorial Spread) -->
     <div *ngIf="activeTab() === 'overview'" class="space-y-12 animate-in fade-in">
-      <div class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] p-6 sm:p-8 md:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-300">
-        
+      <div
+        class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-12 shadow-subtle-luxury grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-300"
+      >
         <div class="lg:col-span-7 space-y-6">
-          <span class="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold">
+          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-semibold">
             Ramyug Tower - Financial District
           </span>
-          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">
+          <h2
+            class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]"
+          >
             An Iconic Hub of Architectural Mastery
           </h2>
-          <p class="text-sm text-[#2C2C2C]/85 dark:text-[#FAF6F0]/85 leading-relaxed font-light m-0">
-            Occupying the upper penthouses of the award-winning Ramyug Tower, our global headquarters houses over 120 architects, structural engineers, and interior designers. Designed by our own in-house principal team, the workspace reflects our commitment to light, acoustics, and mineral luxury.
+          <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
+            Occupying the upper penthouses of the award-winning Ramyug Tower, our global
+            headquarters houses over 120 architects, structural engineers, and interior designers.
+            Designed by our own in-house principal team, the workspace reflects our commitment to
+            natural light, acoustic equilibrium, and mineral luxury.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#E5E5E5] dark:border-[#3D362F] text-xs">
-            <div class="bg-white dark:bg-[#1A1815] p-4 border-l-2 border-[#C5A059]">
-              <span class="text-[0.65rem] uppercase text-[#B89D5E] dark:text-[#C5A059] font-bold block">Building Footprint</span>
-              <strong class="text-[#2C2C2C] dark:text-[#FAF6F0] text-sm">Level 40 – 48 Penthouse</strong>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] text-xs"
+          >
+            <div class="bg-[#FAF7F2] dark:bg-[#141311] p-4 border-l-2 border-[#B89358] shadow-sm">
+              <span
+                class="text-[0.65rem] uppercase text-[#9E7B3E] dark:text-[#B89358] font-bold block"
+                >Building Footprint</span
+              >
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2] text-sm font-semibold"
+                >Level 40 – 48 Penthouse</strong
+              >
             </div>
 
-            <div class="bg-white dark:bg-[#1A1815] p-4 border-l-2 border-[#C5A059]">
-              <span class="text-[0.65rem] uppercase text-[#B89D5E] dark:text-[#C5A059] font-bold block">Concierge Desk</span>
-              <strong class="text-[#2C2C2C] dark:text-[#FAF6F0] text-sm">+91 (0) 22 8899 7700</strong>
+            <div class="bg-[#FAF7F2] dark:bg-[#141311] p-4 border-l-2 border-[#B89358] shadow-sm">
+              <span
+                class="text-[0.65rem] uppercase text-[#9E7B3E] dark:text-[#B89358] font-bold block"
+                >Concierge Desk</span
+              >
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2] text-sm font-semibold"
+                >+91 (0) 22 8899 7700</strong
+              >
             </div>
 
-            <div class="bg-white dark:bg-[#1A1815] p-4 border-l-2 border-[#C5A059]">
-              <span class="text-[0.65rem] uppercase text-[#B89D5E] dark:text-[#C5A059] font-bold block">Private Helipad</span>
-              <strong class="text-[#2C2C2C] dark:text-[#FAF6F0] text-sm">Alpha-45 Skydeck</strong>
+            <div class="bg-[#FAF7F2] dark:bg-[#141311] p-4 border-l-2 border-[#B89358] shadow-sm">
+              <span
+                class="text-[0.65rem] uppercase text-[#9E7B3E] dark:text-[#B89358] font-bold block"
+                >Private Helipad</span
+              >
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2] text-sm font-semibold"
+                >Alpha-45 Skydeck</strong
+              >
             </div>
 
-            <div class="bg-white dark:bg-[#1A1815] p-4 border-l-2 border-[#C5A059]">
-              <span class="text-[0.65rem] uppercase text-[#B89D5E] dark:text-[#C5A059] font-bold block">VIP Access</span>
-              <strong class="text-[#2C2C2C] dark:text-[#FAF6F0] text-sm">Private Keycard Elevator</strong>
+            <div class="bg-[#FAF7F2] dark:bg-[#141311] p-4 border-l-2 border-[#B89358] shadow-sm">
+              <span
+                class="text-[0.65rem] uppercase text-[#9E7B3E] dark:text-[#B89358] font-bold block"
+                >VIP Access</span
+              >
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2] text-sm font-semibold"
+                >Private Keycard Elevator</strong
+              >
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-5 relative">
-          <div class="border-2 border-[#C5A059] shadow-gold-glow overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" 
-              alt="Ramyug Tower Main Office Building" 
+          <div
+            class="border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-sm bg-[#ECE5D8]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+              alt="Ramyug Tower Main Office Building"
               class="w-full h-80 sm:h-96 object-cover"
+              (error)="onImageError($event)"
             />
           </div>
         </div>
-
       </div>
     </div>
-
 
     <!-- TAB 2: DEPARTMENTS -->
     <div *ngIf="activeTab() === 'departments'" class="space-y-6 animate-in fade-in">
       <div class="text-center max-w-2xl mx-auto mb-8">
-        <h2 class="font-serif text-3xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">Main Office Department Directory</h2>
-        <p class="text-xs text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light mt-1">Direct escalation contacts for our main office divisions.</p>
+        <h2 class="font-serif text-3xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Main Office Department Directory
+        </h2>
+        <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light mt-1">
+          Direct escalation contacts for our main office divisions.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div 
-          *ngFor="let dept of departments" 
-          class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] p-6 shadow-sm hover:border-[#C5A059] transition-all space-y-3"
+        <div
+          *ngFor="let dept of departments"
+          class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 shadow-subtle-luxury hover:border-[#B89358] transition-all space-y-3"
         >
-          <div class="flex items-center justify-between border-b border-[#E5E5E5] dark:border-[#3D362F] pb-3">
-            <span class="text-xs font-semibold uppercase tracking-wider text-[#C5A059]">{{ dept.floor }}</span>
-            <span class="text-[0.65rem] text-[#2C2C2C]/60 dark:text-[#FAF6F0]/60 uppercase tracking-widest">Active Division</span>
+          <div
+            class="flex items-center justify-between border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3"
+          >
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#B89358]">{{
+              dept.floor
+            }}</span>
+            <span
+              class="text-[0.65rem] text-[#6E6962] dark:text-[#C8C0B5] uppercase tracking-widest"
+              >Active Division</span
+            >
           </div>
 
-          <h3 class="font-serif text-xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0] m-0">{{ dept.name }}</h3>
-          <p class="text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 font-light m-0 leading-relaxed">{{ dept.description }}</p>
+          <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+            {{ dept.name }}
+          </h3>
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light m-0 leading-relaxed">
+            {{ dept.description }}
+          </p>
 
           <div class="pt-2 text-xs space-y-1">
-            <p class="m-0"><strong class="text-[#2C2C2C] dark:text-[#FAF6F0]">Head of Division:</strong> {{ dept.head }}</p>
-            <p class="m-0"><strong class="text-[#2C2C2C] dark:text-[#FAF6F0]">Direct Email:</strong> <span class="text-[#B89D5E] dark:text-[#C5A059] font-medium">{{ dept.contact }}</span></p>
+            <p class="m-0">
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2]">Head of Division:</strong>
+              {{ dept.head }}
+            </p>
+            <p class="m-0">
+              <strong class="text-[#1D1C1A] dark:text-[#FAF7F2]">Direct Email:</strong>
+              <span class="text-[#9E7B3E] dark:text-[#B89358] font-medium">{{ dept.contact }}</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
-
 
     <!-- TAB 3: ARRIVAL & SECURITY -->
-    <div *ngIf="activeTab() === 'arrival'" class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] p-6 sm:p-8 md:p-12 shadow-sm space-y-8 animate-in fade-in transition-colors duration-300">
+    <div
+      *ngIf="activeTab() === 'arrival'"
+      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-12 shadow-subtle-luxury space-y-8 animate-in fade-in transition-colors duration-300"
+    >
       <div>
-        <h6 class="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold mb-2">Protocol & Logistics</h6>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">Private Arrival & VIP Security Instructions</h2>
+        <h6 class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-semibold mb-2">
+          Protocol & Logistics
+        </h6>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Private Arrival & VIP Security Instructions
+        </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="bg-white dark:bg-[#1A1815] p-6 border-t-4 border-[#C5A059] space-y-2">
-          <h4 class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">1. Valet & Motorcade Entry</h4>
-          <p class="text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 font-light leading-relaxed m-0">
-            Proceed via Financial District Gate B. State your private clearance code at security gate for direct entrance to Level P3 VIP Underground Parking.
+        <div
+          class="bg-[#FAF7F2] dark:bg-[#141311] p-6 border-t-2 border-[#B89358] space-y-2 shadow-sm"
+        >
+          <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            1. Valet & Motorcade Entry
+          </h4>
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+            Proceed via Financial District Gate B. State your private clearance code at security
+            gate for direct entrance to Level P3 VIP Underground Parking.
           </p>
         </div>
 
-        <div class="bg-white dark:bg-[#1A1815] p-6 border-t-4 border-[#C5A059] space-y-2">
-          <h4 class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">2. Helipad Coordination</h4>
-          <p class="text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 font-light leading-relaxed m-0">
-            Ramyug Helipad Alpha-45 requires a 2-hour pre-flight clearance broadcast. Touchdown coordinates: 18.9876° N, 72.8234° E. Direct private sky-lift to Level 48.
+        <div
+          class="bg-[#FAF7F2] dark:bg-[#141311] p-6 border-t-2 border-[#B89358] space-y-2 shadow-sm"
+        >
+          <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            2. Helipad Coordination
+          </h4>
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+            Ramyug Helipad Alpha-45 requires a 2-hour pre-flight clearance broadcast. Touchdown
+            coordinates: 18.9876° N, 72.8234° E. Direct private sky-lift to Level 48.
           </p>
         </div>
 
-        <div class="bg-white dark:bg-[#1A1815] p-6 border-t-4 border-[#C5A059] space-y-2">
-          <h4 class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">3. Concierge Badge Desk</h4>
-          <p class="text-xs text-[#2C2C2C]/80 dark:text-[#FAF6F0]/80 font-light leading-relaxed m-0">
-            Level 40 Sky Lobby hosts our main reception. Non-disclosure agreements (NDAs) and private consultation suites are prepared upon arrival.
+        <div
+          class="bg-[#FAF7F2] dark:bg-[#141311] p-6 border-t-2 border-[#B89358] space-y-2 shadow-sm"
+        >
+          <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            3. Concierge Badge Desk
+          </h4>
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+            Level 40 Sky Lobby hosts our main reception. Non-disclosure agreements (NDAs) and
+            private consultation suites are prepared upon arrival.
           </p>
         </div>
-
       </div>
     </div>
 
-
-    <!-- TAB 4: VIRTUAL TOUR -->
+    <!-- TAB 4: VIRTUAL TOUR (Natural-Light Curated Photography) -->
     <div *ngIf="activeTab() === 'tour'" class="space-y-8 animate-in fade-in">
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="font-serif text-3xl font-bold text-[#2C2C2C] dark:text-[#FAF6F0]">Main Office Architectural Gallery</h2>
-        <p class="text-xs text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light mt-1">Preview the interior craftsmanship of Ramyug Global Headquarters.</p>
+        <h2 class="font-serif text-3xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Main Office Architectural Gallery
+        </h2>
+        <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light mt-1">
+          Preview the interior craftsmanship of Ramyug Global Headquarters.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div *ngFor="let img of galleryImages" class="bg-[#F9F8F6] dark:bg-[#26221E] border border-[#E5E5E5] dark:border-[#3D362F] overflow-hidden group shadow-sm">
-          <div class="h-56 sm:h-64 overflow-hidden relative">
-            <img [src]="img.url" [alt]="img.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div
+          *ngFor="let img of galleryImages"
+          class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden group shadow-subtle-luxury"
+        >
+          <div class="h-56 sm:h-64 overflow-hidden relative bg-[#ECE5D8]">
+            <img
+              [src]="img.url"
+              [alt]="img.title"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              (error)="onImageError($event)"
+            />
           </div>
           <div class="p-5 space-y-1">
-            <h4 class="font-serif text-lg font-bold text-[#2C2C2C] dark:text-[#FAF6F0] m-0">{{ img.title }}</h4>
-            <p class="text-xs text-[#2C2C2C]/75 dark:text-[#FAF6F0]/75 font-light m-0">{{ img.caption }}</p>
+            <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+              {{ img.title }}
+            </h4>
+            <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light m-0">
+              {{ img.caption }}
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-
     <!-- BOTTOM CALL TO ACTION -->
-    <div class="mt-16 text-center pt-8 border-t border-[#E5E5E5] dark:border-[#3D362F] flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a 
-        routerLink="/contact" 
-        class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#D4AF37] text-[#1A1815] text-xs uppercase tracking-[0.2em] font-semibold shadow-gold-glow hover:opacity-95 transition-opacity"
+    <div
+      class="mt-16 text-center pt-8 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex flex-col sm:flex-row items-center justify-center gap-4"
+    >
+      <a
+        routerLink="/contact"
+        class="w-full sm:w-auto px-8 py-3.5 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-colors shadow-sm"
       >
         Book Main Office Appointment
       </a>
 
-      <a 
-        routerLink="/team" 
-        class="w-full sm:w-auto px-8 py-3.5 border border-[#2C2C2C] dark:border-[#FAF6F0] hover:bg-[#2C2C2C] dark:hover:bg-[#FAF6F0] text-[#2C2C2C] dark:text-[#FAF6F0] hover:text-white dark:hover:text-[#1A1815] text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+      <a
+        routerLink="/team"
+        class="w-full sm:w-auto px-8 py-3.5 border border-[#1D1C1A] dark:border-[#FAF7F2] hover:bg-[#1D1C1A] dark:hover:bg-[#FAF7F2] text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-white dark:hover:text-[#1D1C1A] text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
       >
         Meet Managing Director & Team
       </a>
     </div>
-
   </section>
 </div>

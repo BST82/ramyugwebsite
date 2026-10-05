@@ -72,6 +72,15 @@ export class OfficeDetailsComponent {
     }
   ];
 
+  defaultFallbackImage = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    if (target && target.src !== this.defaultFallbackImage) {
+      target.src = this.defaultFallbackImage;
+    }
+  }
+
   setTab(tab: 'overview' | 'departments' | 'arrival' | 'tour') {
     this.activeTab.set(tab);
   }

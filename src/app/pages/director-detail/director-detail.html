@@ -1,0 +1,395 @@
+<!-- Dedicated Director & Executive Leadership Details Page -->
+<div
+  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-28 pb-24 font-sans transition-colors duration-300"
+  *ngIf="member() as profile"
+>
+  <!-- TOP BREADCRUMB & BACK NAVIGATION -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 mb-8">
+    <div
+      class="flex flex-wrap items-center justify-between gap-4 border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-4"
+    >
+      <a
+        routerLink="/team"
+        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-[#B89358] dark:hover:text-[#B89358] transition-colors group cursor-pointer"
+      >
+        <svg
+          class="w-4 h-4 stroke-current fill-none stroke-2 transform group-hover:-translate-x-1 transition-transform"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span>Back to Leadership & Team</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <span
+          class="text-[0.65rem] uppercase tracking-[0.25em] text-[#B89358] font-bold bg-[#F4EFE6] dark:bg-[#1E1B18] px-3 py-1 border border-[#E5DFD5] dark:border-[#2F2B26]"
+        >
+          {{ profile.category === 'senior' ? 'Senior Executive Leader' : 'Main Atelier Specialist' }}
+        </span>
+        <span class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light hidden sm:inline">
+          Dossier Ref: RAM-{{ profile.id | uppercase }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO & EXECUTIVE DOSSIER SPREAD -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 pb-16">
+    <div
+      class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-12 shadow-subtle-luxury relative transition-colors duration-300"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- High-Resolution Portrait Column -->
+        <div class="lg:col-span-5 relative group">
+          <div
+            class="relative z-10 border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden bg-[#ECE5D8] shadow-sm"
+          >
+            <img
+              [src]="profile.image"
+              [alt]="profile.name"
+              class="w-full h-[420px] sm:h-[500px] md:h-[560px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              (error)="onImageError($event)"
+            />
+          </div>
+
+          <!-- Decorative Offset Border -->
+          <div
+            class="absolute -bottom-3 -right-3 w-full h-full border border-[#B89358]/40 pointer-events-none z-0 hidden sm:block"
+          ></div>
+
+          <!-- Experience Badge Overlay -->
+          <div
+            class="absolute top-6 left-6 bg-[#FAF7F2]/95 dark:bg-[#141311]/95 text-[#1D1C1A] dark:text-[#FAF7F2] px-4 py-2 border-l-2 border-[#B89358] z-20 backdrop-blur-sm shadow-sm"
+          >
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">
+              Tenure & Mastery
+            </span>
+            <span class="font-serif text-sm font-bold block">{{ profile.experience }}</span>
+          </div>
+        </div>
+
+        <!-- Executive Narrative & Philosophy Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span
+              class="text-xs font-semibold uppercase tracking-[0.25em] text-[#B89358] block mb-2"
+            >
+              Executive Profile & Dossier
+            </span>
+            <h1
+              class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight leading-tight m-0"
+            >
+              {{ profile.name }}
+            </h1>
+            <p
+              class="text-sm md:text-base text-[#9E7B3E] dark:text-[#B89358] font-medium tracking-wide uppercase mt-2 m-0"
+            >
+              {{ profile.title }}
+            </p>
+            <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] italic font-light mt-1 m-0">
+              {{ profile.credentials }}
+            </p>
+          </div>
+
+          <!-- Editorial Philosophy Quote Block -->
+          <div
+            class="relative bg-[#F4EFE6] dark:bg-[#141311] p-6 sm:p-7 border-l-2 border-[#B89358] shadow-sm transition-colors duration-300"
+          >
+            <p
+              class="font-serif text-lg sm:text-xl text-[#1D1C1A] dark:text-[#FAF7F2] italic leading-relaxed m-0 font-normal"
+            >
+              "{{ profile.quote }}"
+            </p>
+            <div class="mt-3 flex items-center gap-2">
+              <div class="w-6 h-[1px] bg-[#B89358]"></div>
+              <span
+                class="text-[0.65rem] uppercase tracking-widest text-[#9E7B3E] dark:text-[#B89358] font-semibold"
+              >
+                {{ profile.name }} &bull; Design Philosophy
+              </span>
+            </div>
+          </div>
+
+          <!-- Comprehensive Bio Paragraphs -->
+          <div class="space-y-3">
+            <p
+              *ngFor="let paragraph of profile.fullBio"
+              class="text-sm text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0"
+            >
+              {{ paragraph }}
+            </p>
+          </div>
+
+          <!-- Core Specializations -->
+          <div class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26]">
+            <h5
+              class="text-xs uppercase tracking-wider font-semibold text-[#1D1C1A] dark:text-[#FAF7F2] mb-3"
+            >
+              Core Specializations & Technical Domains
+            </h5>
+            <div class="flex flex-wrap gap-2">
+              <span
+                *ngFor="let spec of profile.specialties"
+                class="text-xs bg-[#F4EFE6] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] px-3.5 py-1.5 font-normal tracking-wide"
+              >
+                {{ spec }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Key Distinctions & Honors -->
+          <div class="pt-2">
+            <h5
+              class="text-xs uppercase tracking-wider font-semibold text-[#1D1C1A] dark:text-[#FAF7F2] mb-3"
+            >
+              Key Distinctions & Industry Accolades
+            </h5>
+            <ul class="space-y-2 text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
+              <li *ngFor="let ach of profile.achievements" class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 bg-[#B89358] rounded-full mt-1.5 shrink-0"></span>
+                <span>{{ ach }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Direct Actions & Consultation Buttons -->
+          <div
+            class="pt-6 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex flex-wrap items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-4">
+              <a
+                routerLink="/contact"
+                class="px-6 py-3 bg-[#1D1C1A] dark:bg-[#B89358] hover:bg-[#B89358] dark:hover:bg-[#A88248] text-white dark:text-[#1D1C1A] hover:text-white text-xs font-semibold uppercase tracking-[0.2em] transition-colors shadow-sm cursor-pointer"
+              >
+                Request Private Consultation
+              </a>
+
+              <a
+                [href]="profile.linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-[#B89358] font-semibold uppercase tracking-wider transition-colors"
+              >
+                <svg class="w-4 h-4 fill-current text-[#B89358]" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                  />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
+            <span class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
+              {{ profile.email }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LEADERSHIP JOURNEY & CAREER TIMELINE -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <div class="mb-10 text-center max-w-2xl mx-auto">
+      <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
+        Career Progression
+      </h6>
+      <h2
+        class="font-serif text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
+      >
+        Leadership Journey & Milestones
+      </h2>
+      <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light mt-2">
+        A documented track record of executive leadership and architectural landmark stewardship.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        *ngFor="let step of profile.leadershipJourney; let i = index"
+        class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 shadow-subtle-luxury space-y-3 relative hover:border-[#B89358] transition-colors"
+      >
+        <div
+          class="flex items-center justify-between border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3"
+        >
+          <span class="text-xs font-semibold uppercase tracking-wider text-[#B89358]">
+            {{ step.year }}
+          </span>
+          <span
+            class="text-[0.65rem] text-[#6E6962] dark:text-[#C8C0B5] uppercase tracking-widest font-light"
+          >
+            Phase 0{{ i + 1 }}
+          </span>
+        </div>
+
+        <h3 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+          {{ step.role }}
+        </h3>
+        <p class="text-xs text-[#9E7B3E] dark:text-[#B89358] font-medium uppercase tracking-wider m-0">
+          {{ step.organization }}
+        </p>
+
+        <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0 pt-1">
+          {{ step.description }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CURATED ARCHITECTURAL SHOWCASE / PORTFOLIO GRID -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
+          Signature Contributions
+        </h6>
+        <h2
+          class="font-serif text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
+        >
+          Key Architectural Works & Commissions
+        </h2>
+      </div>
+
+      <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light max-w-md">
+        Landmark residential, civic, and commercial monuments spearheaded or engineered by {{ profile.name }}.
+      </p>
+    </div>
+
+    <!-- Curated Works Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let proj of profile.portfolio"
+        class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-subtle-luxury overflow-hidden group flex flex-col hover:-translate-y-1 hover:border-[#B89358] transition-all duration-300"
+      >
+        <div class="relative h-64 overflow-hidden bg-[#ECE5D8]">
+          <img
+            [src]="proj.image"
+            [alt]="proj.title"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            (error)="onImageError($event)"
+          />
+          <div
+            class="hidden dark:block absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent pointer-events-none"
+          ></div>
+
+          <span
+            class="absolute top-4 left-4 bg-[#FAF7F2]/90 dark:bg-[#141311]/90 text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm"
+          >
+            {{ proj.category }}
+          </span>
+
+          <span
+            class="absolute top-4 right-4 bg-[#B89358] text-white text-[0.65rem] uppercase tracking-widest px-2.5 py-1 font-bold shadow-sm"
+          >
+            {{ proj.year }}
+          </span>
+        </div>
+
+        <div class="p-6 flex-grow flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light block mb-1">
+              {{ proj.location }}
+            </span>
+            <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors m-0">
+              {{ proj.title }}
+            </h3>
+          </div>
+
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
+            {{ proj.description }}
+          </p>
+
+          <div class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider">
+            <span>Blueprint Certified</span>
+            <span class="text-[0.65rem] text-[#6E6962] dark:text-[#C8C0B5] font-light">RAMYUG Atelier</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CALL TO ACTION & CONSULTATION BRIEF -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <div
+      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-8 md:p-12 shadow-subtle-luxury flex flex-col md:flex-row items-center justify-between gap-8 transition-colors duration-300"
+    >
+      <div class="space-y-2 text-center md:text-left">
+        <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold">
+          Executive Desk Engagement
+        </h6>
+        <h3 class="font-serif text-2xl md:text-3xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+          Commission a Project with {{ profile.name }}
+        </h3>
+        <p class="text-xs md:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light max-w-xl m-0">
+          Direct consultations and private estate masterplanning briefings can be arranged through the RAMYUG Executive Client Desk.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 shrink-0">
+        <a
+          routerLink="/contact"
+          class="px-8 py-3.5 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase tracking-[0.2em] font-semibold transition-colors shadow-sm"
+        >
+          Book Consultation
+        </a>
+
+        <a
+          routerLink="/team"
+          class="px-6 py-3.5 border border-[#1D1C1A] dark:border-[#FAF7F2] text-[#1D1C1A] dark:text-[#FAF7F2] hover:bg-[#1D1C1A] hover:text-white dark:hover:bg-[#FAF7F2] dark:hover:text-[#1D1C1A] text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+        >
+          Explore All Leaders
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: EXPLORE OTHER LEADERSHIP GUILD MEMBERS -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 pt-8 pb-16">
+    <div class="border-t border-[#E5DFD5] dark:border-[#2F2B26] pt-12">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h6 class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-semibold mb-1">
+            The Atelier Guild
+          </h6>
+          <h4 class="font-serif text-xl md:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+            Other Leadership Executives
+          </h4>
+        </div>
+
+        <a
+          routerLink="/team"
+          class="text-xs font-semibold uppercase tracking-wider text-[#9E7B3E] dark:text-[#B89358] hover:underline"
+        >
+          View Full Roster &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <a
+          *ngFor="let other of otherMembers()"
+          [routerLink]="['/team', other.id]"
+          class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-5 flex items-center gap-4 group hover:border-[#B89358] transition-all shadow-sm"
+        >
+          <img
+            [src]="other.image"
+            [alt]="other.name"
+            class="w-16 h-16 object-cover object-top border border-[#E5DFD5] dark:border-[#2F2B26] shrink-0"
+            (error)="onImageError($event)"
+          />
+          <div class="overflow-hidden">
+            <h5 class="font-serif text-base font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors truncate m-0">
+              {{ other.name }}
+            </h5>
+            <p class="text-xs text-[#B89358] uppercase tracking-wider truncate m-0 mt-0.5">
+              {{ other.role }}
+            </p>
+            <p class="text-[0.65rem] text-[#6E6962] dark:text-[#C8C0B5] font-light mt-1 m-0">
+              {{ other.experience }} &bull; View Dossier
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

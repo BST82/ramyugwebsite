@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,9 +10,14 @@ import { RouterLink } from '@angular/router';
   templateUrl: './footer.html'
 })
 export class FooterComponent {
+  themeService = inject(ThemeService);
   currentYear = new Date().getFullYear();
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

@@ -83,6 +83,15 @@ export class ContactComponent {
     this.selectedOffice.set(office);
   }
 
+  defaultFallbackImage = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    if (target && target.src !== this.defaultFallbackImage) {
+      target.src = this.defaultFallbackImage;
+    }
+  }
+
   submitInquiry() {
     if (this.formData.fullName && this.formData.email) {
       this.formSubmitted.set(true);

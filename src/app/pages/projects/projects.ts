@@ -85,7 +85,7 @@ export class ProjectsComponent {
       year: '2023',
       area: '42,000 Sq.Ft',
       client: 'Geneva Arts Foundation',
-      image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       description: 'An acoustic masterpiece sculpted in timber and gold leaf, engineered to host world-renowned philharmonic orchestras.',
       highlights: ['Zero-echo acoustic dome', 'Gold leaf acoustic paneling', 'Botanical courtyard']
     },
@@ -97,11 +97,20 @@ export class ProjectsComponent {
       year: '2025',
       area: '620,000 Sq.Ft',
       client: 'Sovereign Wealth Fund',
-      image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
       description: 'An architectural beacon reflecting traditional Islamic geometric lattices infused with futuristic smart glass technology.',
       highlights: ['Traditional geometric lattice screens', 'Sky bridge lounges', 'Solar kinetic facade']
     }
   ];
+
+  defaultFallbackImage = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    if (target && target.src !== this.defaultFallbackImage) {
+      target.src = this.defaultFallbackImage;
+    }
+  }
 
   get filteredProjects(): ProjectDetail[] {
     return this.projectsList.filter(p => {

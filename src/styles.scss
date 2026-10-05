@@ -6,42 +6,47 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-jumeirah-white: #FFFFFF;
-  --color-jumeirah-pearl: #F9F8F6;
-  --color-jumeirah-gold: #C5A059;
-  --color-jumeirah-gold-dark: #B89D5E;
-  --color-jumeirah-charcoal: #2C2C2C;
-  --color-jumeirah-border: #E5E5E5;
+  --color-cream-base: #FAF7F2;
+  --color-cream-card: #F4EFE6;
+  --color-cream-pearl: #F8F5F0;
+  --color-cream-sand: #ECE5D8;
+  --color-cream-border: #E5DFD5;
 
-  /* Warm Luxury Dark Theme Colors (No Black, No Blue) */
-  --color-warm-dark-bg: #1A1815;
-  --color-warm-dark-card: #26221E;
-  --color-warm-dark-elevated: #332D28;
-  --color-warm-dark-border: #3D362F;
-  --color-warm-dark-text: #FAF6F0;
-  --color-warm-dark-muted: #D6CCC0;
+  --color-jumeirah-gold: #B89358;
+  --color-jumeirah-gold-dark: #9E7B3E;
+  --color-jumeirah-gold-light: #D1B27C;
+  --color-jumeirah-charcoal: #1D1C1A;
+  --color-jumeirah-muted: #6E6962;
 
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Montserrat", system-ui, sans-serif;
+  /* Warm Luxury Dark Theme Colors */
+  --color-warm-dark-bg: #141311;
+  --color-warm-dark-card: #1E1B18;
+  --color-warm-dark-elevated: #292521;
+  --color-warm-dark-border: #2F2B26;
+  --color-warm-dark-text: #FAF7F2;
+  --color-warm-dark-muted: #C8C0B5;
+
+  --font-serif: "Bressay Display", "Old Standard TT", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Montserrat", system-ui, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
   }
 
   html.dark {
     color-scheme: dark;
-    background-color: #1A1815;
+    background-color: #141311;
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #2C2C2C;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #FAF7F2;
+    color: #1D1C1A;
+    font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.85;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -49,14 +54,14 @@
   }
 
   html.dark body {
-    background-color: #1A1815;
-    color: #FAF6F0;
+    background-color: #141311;
+    color: #FAF7F2;
   }
 
-  /* Headings: Playfair Display Serif */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: #2C2C2C;
+  /* Headings: Bressay Display / Old Standard TT Editorial Serif - Clean & Static */
+  h1, h2, h3, h4, h5, h6, .editorial-heading {
+    font-family: "Bressay Display", "Old Standard TT", Georgia, serif;
+    color: #1D1C1A;
     letter-spacing: -0.015em;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -71,31 +76,31 @@
     color: #FAF6F0;
   }
 
-  h1 { font-size: 2.75rem; line-height: 1.15; font-weight: 700; }
-  h2 { font-size: 2.25rem; line-height: 1.2; font-weight: 600; }
-  h3 { font-size: 1.75rem; line-height: 1.25; font-weight: 600; }
-  h4 { font-size: 1.35rem; line-height: 1.35; font-weight: 500; }
-  h5 { font-size: 1.15rem; line-height: 1.4; font-weight: 500; }
+  h1 { font-size: 2.25rem; line-height: 1.15; font-weight: 700; }
+  h2 { font-size: 1.85rem; line-height: 1.2; font-weight: 600; }
+  h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 600; }
+  h4 { font-size: 1.25rem; line-height: 1.35; font-weight: 500; }
+  h5 { font-size: 1.125rem; line-height: 1.4; font-weight: 500; }
   h6 {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     line-height: 1.4;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #C5A059;
+    letter-spacing: 0.25em;
+    color: #B89358;
   }
 
   @media (min-width: 768px) {
-    h1 { font-size: 4rem; }
-    h2 { font-size: 3rem; }
-    h3 { font-size: 2.25rem; }
-    h4 { font-size: 1.5rem; }
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.35rem; }
   }
 
   @media (min-width: 1024px) {
-    h1 { font-size: 4.75rem; }
-    h2 { font-size: 3.5rem; }
-    h3 { font-size: 2.5rem; }
+    h1 { font-size: 3.25rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 1.85rem; }
   }
 
   /* Body Paragraphs */
@@ -171,12 +176,17 @@ html.dark ::-webkit-scrollbar-track {
 .ramyug-preloader {
   position: fixed;
   inset: 0;
-  background-color: #1A1815;
+  background-color: #FAF7F2;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+html.dark .ramyug-preloader {
+  background-color: #141311;
 }
 
 .ramyug-preloader-content {
@@ -189,74 +199,84 @@ html.dark ::-webkit-scrollbar-track {
 
 .ramyug-logo-box {
   position: relative;
-  width: 70px;
-  height: 70px;
-  border: 1px solid #C5A059;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #B89358;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #26221E;
-  box-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
+  background-color: #F4EFE6;
+  box-shadow: 0 4px 20px rgba(184, 147, 88, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+html.dark .ramyug-logo-box {
+  background-color: #1E1B18;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .ramyug-monogram {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
+  font-family: "Bressay Display", "Old Standard TT", Georgia, serif;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: #C5A059;
+  color: #B89358;
   letter-spacing: 0.1em;
-  animation: pulse-monogram 2s ease-in-out infinite alternate;
 }
 
 .ramyug-ring {
   position: absolute;
-  inset: -8px;
-  border: 2px solid transparent;
-  border-top-color: #C5A059;
-  border-bottom-color: #B89D5E;
+  inset: -6px;
+  border: 1.5px solid transparent;
+  border-top-color: #B89358;
+  border-bottom-color: #9E7B3E;
   border-radius: 50%;
-  animation: spin-ring 1.8s linear infinite;
+  animation: spin-ring 2.2s linear infinite;
 }
 
 .ramyug-brand-text {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.75rem;
+  font-family: "Bressay Display", "Old Standard TT", Georgia, serif;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.3em;
-  color: #FAF6F0;
+  letter-spacing: 0.35em;
+  color: #1D1C1A;
+  transition: color 0.3s ease;
+}
+
+html.dark .ramyug-brand-text {
+  color: #FAF7F2;
 }
 
 .ramyug-sub-text {
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.35em;
-  color: #C5A059;
+  color: #B89358;
   text-transform: uppercase;
 }
 
 .ramyug-progress-bar {
-  width: 140px;
+  width: 130px;
   height: 2px;
-  background-color: rgba(250, 246, 240, 0.15);
+  background-color: rgba(29, 28, 26, 0.12);
   overflow: hidden;
   position: relative;
+  transition: background-color 0.3s ease;
+}
+
+html.dark .ramyug-progress-bar {
+  background-color: rgba(250, 247, 242, 0.15);
 }
 
 .ramyug-progress-fill {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #C5A059, #D4AF37, #C5A059);
-  animation: progress-slide 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #B89358, #D1B27C, #B89358);
+  animation: progress-slide 1.8s ease-in-out infinite;
 }
 
 @keyframes spin-ring {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-@keyframes pulse-monogram {
-  0% { opacity: 0.7; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1.05); }
 }
 
 @keyframes progress-slide {

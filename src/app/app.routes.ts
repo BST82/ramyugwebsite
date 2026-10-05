@@ -17,6 +17,21 @@ export const routes: Routes = [
     data: { title: 'Director Profile & Team' }
   },
   {
+    path: 'team/:id',
+    loadComponent: () => import('./pages/director-detail/director-detail').then(m => m.DirectorDetailComponent),
+    data: { title: 'Director & Executive Profile' }
+  },
+  {
+    path: 'director/:slug',
+    loadComponent: () => import('./pages/director-detail/director-detail').then(m => m.DirectorDetailComponent),
+    data: { title: 'Director Profile' }
+  },
+  {
+    path: 'director',
+    redirectTo: 'team/director',
+    pathMatch: 'full'
+  },
+  {
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent),
     data: { title: 'Location & Contact' }
