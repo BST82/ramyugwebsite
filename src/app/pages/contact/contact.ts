@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 export interface OfficeLocation {
   id: string;
@@ -12,70 +13,79 @@ export interface OfficeLocation {
   email: string;
   hours: string;
   isMainOffice: boolean;
-  coordinates: { x: number; y: number }; // Percentage for interactive map marker
+  coordinates: { x: number; y: number };
   image: string;
+  mapUrl?: string;
 }
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './contact.html'
 })
 export class ContactComponent {
+  private sanitizer = inject(DomSanitizer);
+
   selectedOffice = signal<OfficeLocation | null>(null);
   formSubmitted = signal(false);
+
+  mainAddress = 'Plot no 3/SP-8, Sector - 3, Siddharth Vihar, Ghaziabad, U.P';
+  safeMapUrl: SafeResourceUrl;
 
   formData = {
     fullName: '',
     email: '',
     phone: '',
-    projectType: 'Luxury Estate Residence',
-    budgetRange: '$10M - $25M',
+    projectType: 'Residential Project Inquiry',
+    budgetRange: 'Rs 50 Lakh - Rs 1.5 Cr',
     message: ''
   };
 
   offices: OfficeLocation[] = [
     {
-      id: 'mumbai-main',
-      city: 'Mumbai',
-      name: 'Ramyug Global Headquarters (Main Office)',
-      address: 'Suite 4500, Ramyug Tower, BKC Financial District, Mumbai 400051',
-      phone: '+91 (0) 22 8899 7700',
-      email: 'main.office@ramyug.com',
-      hours: 'Mon - Sat: 09:00 - 19:00 IST',
+      id: 'head-office',
+      city: 'Ghaziabad / NCR',
+      name: 'RAMYUG GROUP Head Office',
+      address: 'Plot no 3/SP-8, Sector - 3, Siddharth Vihar, Ghaziabad, U.P',
+      phone: '+91 98765 43210',
+      email: 'info@ramyug.in',
+      hours: 'Mon - Sat: 09:30 - 18:30 IST',
       isMainOffice: true,
-      coordinates: { x: 70, y: 55 },
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'
+      coordinates: { x: 68, y: 52 },
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+      mapUrl: 'https://maps.google.com/maps?q=Plot+no+3/SP-8,+Sector+-+3,+Siddharth+Vihar,+Ghaziabad,+U.P&t=&z=15&ie=UTF8&iwloc=&output=embed'
     },
     {
-      id: 'dubai-studio',
-      city: 'Dubai',
-      name: 'Ramyug Middle East Atelier',
-      address: 'Level 38, Almas Tower, Jumeirah Lakes Towers, Dubai, UAE',
-      phone: '+971 4 456 7890',
-      email: 'dubai@ramyug.com',
-      hours: 'Mon - Fri: 08:30 - 18:00 GST',
+      id: 'noida-office',
+      city: 'Noida',
+      name: 'Ramyug Group Corporate Desk',
+      address: 'Sector 77, Noida, Uttar Pradesh, India',
+      phone: '+91 98765 43211',
+      email: 'noida@ramyug.in',
+      hours: 'Mon - Sat: 09:30 - 18:30 IST',
       isMainOffice: false,
-      coordinates: { x: 60, y: 48 },
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'
+      coordinates: { x: 72, y: 56 },
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'london-gallery',
-      city: 'London',
-      name: 'Ramyug European Design Gallery',
-      address: '14 Berkeley Square, Mayfair, London W1J 6CB, UK',
-      phone: '+44 20 7946 0912',
-      email: 'london@ramyug.com',
-      hours: 'Mon - Fri: 09:00 - 17:30 GMT',
+      id: 'uttarakhand-office',
+      city: 'Uttarakhand',
+      name: 'Vansa Eco Resort Regional Desk',
+      address: 'Uttarakhand, India',
+      phone: '+91 98765 43212',
+      email: 'realty@ramyug.in',
+      hours: 'Mon - Sat: 09:00 - 18:00 IST',
       isMainOffice: false,
-      coordinates: { x: 45, y: 32 },
-      image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80'
+      coordinates: { x: 64, y: 42 },
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
     }
   ];
 
   constructor() {
-    // Default to selecting Main Office
+    this.safeMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://maps.google.com/maps?q=Plot+no+3/SP-8,+Sector+-+3,+Siddharth+Vihar,+Ghaziabad,+U.P&t=&z=15&ie=UTF8&iwloc=&output=embed'
+    );
     this.selectedOffice.set(this.offices[0]);
   }
 
@@ -104,8 +114,8 @@ export class ContactComponent {
       fullName: '',
       email: '',
       phone: '',
-      projectType: 'Luxury Estate Residence',
-      budgetRange: '$10M - $25M',
+      projectType: 'Residential Project Inquiry',
+      budgetRange: 'Rs 50 Lakh - Rs 1.5 Cr',
       message: ''
     };
   }

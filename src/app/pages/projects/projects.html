@@ -1,31 +1,39 @@
 <!-- Projects Portfolio Page -->
-<div
-  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-24 pb-24 font-sans transition-colors duration-300"
->
+<div class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-16 pb-24 font-sans transition-colors duration-300">
+
   <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
-  <section
-    class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
-  >
+  <section class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300">
     <div class="absolute inset-0 z-0">
       <img
-        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85"
         alt="Architectural Masterwork Building Media"
         class="w-full h-full object-cover opacity-100 dark:opacity-85 transition-all duration-500"
         (error)="onImageError($event)"
       />
       <!-- Dark mode overlay only for readability -->
-      <div
-        class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"
-      ></div>
+      <div class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"></div>
     </div>
   </section>
 
   <!-- PORTFOLIO SECTION -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16">
+    
+    <!-- Section Title & Intro -->
+    <div class="max-w-3xl space-y-3 mb-12">
+      <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
+        RAMYUG GROUP &bull; Real Estate Portfolio
+      </span>
+      <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+        Group Companies & Ventures
+      </h1>
+      <p class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+        Explore the landmark residential, commercial, low-density floor, joint development, and hospitality projects delivered or developed by Ramyug Group's operating entities.
+      </p>
+    </div>
+
     <!-- Filter & Search Bar -->
-    <div
-      class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-6"
-    >
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-6">
+      
       <!-- Category Tabs -->
       <div class="flex flex-wrap gap-2 w-full md:w-auto">
         <button
@@ -47,7 +55,7 @@
       <div class="w-full md:w-72 relative">
         <input
           type="text"
-          placeholder="Search by project or city..."
+          placeholder="Search by company or project..."
           (input)="onSearchInput($event)"
           class="w-full bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-2.5 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] placeholder:text-[#6E6962]/60 dark:placeholder:text-[#C8C0B5]/50 focus:outline-none focus:border-[#B89358]"
         />
@@ -61,75 +69,81 @@
       </div>
     </div>
 
-    <!-- Grid Layout (Warm Cream Alabaster Cards) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Grid Layout for Group Companies & Ventures -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
+      
       <div
-        *ngFor="let project of filteredProjects"
-        (click)="openModal(project)"
-        class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-subtle-luxury overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-[#B89358] relative flex flex-col"
+        *ngFor="let p of filteredProjects"
+        (click)="openModal(p)"
+        class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-[#B89358] flex flex-col justify-between"
       >
-        <div class="relative h-72 overflow-hidden bg-[#ECE5D8]">
+        <!-- Card Top Image Banner -->
+        <div class="relative h-64 sm:h-72 overflow-hidden bg-[#ECE5D8]">
           <img
-            [src]="project.image"
-            [alt]="project.title"
+            [src]="p.image"
+            [alt]="p.projectName"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             (error)="onImageError($event)"
           />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#141311]/60 via-transparent to-transparent opacity-60"
-          ></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/80 via-[#141311]/20 to-transparent"></div>
 
-          <span
-            class="absolute top-4 left-4 bg-[#FAF7F2]/90 dark:bg-[#141311]/90 text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm"
-          >
-            {{ project.category }}
-          </span>
+          <!-- Company Badge Overlay -->
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+            <span class="bg-[#141311]/90 text-[#B89358] border border-[#B89358]/40 text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-xs">
+              {{ p.company }}
+            </span>
 
-          <span
-            class="absolute top-4 right-4 bg-[#B89358] text-white text-[0.65rem] uppercase tracking-widest px-2.5 py-1 font-bold shadow-sm"
-          >
-            {{ project.year }}
-          </span>
-        </div>
-
-        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-          <div>
-            <div
-              class="flex items-center justify-between text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light mb-1"
-            >
-              <span>{{ project.location }}</span>
-              <span>{{ project.area }}</span>
-            </div>
-            <h3
-              class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors"
-            >
-              {{ project.title }}
-            </h3>
+            <span class="bg-[#B89358] text-white text-[0.65rem] uppercase tracking-widest px-2.5 py-1 font-bold shadow-xs">
+              {{ p.year }}
+            </span>
           </div>
 
-          <p
-            class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light line-clamp-2 m-0"
-          >
-            {{ project.description }}
-          </p>
+          <!-- Location & Status Badge at bottom of image -->
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[0.65rem] uppercase tracking-wider text-[#B89358] font-bold block">{{ p.category }} &bull; {{ p.area }}</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-[#B89358] transition-colors leading-tight m-0">
+              {{ p.projectName }}
+            </h3>
+          </div>
+        </div>
 
-          <div
-            class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs font-semibold text-[#9E7B3E] dark:text-[#B89358] group-hover:text-[#1D1C1A] dark:group-hover:text-[#FAF7F2] transition-colors uppercase tracking-wider"
-          >
-            <span>Inspect Blueprint</span>
-            <svg
-              class="w-4 h-4 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2"
-              viewBox="0 0 24 24"
-            >
+        <!-- Card Body Content -->
+        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+          
+          <div class="space-y-3">
+            <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0 line-clamp-3">
+              {{ p.paragraphs[0] }}
+            </p>
+
+            <div class="pt-2">
+              <span class="text-[0.65rem] uppercase tracking-wider text-[#B89358] font-bold block mb-2">Key Highlights</span>
+              <div class="flex flex-wrap gap-2">
+                <span 
+                  *ngFor="let kh of p.keyHighlights"
+                  class="px-2.5 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-[0.65rem] uppercase tracking-wider text-[#1D1C1A]/80 dark:text-[#FAF7F2]/80 font-medium border border-[#E5DFD5] dark:border-[#2F2B26]"
+                >
+                  {{ kh }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer Action -->
+          <div class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs font-semibold text-[#B89358] group-hover:text-[#1D1C1A] dark:group-hover:text-[#FAF7F2] transition-colors uppercase tracking-wider">
+            <span>Read Complete Details</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- PROJECT DETAIL MODAL (Warm Cream Editorial Card) -->
+  <!-- PROJECT DETAIL MODAL LIGHTBOX -->
   <div
     *ngIf="selectedProject()"
     class="fixed inset-0 z-50 bg-[#141311]/85 backdrop-blur-md flex items-center justify-center p-4 md:p-8 animate-in fade-in"
@@ -137,6 +151,7 @@
     <div
       class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] max-w-4xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
     >
+      <!-- Close Button -->
       <button
         (click)="closeModal()"
         type="button"
@@ -149,66 +164,106 @@
       </button>
 
       <div class="grid grid-cols-1 lg:grid-cols-12">
-        <div class="lg:col-span-7 h-64 sm:h-80 lg:h-full relative bg-[#ECE5D8]">
+        
+        <!-- Modal Left Image Header -->
+        <div class="lg:col-span-6 h-64 sm:h-80 lg:h-full relative bg-[#ECE5D8]">
           <img
             [src]="selectedProject()?.image"
-            [alt]="selectedProject()?.title"
+            [alt]="selectedProject()?.projectName"
             class="w-full h-full object-cover"
             (error)="onImageError($event)"
           />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">{{ selectedProject()?.company }}</span>
+            <h3 class="font-serif text-xl font-bold text-white m-0">{{ selectedProject()?.projectName }}</h3>
+          </div>
         </div>
 
-        <div class="lg:col-span-5 p-6 sm:p-8 space-y-4">
-          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-semibold">
-            {{ selectedProject()?.category }} &bull; {{ selectedProject()?.year }}
-          </span>
-          <h2
-            class="font-serif text-2xl md:text-3xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold m-0"
-          >
-            {{ selectedProject()?.title }}
-          </h2>
-          <p
-            class="text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider m-0"
-          >
-            {{ selectedProject()?.location }} &bull; {{ selectedProject()?.area }}
-          </p>
-          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] italic m-0">
-            Client Commission: {{ selectedProject()?.client }}
-          </p>
+        <!-- Modal Right Text Content -->
+        <div class="lg:col-span-6 p-6 sm:p-8 space-y-4">
+          
+          <div class="space-y-1">
+            <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
+              {{ selectedProject()?.category }} &bull; {{ selectedProject()?.year }}
+            </span>
+            <h2 class="font-serif text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0">
+              {{ selectedProject()?.projectName }}
+            </h2>
+            <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light m-0">
+              Location: <strong class="text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold">{{ selectedProject()?.location }}</strong> &bull; {{ selectedProject()?.area }}
+            </p>
+            <p class="text-xs text-[#B89358] font-medium m-0">
+              Structure/Partner: {{ selectedProject()?.partnerOrEntity }}
+            </p>
+          </div>
 
-          <hr class="border-[#E5DFD5] dark:border-[#2F2B26] my-4" />
+          <hr class="border-[#E5DFD5] dark:border-[#2F2B26] my-3" />
 
-          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
-            {{ selectedProject()?.description }}
-          </p>
+          <!-- Full Paragraph Text -->
+          <div class="space-y-3 text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed">
+            <p *ngFor="let p of selectedProject()?.paragraphs" class="m-0">
+              {{ p }}
+            </p>
+          </div>
 
-          <div class="pt-4 space-y-2">
-            <h5
-              class="text-xs uppercase tracking-wider font-semibold text-[#1D1C1A] dark:text-[#FAF7F2]"
-            >
-              Key Features
+          <!-- Amenities / Concept List -->
+          <div class="pt-3 space-y-2">
+            <h5 class="text-xs uppercase tracking-wider font-semibold text-[#1D1C1A] dark:text-[#FAF7F2]">
+              Key Features & Amenities
             </h5>
             <ul class="text-xs text-[#6E6962] dark:text-[#C8C0B5] space-y-1.5 font-light">
-              <li *ngFor="let h of selectedProject()?.highlights" class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#B89358] rounded-full"></span>
-                <span>{{ h }}</span>
+              <li *ngFor="let a of selectedProject()?.amenitiesOrConcept" class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-[#B89358] shrink-0"></span>
+                <span>{{ a }}</span>
               </li>
             </ul>
           </div>
 
-          <div
-            class="pt-6 flex items-center justify-between border-t border-[#E5DFD5] dark:border-[#2F2B26]"
-          >
+          <!-- Modal Action -->
+          <div class="pt-6 flex items-center justify-between border-t border-[#E5DFD5] dark:border-[#2F2B26]">
             <a
               routerLink="/contact"
               (click)="closeModal()"
-              class="px-6 py-2.5 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase tracking-widest font-semibold transition-colors"
+              class="px-6 py-2.5 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-sm"
             >
-              Inquire Regarding Commission
+              Inquire Regarding Project
             </a>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </div>
+
+  <!-- BOTTOM ACTION BANNER -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16">
+    <div class="bg-[#141311] text-white p-8 sm:p-12 border border-[#B89358]/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold">RAMYUG GROUP &bull; Real Estate Group</span>
+        <h4 class="font-serif text-2xl sm:text-3xl font-bold text-white">Partner With Us & Explore Our Opportunities</h4>
+        <p class="text-xs sm:text-sm text-gray-400 font-light max-w-xl">
+          Get in touch with our leadership team for joint venture developments, investment opportunities, or general inquiries.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
+        <a 
+          routerLink="/office-details"
+          class="px-5 py-3 border border-[#B89358] text-[#B89358] hover:bg-[#B89358] hover:text-white text-xs uppercase font-semibold tracking-widest transition-colors cursor-pointer"
+        >
+          Group Ventures
+        </a>
+        <a 
+          routerLink="/contact"
+          class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase font-semibold tracking-widest transition-colors shadow-sm cursor-pointer"
+        >
+          Contact Head Office
+        </a>
+      </div>
+    </div>
+  </section>
+
 </div>

@@ -27,7 +27,9 @@ export class NavbarComponent {
     { path: '/projects', label: 'Projects', badge: '02' },
     { path: '/team', label: 'Team', badge: '03' },
     { path: '/contact', label: 'Location', badge: '04' },
-    { path: '/office-details', label: 'Main Office', badge: '05' },
+    { path: '/office-details', label: 'Group Companies & Ventures', badge: '05' },
+    { path: '/real-estate-portfolio', label: 'Real Estate Portfolio', badge: '06' },
+    { path: '/about', label: 'Why Ramyug', badge: '07' },
   ];
 
   constructor() {

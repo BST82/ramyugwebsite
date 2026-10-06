@@ -32,6 +32,14 @@ export class TeamComponent {
     return this.teamMembers.filter(m => m.category === this.activeCategory() && m.id !== 'director');
   }
 
+  get seniorCount(): number {
+    return this.teamMembers.filter(m => m.category === 'senior').length;
+  }
+
+  get mainCount(): number {
+    return this.teamMembers.filter(m => m.category === 'main').length;
+  }
+
   setCategory(cat: 'senior' | 'main') {
     this.activeCategory.set(cat);
   }

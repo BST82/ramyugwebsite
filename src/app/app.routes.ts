@@ -44,7 +44,27 @@ export const routes: Routes = [
   {
     path: 'office-details',
     loadComponent: () => import('./pages/office-details/office-details').then(m => m.OfficeDetailsComponent),
-    data: { title: 'Main Office Blueprint' }
+    data: { title: 'Group Companies & Ventures' }
+  },
+  {
+    path: 'real-estate-portfolio',
+    loadComponent: () => import('./pages/real-estate-portfolio/real-estate-portfolio').then(m => m.RealEstatePortfolioComponent),
+    data: { title: 'Real Estate Portfolio' }
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./pages/about/about').then(m => m.AboutComponent),
+    data: { title: 'Why Ramyug Group - About Us' }
+  },
+  {
+    path: 'why-ramyug',
+    redirectTo: 'about',
+    pathMatch: 'full'
+  },
+  {
+    path: 'portfolio',
+    redirectTo: 'real-estate-portfolio',
+    pathMatch: 'full'
   },
   {
     path: '**',

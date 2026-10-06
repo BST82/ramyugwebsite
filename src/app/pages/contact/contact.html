@@ -1,11 +1,8 @@
 <!-- Location & Contact Module -->
-<div
-  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-24 pb-24 font-sans transition-colors duration-300"
->
+<div class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-16 pb-24 font-sans transition-colors duration-300">
+
   <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
-  <section
-    class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
-  >
+  <section class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300">
     <div class="absolute inset-0 z-0">
       <img
         src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85"
@@ -13,158 +10,113 @@
         class="w-full h-full object-cover opacity-100 dark:opacity-85 transition-all duration-500"
         (error)="onImageError($event)"
       />
-      <!-- Dark mode overlay only for readability -->
-      <div
-        class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"
-      ></div>
+      <div class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-[#141311]/40 to-[#141311]/90 pointer-events-none"></div>
     </div>
   </section>
 
-  <!-- SECTION 1: INTEGRATED INTERACTIVE MAP MODULE WITH MAIN OFFICE CARD -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 py-20">
-    <div class="space-y-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
-            Interactive Global Map
-          </h6>
-          <h2
-            class="font-serif text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
-          >
-            Our Atelier Hubs
-          </h2>
+  <!-- SECTION 1: HEAD OFFICE & OFFICIAL LOCATION CARD -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-6 space-y-6">
+        <span class="px-3 py-1 bg-[#B89358]/10 text-[#B89358] border border-[#B89358]/30 text-[0.7rem] uppercase tracking-[0.25em] font-semibold inline-block">
+          Head Office Location
+        </span>
+        
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight">
+          RAMYUG GROUP Head Office
+        </h1>
+
+        <!-- Address Card Box with Pin Icon -->
+        <div class="p-6 bg-[#F4EFE6] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full border border-[#B89358] text-[#B89358] bg-[#FAF7F2] dark:bg-[#141311] flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Official Address</span>
+              <p class="font-serif text-base sm:text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] m-0 leading-snug">
+                Plot no 3/SP-8, Sector - 3, Siddharth Vihar, Ghaziabad, U.P
+              </p>
+            </div>
+          </div>
         </div>
 
-        <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] max-w-md font-light">
-          Click any map pin or hub card below to inspect location blueprints and access our
-          dedicated Main Office Concierge.
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-light text-[#6E6962] dark:text-[#C8C0B5]">
+          <div class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-1">
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Direct Phone</span>
+            <p class="font-medium text-[#1D1C1A] dark:text-[#FAF7F2] m-0">+91 98765 43210</p>
+          </div>
+
+          <div class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-1">
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Email Desk</span>
+            <p class="font-medium text-[#B89358] m-0"><a href="mailto:info@ramyug.in" class="hover:underline">info@ramyug.in</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Embedded Map Container -->
+      <div class="lg:col-span-6 relative border border-[#E5DFD5] dark:border-[#2F2B26] shadow-xl overflow-hidden bg-[#1E1B18] h-[360px] sm:h-[420px]">
+        <iframe
+          [src]="safeMapUrl"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full grayscale opacity-90 dark:opacity-75 hover:grayscale-0 transition-all duration-300"
+          title="RAMYUG GROUP Head Office Map Location"
+        ></iframe>
+
+        <!-- Map Marker Overlay Card -->
+        <div class="absolute bottom-4 left-4 right-4 bg-[#141311]/90 text-white p-4 border border-[#B89358]/50 backdrop-blur-xs flex items-center justify-between">
+          <div class="space-y-0.5">
+            <span class="text-[0.6rem] uppercase tracking-widest text-[#B89358] font-bold block">Map Location Pin</span>
+            <p class="text-xs font-serif font-bold text-white m-0">Plot no 3/SP-8, Sector - 3, Siddharth Vihar, Ghaziabad, U.P</p>
+          </div>
+
+          <a 
+            href="https://maps.google.com/maps?q=Plot+no+3/SP-8,+Sector+-+3,+Siddharth+Vihar,+Ghaziabad,+U.P" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-3 py-1.5 bg-[#B89358] hover:bg-[#A88248] text-white text-[0.65rem] uppercase font-semibold tracking-wider shrink-0 transition-colors"
+          >
+            Open Map &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: INTERACTIVE MAP HUB & REGIONAL DESKS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12">
+    <div class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-6">
+        <div>
+          <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
+            Regional Locations
+          </h6>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight">
+            Group Offices & Desks
+          </h2>
+        </div>
+        <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] max-w-md font-light m-0">
+          Select any office card below to inspect contact details and direct desk parameters.
         </p>
       </div>
 
-      <!-- Interactive Map Visual Container (Warm Stone / Mocha Editorial Frame) -->
-      <div
-        class="relative bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-subtle-luxury h-[420px] sm:h-[500px] overflow-hidden group"
-      >
-        <div
-          class="absolute inset-0 bg-[radial-gradient(#B89358_1px,transparent_1px)] [background-size:24px_24px] opacity-15"
-        ></div>
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-[#141311] via-transparent to-[#141311]/50"
-        ></div>
-
-        <svg
-          class="absolute inset-0 w-full h-full opacity-15 pointer-events-none stroke-[#B89358] fill-none stroke-[0.5]"
-          viewBox="0 0 1000 500"
-        >
-          <path
-            d="M150,150 Q300,100 450,150 T750,150 M200,250 Q400,200 600,250 T900,250 M100,350 Q350,300 650,350 T950,350"
-          />
-          <line x1="0" y1="125" x2="1000" y2="125" />
-          <line x1="0" y1="250" x2="1000" y2="250" />
-          <line x1="0" y1="375" x2="1000" y2="375" />
-          <line x1="250" y1="0" x2="250" y2="500" />
-          <line x1="500" y1="0" x2="500" y2="500" />
-          <line x1="750" y1="0" x2="750" y2="500" />
-        </svg>
-
-        <!-- Interactive Map Pins (Static & Refined) -->
-        <div
-          *ngFor="let office of offices"
-          (click)="selectOffice(office)"
-          class="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20 group/pin"
-          [style.left.%]="office.coordinates.x"
-          [style.top.%]="office.coordinates.y"
-        >
-          <div
-            class="relative w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-200 shadow-sm"
-            [ngClass]="
-              selectedOffice()?.id === office.id
-                ? 'bg-[#B89358] border-white scale-110'
-                : 'bg-[#1E1B18] border-[#B89358] hover:scale-105'
-            "
-          >
-            <span
-              class="font-serif text-xs font-bold"
-              [ngClass]="selectedOffice()?.id === office.id ? 'text-[#1D1C1A]' : 'text-[#B89358]'"
-            >
-              {{ office.city.charAt(0) }}
-            </span>
-          </div>
-
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#FAF7F2] text-[#1D1C1A] border border-[#E5DFD5] text-[0.65rem] uppercase tracking-widest px-2.5 py-1 whitespace-nowrap opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none shadow-sm"
-          >
-            {{ office.name }}
-          </div>
-        </div>
-
-        <!-- OVERLAY CARD FOR SELECTED OFFICE (Warm Cream Editorial Card) -->
-        <div
-          *ngIf="selectedOffice()"
-          class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md bg-[#FAF7F2]/98 dark:bg-[#1E1B18]/98 text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] p-5 sm:p-6 shadow-2xl z-30 backdrop-blur-md animate-in fade-in"
-        >
-          <div class="flex items-center justify-between mb-3">
-            <span
-              class="text-[0.65rem] uppercase tracking-[0.25em] text-[#B89358] font-semibold flex items-center gap-1.5"
-            >
-              <span class="w-1.5 h-1.5 rounded-full bg-[#B89358]"></span>
-              {{ selectedOffice()?.isMainOffice ? 'Global Headquarters' : 'Regional Atelier' }}
-            </span>
-
-            <span class="text-[0.65rem] text-[#6E6962] dark:text-[#C8C0B5] font-light">
-              {{ selectedOffice()?.city }} Hub
-            </span>
-          </div>
-
-          <h3
-            class="font-serif text-lg sm:text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] mb-2 leading-snug"
-          >
-            {{ selectedOffice()?.name }}
-          </h3>
-
-          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light mb-3 m-0">
-            {{ selectedOffice()?.address }}
-          </p>
-
-          <div
-            class="space-y-1.5 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] font-light mb-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] pt-3"
-          >
-            <p class="m-0">
-              <strong class="text-[#B89358] font-medium">Direct Line:</strong>
-              {{ selectedOffice()?.phone }}
-            </p>
-            <p class="m-0">
-              <strong class="text-[#B89358] font-medium">VIP Desk:</strong>
-              {{ selectedOffice()?.email }}
-            </p>
-            <p class="m-0">
-              <strong class="text-[#B89358] font-medium">Atelier Hours:</strong>
-              {{ selectedOffice()?.hours }}
-            </p>
-          </div>
-
-          <div
-            class="pt-2 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between gap-3"
-          >
-            <a
-              routerLink="/office-details"
-              class="w-full py-2.5 px-4 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.2em] text-center transition-colors shadow-sm flex items-center justify-center gap-2"
-            >
-              <span>Explore Main Office Details</span>
-              <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hub Selector Cards Row (Warm Alabaster Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      <!-- Hub Selector Cards Row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
           *ngFor="let off of offices"
           (click)="selectOffice(off)"
-          class="p-6 bg-[#F4EFE6] dark:bg-[#1E1B18] border cursor-pointer transition-all duration-200 relative group shadow-subtle-luxury"
+          class="p-6 bg-[#F4EFE6] dark:bg-[#1E1B18] border cursor-pointer transition-all duration-200 relative group shadow-sm"
           [ngClass]="
             selectedOffice()?.id === off.id
               ? 'border-[#B89358] bg-[#FAF7F2] dark:bg-[#292521]'
@@ -172,45 +124,38 @@
           "
         >
           <div class="flex items-center justify-between mb-2">
-            <span class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">{{
-              off.city
-            }}</span>
+            <span class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">{{ off.city }}</span>
             <span
               *ngIf="off.isMainOffice"
               class="text-[0.6rem] uppercase tracking-widest bg-[#B89358] text-white font-bold px-2 py-0.5"
             >
-              HQ
+              Head Office
             </span>
           </div>
           <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light line-clamp-2 m-0 mb-3">
             {{ off.address }}
           </p>
-          <span
-            class="text-[0.7rem] uppercase tracking-wider text-[#9E7B3E] dark:text-[#B89358] font-semibold group-hover:text-[#1D1C1A] dark:group-hover:text-white transition-colors"
-          >
-            Select on Map &rarr;
+          <span class="text-[0.7rem] uppercase tracking-wider text-[#9E7B3E] dark:text-[#B89358] font-semibold group-hover:text-[#1D1C1A] dark:group-hover:text-white transition-colors">
+            Inspect Location &rarr;
           </span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: VIP CONSULTATION & INQUIRY FORM (Warm Cream Editorial Spread) -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
-    <div
-      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-14 shadow-subtle-luxury relative transition-colors duration-300"
-    >
+  <!-- SECTION 3: INQUIRY FORM -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16">
+    <div class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-14 shadow-sm relative transition-colors duration-300">
       <div class="max-w-3xl mx-auto space-y-8">
         <div class="text-center space-y-3">
           <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold">
-            Confidential Client Intake
+            Corporate & Client Intake
           </h6>
           <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
-            Schedule Private Consultation
+            Send Us A Message
           </h2>
           <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light">
-            Our principal architects and executive partners remain available for private estate
-            briefings and commercial commissions.
+            Our leadership team and corporate desk are available for real estate inquiries, joint venture opportunities, and project briefings.
           </p>
         </div>
 
@@ -218,126 +163,93 @@
           *ngIf="formSubmitted()"
           class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] p-8 border border-[#B89358] text-center space-y-4 animate-in fade-in shadow-sm"
         >
-          <div
-            class="w-12 h-12 rounded-full border border-[#B89358] text-[#B89358] flex items-center justify-center mx-auto text-xl font-serif font-bold"
-          >
+          <div class="w-12 h-12 rounded-full border border-[#B89358] text-[#B89358] flex items-center justify-center mx-auto text-xl font-serif font-bold">
             &check;
           </div>
           <h3 class="font-serif text-2xl font-bold text-[#B89358]">
-            Inquiry Registered Successfully
+            Inquiry Submitted Successfully
           </h3>
-          <p
-            class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light max-w-md mx-auto leading-relaxed"
-          >
-            Thank you, {{ formData.fullName }}. A senior partner from the RAMYUG Executive Client
-            Desk will contact you within 24 business hours.
+          <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light max-w-md mx-auto leading-relaxed">
+            Thank you, {{ formData.fullName }}. A representative from the RAMYUG Client Desk will contact you shortly.
           </p>
           <button
             (click)="resetForm()"
             type="button"
             class="px-6 py-2.5 bg-[#B89358] text-white text-xs uppercase tracking-widest font-semibold cursor-pointer"
           >
-            Submit Another Inquiry
+            Send Another Message
           </button>
         </div>
 
         <form *ngIf="!formSubmitted()" (ngSubmit)="submitInquiry()" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label
-                class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-              >
-                Full Name / Entity *
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block">
+                Full Name *
               </label>
               <input
                 type="text"
                 [(ngModel)]="formData.fullName"
                 name="fullName"
                 required
-                placeholder="e.g. Lord Alistair Sterling / Sterling Group"
+                placeholder="Your name or organization"
                 class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
               />
             </div>
 
             <div class="space-y-2">
-              <label
-                class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-              >
-                Corporate / VIP Email *
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block">
+                Email Address *
               </label>
               <input
                 type="email"
                 [(ngModel)]="formData.email"
                 name="email"
                 required
-                placeholder="client@domain.com"
+                placeholder="name@domain.com"
                 class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
               />
             </div>
 
             <div class="space-y-2">
-              <label
-                class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-              >
-                Direct Contact Phone
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block">
+                Phone Number
               </label>
               <input
                 type="tel"
                 [(ngModel)]="formData.phone"
                 name="phone"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98765 00000"
                 class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
               />
             </div>
 
             <div class="space-y-2">
-              <label
-                class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-              >
-                Project Classification
+              <label class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block">
+                Inquiry Classification
               </label>
               <select
                 [(ngModel)]="formData.projectType"
                 name="projectType"
                 class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
               >
-                <option value="Luxury Estate Residence">Ultra-Luxury Estate Residence</option>
-                <option value="Commercial Tower / Skyline">Commercial Skyscraper Landmark</option>
-                <option value="Heritage Restoration">Heritage Restoration & Conservation</option>
-                <option value="Cultural Institution">Cultural / Philharmonic Masterpiece</option>
+                <option value="Residential Project Inquiry">Residential Apartments / Floors</option>
+                <option value="Joint Venture Opportunity">Joint Venture / JDA Partnership</option>
+                <option value="Commercial Land & Development">Commercial Opportunity</option>
+                <option value="Eco Resort & Hospitality">Hospitality & Eco-Tourism</option>
               </select>
             </div>
           </div>
 
           <div class="space-y-2">
-            <label
-              class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-            >
-              Estimated Commission Capital Range
-            </label>
-            <select
-              [(ngModel)]="formData.budgetRange"
-              name="budgetRange"
-              class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
-            >
-              <option value="$5M - $10M">$5 Million - $10 Million</option>
-              <option value="$10M - $25M">$10 Million - $25 Million</option>
-              <option value="$25M - $50M">$25 Million - $50 Million</option>
-              <option value="$50M+">$50 Million+ (Bespoke Commission)</option>
-            </select>
-          </div>
-
-          <div class="space-y-2">
-            <label
-              class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block"
-            >
-              Brief Project Scope & Vision
+            <label class="text-xs font-semibold uppercase tracking-wider text-[#1D1C1A] dark:text-[#FAF7F2] block">
+              Message / Details
             </label>
             <textarea
               rows="4"
               [(ngModel)]="formData.message"
               name="message"
-              placeholder="Outline site parameters, architectural preferences, or timelines..."
+              placeholder="Provide information regarding your inquiry..."
               class="w-full bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] px-4 py-3 text-xs text-[#1D1C1A] dark:text-[#FAF7F2] focus:outline-none focus:border-[#B89358]"
             ></textarea>
           </div>
@@ -346,10 +258,11 @@
             type="submit"
             class="w-full py-4 bg-[#1D1C1A] dark:bg-[#B89358] hover:bg-[#B89358] dark:hover:bg-[#A88248] text-white dark:text-[#1D1C1A] hover:text-white text-xs font-semibold uppercase tracking-[0.25em] transition-colors duration-200 shadow-sm cursor-pointer"
           >
-            Dispatch Private Briefing Request
+            Submit Message
           </button>
         </form>
       </div>
     </div>
   </section>
+
 </div>

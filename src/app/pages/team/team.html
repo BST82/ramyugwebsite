@@ -1,10 +1,10 @@
 <!-- Leadership & Team Module -->
 <div
-  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-24 pb-24 font-sans transition-colors duration-300"
+  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-24 font-sans transition-colors duration-300"
 >
-  <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
+  <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Responsive Height -->
   <section
-    class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
+    class="relative h-[220px] sm:h-[320px] md:h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
   >
     <div class="absolute inset-0 z-0">
       <img
@@ -21,24 +21,24 @@
   </section>
 
   <!-- SECTION 1: DIRECTOR PROFILE (Warm Cream Editorial Spread) -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 py-20">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-16 md:py-20">
     <div
-      class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-6 sm:p-8 md:p-14 relative shadow-subtle-luxury transition-colors duration-300"
+      class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-5 sm:p-8 md:p-14 relative shadow-subtle-luxury transition-colors duration-300"
     >
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Large Portrait Layout (Natural Light) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Large Portrait Layout (Fully Responsive Image on Mobile) -->
         <div class="lg:col-span-5 relative group">
           <a
             [routerLink]="['/team', director.id]"
             class="block cursor-pointer relative"
           >
             <div
-              class="relative z-10 overflow-hidden border border-[#E5DFD5] dark:border-[#2F2B26] bg-[#ECE5D8]"
+              class="relative z-10 overflow-hidden border border-[#E5DFD5] dark:border-[#2F2B26] bg-[#ECE5D8] rounded-sm"
             >
               <img
                 [src]="director.image"
                 [alt]="director.name"
-                class="w-full h-[400px] sm:h-[480px] md:h-[540px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                class="w-full h-auto aspect-[3/4] max-h-[380px] sm:max-h-[480px] md:max-h-[540px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 (error)="onImageError($event)"
               />
               <div
@@ -50,10 +50,11 @@
               class="absolute -bottom-3 -right-3 w-full h-full border border-[#B89358]/40 pointer-events-none z-0 hidden sm:block"
             ></div>
 
+            <!-- Responsive Badge Placement (Below image on mobile, floating on desktop) -->
             <div
-              class="absolute bottom-6 left-6 right-6 bg-[#FAF7F2]/95 dark:bg-[#141311]/95 text-[#1D1C1A] dark:text-[#FAF7F2] p-4 border-l-2 border-[#B89358] z-20 backdrop-blur-md shadow-sm"
+              class="mt-3 sm:mt-0 relative sm:absolute sm:bottom-6 sm:left-6 sm:right-6 bg-[#FAF7F2]/95 dark:bg-[#141311]/95 text-[#1D1C1A] dark:text-[#FAF7F2] p-3.5 sm:p-4 border-l-2 border-[#B89358] z-20 backdrop-blur-md shadow-sm"
             >
-              <h4 class="font-serif text-lg font-bold m-0 leading-tight group-hover:text-[#B89358] transition-colors">
+              <h4 class="font-serif text-base sm:text-lg font-bold m-0 leading-tight group-hover:text-[#B89358] transition-colors">
                 {{ director.name }}
               </h4>
               <p class="text-xs text-[#B89358] font-medium m-0 tracking-wider uppercase mt-1">
@@ -64,30 +65,30 @@
         </div>
 
         <!-- Director Narrative & Static Editorial Quote Block -->
-        <div class="lg:col-span-7 space-y-7">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-7">
           <div>
             <span
               class="text-xs font-semibold uppercase tracking-[0.25em] text-[#B89358] block mb-2"
             >
-              Managing Director's Statement
+              Director's Profile
             </span>
             <h2
-              class="font-serif text-3xl md:text-4xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold tracking-tight"
+              class="font-serif text-2xl sm:text-3xl md:text-4xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold tracking-tight"
             >
-              Sculpting Monuments That Define Generations
+              Strategic Planning & Sector Leadership
             </h2>
           </div>
 
-          <!-- Clean Editorial Quote Block (Static Typography) -->
+          <!-- Clean Editorial Quote Block -->
           <div
-            class="relative bg-[#F4EFE6] dark:bg-[#141311] p-6 sm:p-8 border-l-2 border-[#B89358] shadow-sm my-6 transition-colors duration-300"
+            class="relative bg-[#F4EFE6] dark:bg-[#141311] p-5 sm:p-8 border-l-2 border-[#B89358] shadow-sm my-4 sm:my-6 transition-colors duration-300"
           >
             <p
-              class="font-serif text-xl md:text-2xl text-[#1D1C1A] dark:text-[#FAF7F2] italic leading-relaxed m-0 font-normal"
+              class="font-serif text-lg sm:text-xl md:text-2xl text-[#1D1C1A] dark:text-[#FAF7F2] italic leading-relaxed m-0 font-normal"
             >
               "{{ director.quote }}"
             </p>
-            <div class="mt-4 flex items-center gap-3">
+            <div class="mt-3 sm:mt-4 flex items-center gap-3">
               <div class="w-8 h-[1px] bg-[#B89358]"></div>
               <span
                 class="text-xs uppercase tracking-widest text-[#9E7B3E] dark:text-[#B89358] font-semibold"
@@ -96,15 +97,15 @@
             </div>
           </div>
 
-          <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
+          <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light m-0">
             {{ director.bio }}
           </p>
 
           <div class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26]">
-            <h5 class="font-serif text-base text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold mb-3">
-              Key Distinction & Accolades
+            <h5 class="font-serif text-sm sm:text-base text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold mb-3">
+              Key Focus & Distinctions
             </h5>
-            <ul class="space-y-2.5 text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
+            <ul class="space-y-2 text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
               <li *ngFor="let ach of director.achievements" class="flex items-start gap-2.5">
                 <span class="w-1.5 h-1.5 bg-[#B89358] rounded-full mt-1.5 shrink-0"></span>
                 <span>{{ ach }}</span>
@@ -112,12 +113,12 @@
             </ul>
           </div>
 
-          <div class="flex flex-wrap items-center justify-between gap-6 pt-4">
+          <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-between gap-4 pt-4">
             <a
               [routerLink]="['/team', director.id]"
-              class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 shadow-sm inline-flex items-center gap-2 cursor-pointer"
+              class="px-5 sm:px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 shadow-sm inline-flex items-center justify-center gap-2 cursor-pointer text-center"
             >
-              <span>Explore Director Dossier & Projects</span>
+              <span>Explore Director Dossier</span>
               <svg class="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -125,9 +126,9 @@
 
             <a
               routerLink="/contact"
-              class="px-6 py-3 border border-[#1D1C1A] dark:border-[#FAF7F2] hover:bg-[#1D1C1A] dark:hover:bg-[#FAF7F2] text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-white dark:hover:text-[#1D1C1A] text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200"
+              class="px-5 sm:px-6 py-3 border border-[#1D1C1A] dark:border-[#FAF7F2] hover:bg-[#1D1C1A] dark:hover:bg-[#FAF7F2] text-[#1D1C1A] dark:text-[#FAF7F2] hover:text-white dark:hover:text-[#1D1C1A] text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 text-center"
             >
-              Request Executive Meeting
+              Request Meeting
             </a>
           </div>
         </div>
@@ -136,64 +137,65 @@
   </section>
 
   <!-- SECTION 2: ANCHORED & CATEGORIZED TEAM MODULE -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 py-16" id="team-roster">
-    <div class="text-center max-w-3xl mx-auto mb-12">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-16" id="team-roster">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
       <h6 class="text-xs uppercase tracking-[0.3em] text-[#B89358] font-semibold mb-2">
-        The Atelier Guild
+        Leadership & Advisory
       </h6>
       <h2
-        class="font-serif text-3xl md:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
+        class="font-serif text-2xl sm:text-3xl md:text-5xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight"
       >
-        Architects of Distinction
+        Board of Directors & Advisors
       </h2>
-      <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light mt-3">
-        Explore our multidisciplinary leaders and specialists. Click any profile to view their full professional dossier and architectural portfolio.
+      <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light mt-3">
+        Explore our experienced directors and professional consultants. Click any profile to view their full bio and domain experience.
       </p>
     </div>
 
     <!-- Category Filter Tabs (Warm Stone & Cream Style) -->
-    <div class="flex justify-center mb-16">
+    <div class="flex justify-center mb-10 sm:mb-16">
       <div
         class="inline-flex p-1 bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] max-w-md w-full"
       >
         <button
           (click)="setCategory('senior')"
           type="button"
-          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
+          class="flex-1 py-3 px-3 sm:px-6 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
           [ngClass]="
             activeCategory() === 'senior'
               ? 'bg-[#FAF7F2] dark:bg-[#292521] text-[#1D1C1A] dark:text-[#FAF7F2] shadow-sm border border-[#E5DFD5] dark:border-[#2F2B26]'
               : 'text-[#6E6962] dark:text-[#C8C0B5] hover:text-[#1D1C1A]'
           "
         >
-          Senior Leadership
-          <span class="ml-1 text-[0.65rem] text-[#B89358]">(03)</span>
+          Leadership Team
+          <span class="ml-1 text-[0.65rem] text-[#B89358]">(0{{ seniorCount }})</span>
         </button>
 
         <button
           (click)="setCategory('main')"
           type="button"
-          class="flex-1 py-3 px-4 sm:px-6 text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
+          class="flex-1 py-3 px-3 sm:px-6 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.1em] sm:tracking-[0.2em] transition-all duration-200 relative focus:outline-none cursor-pointer"
           [ngClass]="
             activeCategory() === 'main'
               ? 'bg-[#FAF7F2] dark:bg-[#292521] text-[#1D1C1A] dark:text-[#FAF7F2] shadow-sm border border-[#E5DFD5] dark:border-[#2F2B26]'
               : 'text-[#6E6962] dark:text-[#C8C0B5] hover:text-[#1D1C1A]'
           "
         >
-          Main Atelier Team
-          <span class="ml-1 text-[0.65rem] text-[#B89358]">(04)</span>
+          Consultants & Advisory
+          <span class="ml-1 text-[0.65rem] text-[#B89358]">(0{{ mainCount }})</span>
         </button>
       </div>
     </div>
 
-    <!-- Team Cards Grid (Warm Cream Alabaster Cards linking directly to /team/:id) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Team Cards Grid (Fully Responsive Cards & Images) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <a
         *ngFor="let member of filteredTeam"
         [routerLink]="['/team', member.id]"
         class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] shadow-subtle-luxury overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-[#B89358] relative flex flex-col no-underline text-inherit"
       >
-        <div class="relative h-80 overflow-hidden bg-[#ECE5D8]">
+        <!-- Responsive Card Image Frame -->
+        <div class="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-[#ECE5D8]">
           <img
             [src]="member.image"
             [alt]="member.name"
@@ -207,7 +209,7 @@
           <span
             class="absolute top-4 left-4 bg-[#FAF7F2]/90 dark:bg-[#141311]/90 text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26] text-[0.65rem] uppercase tracking-widest px-3 py-1 font-semibold backdrop-blur-sm"
           >
-            {{ member.category === 'senior' ? 'Senior Board' : 'Main Atelier' }}
+            {{ member.category === 'senior' ? 'Director' : 'Consultant' }}
           </span>
 
           <span
@@ -217,23 +219,23 @@
           </span>
         </div>
 
-        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+        <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
           <div>
             <h3
-              class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors mb-1"
+              class="font-serif text-lg sm:text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors mb-1"
             >
               {{ member.name }}
             </h3>
             <p class="text-xs text-[#B89358] font-semibold uppercase tracking-wider m-0">
               {{ member.role }}
             </p>
-            <p class="text-[0.75rem] text-[#6E6962] dark:text-[#C8C0B5] italic mt-1 font-light">
+            <p class="text-[0.75rem] text-[#6E6962] dark:text-[#C8C0B5] italic mt-1 font-light line-clamp-1">
               {{ member.credentials }}
             </p>
           </div>
 
           <p
-            class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light line-clamp-2 m-0"
+            class="text-xs text-[#6E6962] dark:text-[#C8C0B5] leading-relaxed font-light line-clamp-3 m-0"
           >
             {{ member.bio }}
           </p>
@@ -250,7 +252,7 @@
           <div
             class="pt-4 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider group-hover:text-[#1D1C1A] dark:group-hover:text-white transition-colors"
           >
-            <span>View Full Details & Projects</span>
+            <span>View Profile & Details</span>
             <svg
               class="w-4 h-4 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2"
               viewBox="0 0 24 24"
@@ -263,3 +265,4 @@
     </div>
   </section>
 </div>
+
