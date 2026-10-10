@@ -1,5 +1,6 @@
-<div class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] font-sans min-h-screen transition-colors duration-300 pt-16">
-
+<div
+  class="bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] font-sans min-h-screen transition-colors duration-300 pt-16"
+>
   <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
   <section
     class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
@@ -19,57 +20,77 @@
   </section>
 
   <!-- HERO BANNER SECTION (Matching layout of page components) -->
-  <section class="relative bg-[#F4EFE6] dark:bg-[#1A1815] border-b border-[#E5DFD5] dark:border-[#2F2B26] py-16 sm:py-24 overflow-hidden">
-    <div class="absolute inset-0 opacity-10 dark:opacity-15 bg-[radial-gradient(#B89358_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+  <section
+    class="relative bg-[#F4EFE6] dark:bg-[#1A1815] border-b border-[#E5DFD5] dark:border-[#2F2B26] py-16 sm:py-24 overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 opacity-10 dark:opacity-15 bg-[radial-gradient(#B89358_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"
+    ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-      
       <!-- Top Tagline & Location -->
       <div class="flex flex-wrap items-center gap-3 mb-6">
-        <span class="px-3 py-1 bg-[#B89358]/10 text-[#B89358] border border-[#B89358]/30 text-[0.7rem] uppercase tracking-[0.25em] font-semibold">
+        <span
+          class="px-3 py-1 bg-[#B89358]/10 text-[#B89358] border border-[#B89358]/30 text-[0.7rem] uppercase tracking-[0.25em] font-semibold"
+        >
           {{ companyName }} &bull; {{ industryType }}
         </span>
-        <span class="text-xs text-[#6E6962] dark:text-[#C8C0B5] tracking-wider uppercase font-light">
+        <span
+          class="text-xs text-[#6E6962] dark:text-[#C8C0B5] tracking-wider uppercase font-light"
+        >
           {{ headquarters }}
         </span>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
         <div class="lg:col-span-7 space-y-6">
-          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight leading-none">
+          <h1
+            class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight leading-none"
+          >
             {{ companyName }}
           </h1>
 
           <!-- Core Motto Box -->
-          <div class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] shadow-sm space-y-1">
+          <div
+            class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] shadow-sm space-y-1"
+          >
             <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">
               Core Motto
             </span>
-            <p class="font-serif text-lg sm:text-xl italic text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold m-0">
+            <p
+              class="font-serif text-lg sm:text-xl italic text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold m-0"
+            >
               "{{ motto }}"
             </p>
           </div>
 
-          <p class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed">
-            Ramyug Group of Companies, established in 2020, is a professionally managed real estate group headquartered in Noida, Uttar Pradesh. Founded by a team of experienced professionals with more than 50+ years of combined experience.
+          <p
+            class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed"
+          >
+            Ramyug Group of Companies, established in 2020, is a professionally managed real estate
+            group headquartered in Noida, Uttar Pradesh. Founded by a team of seasoned professionals
+            with over 50 years of combined industry experience, the group is committed to delivering
+            excellence, fostering trust, and creating long-term value through its real estate
+            ventures. With a strong foundation of expertise and a forward-looking approach, Ramyug
+            Group strives to uphold the highest standards of professionalism, transparency, and
+            customer satisfaction.
           </p>
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a 
-              routerLink="/about" 
+            <a
+              routerLink="/about"
               class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
             >
               Why Ramyug Group
             </a>
-            <a 
-              routerLink="/office-details" 
+            <a
+              routerLink="/office-details"
               class="px-5 py-3 border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] text-[#1D1C1A] dark:text-[#FAF7F2] text-xs font-semibold uppercase tracking-[0.18em] transition-colors cursor-pointer bg-[#FAF7F2] dark:bg-[#1E1B18]"
             >
               Group Companies & Ventures
             </a>
-            <a 
-              routerLink="/real-estate-portfolio" 
+            <a
+              routerLink="/real-estate-portfolio"
               class="px-5 py-3 border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] text-[#1D1C1A] dark:text-[#FAF7F2] text-xs font-semibold uppercase tracking-[0.18em] transition-colors cursor-pointer bg-[#FAF7F2] dark:bg-[#1E1B18]"
             >
               Real Estate Portfolio
@@ -79,38 +100,57 @@
 
         <!-- Architectural Image Frame -->
         <div class="lg:col-span-5 relative">
-          <div class="relative z-10 border border-[#E5DFD5] dark:border-[#2F2B26] shadow-xl overflow-hidden bg-[#ECE5D8] group">
+          <div
+            class="relative z-10 border border-[#E5DFD5] dark:border-[#2F2B26] shadow-xl overflow-hidden bg-[#ECE5D8] group"
+          >
             <img
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
               alt="RAMYUG GROUP Real Estate Landmark"
               class="w-full h-[340px] sm:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
               (error)="onImageError($event)"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent opacity-80"></div>
-            <div class="absolute bottom-4 left-4 right-4 text-white p-3 bg-[#141311]/60 backdrop-blur-xs border border-white/10">
-              <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Headquarters</span>
-              <p class="text-xs font-serif font-bold m-0 text-white">Noida, Uttar Pradesh &bull; Est. 2020</p>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent opacity-80"
+            ></div>
+            <div
+              class="absolute bottom-4 left-4 right-4 text-white p-3 bg-[#141311]/60 backdrop-blur-xs border border-white/10"
+            >
+              <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block"
+                >Headquarters</span
+              >
+              <p class="text-xs font-serif font-bold m-0 text-white">
+                Noida, Uttar Pradesh &bull; Est. 2020
+              </p>
             </div>
           </div>
-          <div class="absolute -bottom-4 -left-4 w-full h-full border border-[#B89358]/30 pointer-events-none z-0 hidden sm:block"></div>
+          <div
+            class="absolute -bottom-4 -left-4 w-full h-full border border-[#B89358]/30 pointer-events-none z-0 hidden sm:block"
+          ></div>
         </div>
-
       </div>
 
       <!-- Quick Metrics Strip -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-10 border-t border-[#E5DFD5] dark:border-white/10">
-        <div *ngFor="let s of stats" class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-2 border-[#B89358] shadow-xs space-y-1">
-          <span class="font-serif text-2xl sm:text-3xl font-bold text-[#B89358] block">{{ s.value }}</span>
-          <span class="text-[0.68rem] uppercase tracking-wider text-[#6E6962] dark:text-[#C8C0B5] font-medium block">{{ s.label }}</span>
+      <div
+        class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-10 border-t border-[#E5DFD5] dark:border-white/10"
+      >
+        <div
+          *ngFor="let s of stats"
+          class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-2 border-[#B89358] shadow-xs space-y-1"
+        >
+          <span class="font-serif text-2xl sm:text-3xl font-bold text-[#B89358] block">{{
+            s.value
+          }}</span>
+          <span
+            class="text-[0.68rem] uppercase tracking-wider text-[#6E6962] dark:text-[#C8C0B5] font-medium block"
+            >{{ s.label }}</span
+          >
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- COMPANY OVERVIEW SECTION (With Image Showcase) -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 sm:py-24">
-    
     <div class="space-y-3 mb-10 pb-4 border-b border-[#E5DFD5] dark:border-[#2F2B26]">
       <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
         About The Group
@@ -121,10 +161,10 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-      
       <!-- Text Paragraphs Column -->
-      <div class="lg:col-span-7 space-y-6 text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed">
-        
+      <div
+        class="lg:col-span-7 space-y-6 text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed"
+      >
         <p class="m-0">
           {{ overviewParagraphs[0] }}
         </p>
@@ -143,31 +183,43 @@
 
         <!-- Highlighted Philosophy Quote Box -->
         <div class="p-6 bg-[#F4EFE6] dark:bg-[#1E1B18] border-l-4 border-[#B89358] shadow-sm my-6">
-          <p class="font-serif text-base sm:text-lg text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold italic m-0 leading-relaxed">
+          <p
+            class="font-serif text-base sm:text-lg text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold italic m-0 leading-relaxed"
+          >
             "{{ overviewParagraphs[4] }}"
           </p>
         </div>
-
       </div>
 
       <!-- Right Column: Dummy Architectural Image & Quick Info Cards -->
       <div class="lg:col-span-5 space-y-6">
-        
-        <div class="border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-md group relative">
-          <img 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
-            alt="Ramyug Real Estate Execution" 
+        <div
+          class="border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-md group relative"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+            alt="Ramyug Real Estate Execution"
             class="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
             (error)="onImageError($event)"
           />
-          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#141311]/80 to-transparent text-white">
-            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Development Philosophy</span>
-            <p class="text-xs font-light m-0 text-gray-200">Creating well-planned spaces & strengthening communities</p>
+          <div
+            class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#141311]/80 to-transparent text-white"
+          >
+            <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block"
+              >Development Philosophy</span
+            >
+            <p class="text-xs font-light m-0 text-gray-200">
+              Creating well-planned spaces & strengthening communities
+            </p>
           </div>
         </div>
 
-        <div class="p-6 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-4">
-          <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3">
+        <div
+          class="p-6 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-4"
+        >
+          <h4
+            class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3"
+          >
             Core Regional Presence
           </h4>
           <ul class="space-y-2.5 text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light">
@@ -190,61 +242,88 @@
           </ul>
         </div>
 
-        <div class="p-6 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-4">
-          <h4 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3">
+        <div
+          class="p-6 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-4"
+        >
+          <h4
+            class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] border-b border-[#E5DFD5] dark:border-[#2F2B26] pb-3"
+          >
             Focus Segments
           </h4>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]">Residential Projects</span>
-            <span class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]">Commercial Developments</span>
-            <span class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]">Plotted Lands</span>
-            <span class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]">Hospitality Opportunities</span>
+            <span
+              class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]"
+              >Residential Projects</span
+            >
+            <span
+              class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]"
+              >Commercial Developments</span
+            >
+            <span
+              class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]"
+              >Plotted Lands</span
+            >
+            <span
+              class="px-3 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-xs text-[#1D1C1A] dark:text-[#FAF7F2] border border-[#E5DFD5] dark:border-[#2F2B26]"
+              >Hospitality Opportunities</span
+            >
           </div>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- FEATURED SEGMENTS SHOWCASE (Interactive Cards with Images) -->
-  <section class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-y border-[#E5DFD5] dark:border-[#2F2B26]">
+  <section
+    class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-y border-[#E5DFD5] dark:border-[#2F2B26]"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-      
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div class="space-y-2">
-          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Development Focus</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Real Estate Segments</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+            >Development Focus</span
+          >
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            Real Estate Segments
+          </h2>
         </div>
-        <a routerLink="/real-estate-portfolio" class="text-xs font-semibold uppercase tracking-[0.2em] text-[#B89358] hover:underline">
+        <a
+          routerLink="/real-estate-portfolio"
+          class="text-xs font-semibold uppercase tracking-[0.2em] text-[#B89358] hover:underline"
+        >
           View All Portfolio Segments &rarr;
         </a>
       </div>
 
       <!-- Grid of 4 Interactive Cards with Architectural Images -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a 
+        <a
           *ngFor="let seg of featuredSegments"
           [routerLink]="seg.link"
           class="group relative h-80 border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 block"
         >
-          <img 
-            [src]="seg.image" 
-            [alt]="seg.title" 
+          <img
+            [src]="seg.image"
+            [alt]="seg.title"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             (error)="onImageError($event)"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/90 via-[#141311]/40 to-transparent transition-opacity duration-300"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#141311]/90 via-[#141311]/40 to-transparent transition-opacity duration-300"
+          ></div>
 
           <div class="absolute top-4 left-4">
-            <span class="px-2.5 py-1 bg-[#141311]/80 text-[#B89358] border border-[#B89358]/40 text-[0.65rem] uppercase tracking-widest font-semibold backdrop-blur-xs">
+            <span
+              class="px-2.5 py-1 bg-[#141311]/80 text-[#B89358] border border-[#B89358]/40 text-[0.65rem] uppercase tracking-widest font-semibold backdrop-blur-xs"
+            >
               {{ seg.badge }}
             </span>
           </div>
 
           <div class="absolute bottom-6 left-6 right-6 space-y-1 text-white">
-            <h3 class="font-serif text-xl font-bold text-white group-hover:text-[#B89358] transition-colors m-0">
+            <h3
+              class="font-serif text-xl font-bold text-white group-hover:text-[#B89358] transition-colors m-0"
+            >
               {{ seg.title }}
             </h3>
             <p class="text-xs text-gray-300 font-light m-0">
@@ -253,13 +332,11 @@
           </div>
         </a>
       </div>
-
     </div>
   </section>
 
   <!-- OUR VISION SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 sm:py-24">
-    
     <div class="max-w-3xl space-y-3 mb-10">
       <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
         Strategic Directive
@@ -270,37 +347,47 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <div class="lg:col-span-7 p-8 sm:p-12 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-md space-y-6">
-        <p class="font-serif text-lg sm:text-xl text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold leading-relaxed m-0">
+      <div
+        class="lg:col-span-7 p-8 sm:p-12 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-md space-y-6"
+      >
+        <p
+          class="font-serif text-lg sm:text-xl text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold leading-relaxed m-0"
+        >
           {{ visionText[0] }}
         </p>
 
-        <p class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+        <p
+          class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0"
+        >
           {{ visionText[1] }}
         </p>
       </div>
 
-      <div class="lg:col-span-5 relative border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" 
-          alt="Ramyug Visionary Design" 
+      <div
+        class="lg:col-span-5 relative border border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden shadow-lg group"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+          alt="Ramyug Visionary Design"
           class="w-full h-[320px] object-cover transition-transform duration-700 group-hover:scale-105"
           (error)="onImageError($event)"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/60 to-transparent"></div>
         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block">Sustainable Built Environments</span>
+          <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold block"
+            >Sustainable Built Environments</span
+          >
           <p class="text-xs font-light m-0">Enhancing lifestyles & supporting urban communities</p>
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- OUR MISSION SECTION -->
-  <section class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-y border-[#E5DFD5] dark:border-[#2F2B26]">
+  <section
+    class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-y border-[#E5DFD5] dark:border-[#2F2B26]"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-      
       <div class="space-y-3 mb-10 pb-4 border-b border-[#E5DFD5] dark:border-[#2F2B26]">
         <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
           Operational Purpose
@@ -311,8 +398,12 @@
       </div>
 
       <!-- Lead Mission Statement -->
-      <div class="p-6 bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] mb-10 shadow-xs">
-        <p class="text-base sm:text-lg text-[#1D1C1A] dark:text-[#FAF7F2] font-medium leading-relaxed m-0">
+      <div
+        class="p-6 bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] mb-10 shadow-xs"
+      >
+        <p
+          class="text-base sm:text-lg text-[#1D1C1A] dark:text-[#FAF7F2] font-medium leading-relaxed m-0"
+        >
           {{ missionLead }}
         </p>
         <span class="text-xs uppercase tracking-[0.2em] text-[#B89358] font-bold block mt-4">
@@ -322,15 +413,16 @@
 
       <!-- 6 Mission Points Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div 
+        <div
           *ngFor="let point of missionPoints; let i = index"
           class="p-6 bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] transition-all duration-300 space-y-4 shadow-sm hover:shadow-md group"
         >
           <div class="flex items-center justify-between">
-            <div class="w-8 h-8 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#1E1B18] flex items-center justify-center text-[#B89358] group-hover:bg-[#B89358] group-hover:text-white transition-colors">
+            <div
+              class="w-8 h-8 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#1E1B18] flex items-center justify-center text-[#B89358] group-hover:bg-[#B89358] group-hover:text-white transition-colors"
+            >
               <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <span class="font-serif text-sm font-bold text-[#B89358]/60">0{{ i + 1 }}</span>
@@ -340,15 +432,12 @@
             {{ point }}
           </p>
         </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- OUR CORE VALUES SECTION (With Card Background Images) -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 sm:py-24">
-    
     <div class="space-y-3 mb-12 pb-4 border-b border-[#E5DFD5] dark:border-[#2F2B26]">
       <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
         Foundational Ethos
@@ -357,31 +446,35 @@
         Our Core Values
       </h2>
       <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light m-0">
-        The five principles guiding our decisions, operational execution, and stakeholder relationships.
+        The five principles guiding our decisions, operational execution, and stakeholder
+        relationships.
       </p>
     </div>
 
     <!-- Values Grid with Images -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      
-      <div 
+      <div
         *ngFor="let val of coreValues; let i = index"
         class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] transition-all duration-300 shadow-sm hover:shadow-xl space-y-4 group overflow-hidden flex flex-col justify-between"
         [ngClass]="{ 'lg:col-span-2': i === 4 }"
       >
         <div class="relative h-44 overflow-hidden">
-          <img 
-            [src]="val.image" 
-            [alt]="val.title" 
+          <img
+            [src]="val.image"
+            [alt]="val.title"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             (error)="onImageError($event)"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#141311] via-[#141311]/40 to-transparent"></div>
-          
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#141311] via-[#141311]/40 to-transparent"
+          ></div>
+
           <div class="absolute bottom-3 left-4 flex items-center gap-3">
-            <div class="w-8 h-8 border border-[#B89358] bg-[#141311] flex items-center justify-center text-[#B89358]">
+            <div
+              class="w-8 h-8 border border-[#B89358] bg-[#141311] flex items-center justify-center text-[#B89358]"
+            >
               <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="val.icon"/>
+                <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="val.icon" />
               </svg>
             </div>
             <h3 class="font-serif text-lg font-bold text-white m-0">
@@ -391,24 +484,29 @@
         </div>
 
         <div class="p-6 pt-2 flex-grow">
-          <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+          <p
+            class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0"
+          >
             {{ val.description }}
           </p>
         </div>
       </div>
-
     </div>
-
   </section>
 
   <!-- INTERACTIVE PROJECTS OVERVIEW (With Modal Inspection) -->
-  <section class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-t border-[#E5DFD5] dark:border-[#2F2B26]">
+  <section
+    class="bg-[#F4EFE6] dark:bg-[#1E1B18] py-16 sm:py-24 border-t border-[#E5DFD5] dark:border-[#2F2B26]"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-      
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block mb-2">Selected Highlights</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Projects & Deliveries</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block mb-2"
+            >Selected Highlights</span
+          >
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            Projects & Deliveries
+          </h2>
         </div>
 
         <!-- Filter Categories -->
@@ -442,61 +540,85 @@
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               (error)="onImageError($event)"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent opacity-70"></div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#141311]/70 via-transparent to-transparent opacity-70"
+            ></div>
 
-            <span class="absolute top-3 left-3 bg-[#141311]/80 text-[#B89358] border border-[#B89358]/40 text-[0.6rem] uppercase tracking-widest px-2.5 py-0.5 font-semibold backdrop-blur-xs">
+            <span
+              class="absolute top-3 left-3 bg-[#141311]/80 text-[#B89358] border border-[#B89358]/40 text-[0.6rem] uppercase tracking-widest px-2.5 py-0.5 font-semibold backdrop-blur-xs"
+            >
               {{ project.category }}
             </span>
 
-            <span class="absolute top-3 right-3 bg-[#B89358] text-white text-[0.6rem] uppercase tracking-widest px-2 py-0.5 font-bold shadow-xs">
+            <span
+              class="absolute top-3 right-3 bg-[#B89358] text-white text-[0.6rem] uppercase tracking-widest px-2 py-0.5 font-bold shadow-xs"
+            >
               {{ project.year }}
             </span>
           </div>
 
           <div class="p-5 flex-grow flex flex-col justify-between space-y-3">
             <div>
-              <span class="text-[0.65rem] text-[#B89358] uppercase font-semibold tracking-wider block mb-1">{{ project.location }}</span>
-              <h3 class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors leading-snug">
+              <span
+                class="text-[0.65rem] text-[#B89358] uppercase font-semibold tracking-wider block mb-1"
+                >{{ project.location }}</span
+              >
+              <h3
+                class="font-serif text-lg font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors leading-snug"
+              >
                 {{ project.title }}
               </h3>
             </div>
 
-            <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light line-clamp-2 m-0 leading-relaxed">
+            <p
+              class="text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light line-clamp-2 m-0 leading-relaxed"
+            >
               {{ project.description }}
             </p>
 
-            <div class="pt-3 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs font-semibold text-[#B89358] uppercase tracking-wider">
+            <div
+              class="pt-3 border-t border-[#E5DFD5] dark:border-[#2F2B26] flex items-center justify-between text-xs font-semibold text-[#B89358] uppercase tracking-wider"
+            >
               <span>Inspect Details</span>
-              <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2" viewBox="0 0 24 24">
+              <svg
+                class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform stroke-current fill-none stroke-2"
+                viewBox="0 0 24 24"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- BOTTOM ACTION BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16">
-    <div class="bg-[#141311] text-white p-8 sm:p-12 border border-[#B89358]/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+    <div
+      class="bg-[#141311] text-white p-8 sm:p-12 border border-[#B89358]/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl"
+    >
       <div class="space-y-2 text-center md:text-left">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold">RAMYUG GROUP &bull; Real Estate Group</span>
-        <h4 class="font-serif text-2xl sm:text-3xl font-bold text-white">Partner With Us & Explore Our Opportunities</h4>
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold"
+          >RAMYUG GROUP &bull; Real Estate Group</span
+        >
+        <h4 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+          Partner With Us & Explore Our Opportunities
+        </h4>
         <p class="text-xs sm:text-sm text-gray-400 font-light max-w-xl">
-          Get in touch with our leadership team for joint venture developments, investment opportunities, or general inquiries.
+          Get in touch with our leadership team for joint venture developments, investment
+          opportunities, or general inquiries.
         </p>
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
-        <a 
+        <a
           routerLink="/team"
           class="px-5 py-3 border border-[#B89358] text-[#B89358] hover:bg-[#B89358] hover:text-white text-xs uppercase font-semibold tracking-widest transition-colors cursor-pointer"
         >
           Leadership Profile
         </a>
-        <a 
+        <a
           routerLink="/contact"
           class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase font-semibold tracking-widest transition-colors shadow-sm cursor-pointer"
         >
@@ -539,10 +661,14 @@
           <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-semibold">
             {{ selectedProject()?.category }} &bull; {{ selectedProject()?.year }}
           </span>
-          <h2 class="font-serif text-2xl md:text-3xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold m-0">
+          <h2
+            class="font-serif text-2xl md:text-3xl text-[#1D1C1A] dark:text-[#FAF7F2] font-bold m-0"
+          >
             {{ selectedProject()?.title }}
           </h2>
-          <p class="text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider m-0">
+          <p
+            class="text-xs text-[#9E7B3E] dark:text-[#B89358] font-semibold uppercase tracking-wider m-0"
+          >
             {{ selectedProject()?.location }} &bull; {{ selectedProject()?.area }}
           </p>
           <p class="text-xs text-[#6E6962] dark:text-[#C8C0B5] italic m-0">
@@ -555,7 +681,9 @@
             {{ selectedProject()?.description }}
           </p>
 
-          <div class="pt-6 flex items-center justify-between border-t border-[#E5DFD5] dark:border-[#2F2B26]">
+          <div
+            class="pt-6 flex items-center justify-between border-t border-[#E5DFD5] dark:border-[#2F2B26]"
+          >
             <a
               routerLink="/contact"
               (click)="closeProjectModal()"
@@ -568,5 +696,4 @@
       </div>
     </div>
   </div>
-
 </div>

@@ -1,5 +1,6 @@
-<div class="min-h-screen bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] transition-colors duration-300 font-sans pt-16 pb-20">
-
+<div
+  class="min-h-screen bg-[#FAF7F2] dark:bg-[#141311] text-[#1D1C1A] dark:text-[#FAF7F2] transition-colors duration-300 font-sans pt-16 pb-20"
+>
   <!-- Editorial Header Banner with Crisp Architectural Media & Standardized Height -->
   <section
     class="relative h-[420px] w-full bg-[#FAF7F2] dark:bg-[#141311] border-b border-[#E5DFD5] dark:border-[#2F2B26] overflow-hidden transition-colors duration-300"
@@ -19,71 +20,108 @@
   </section>
 
   <!-- HERO HEADER SECTION -->
-  <section class="relative bg-[#F4EFE6] dark:bg-[#1A1815] border-b border-[#E5DFD5] dark:border-[#2F2B26] py-16 sm:py-24 overflow-hidden">
-    <div class="absolute inset-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#B89358_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+  <section
+    class="relative bg-[#F4EFE6] dark:bg-[#1A1815] border-b border-[#E5DFD5] dark:border-[#2F2B26] py-16 sm:py-24 overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#B89358_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"
+    ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-      
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#B89358] mb-6 font-medium">
+      <nav
+        class="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#B89358] mb-6 font-medium"
+      >
         <a routerLink="/home" class="hover:underline">Home</a>
         <span>&bull;</span>
         <span class="text-[#1D1C1A] dark:text-[#FAF7F2]">Why Ramyug Group</span>
       </nav>
 
       <div class="max-w-3xl space-y-4">
-        <span class="inline-block px-3 py-1 bg-[#B89358]/10 text-[#B89358] border border-[#B89358]/30 text-[0.7rem] uppercase tracking-[0.25em] font-semibold">
+        <span
+          class="inline-block px-3 py-1 bg-[#B89358]/10 text-[#B89358] border border-[#B89358]/30 text-[0.7rem] uppercase tracking-[0.25em] font-semibold"
+        >
           Corporate Profile & Foundational Philosophy
         </span>
 
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight leading-none">
+        <h1
+          class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] tracking-tight leading-none"
+        >
           Why Ramyug Group
         </h1>
 
-        <p class="text-base sm:text-lg text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed pt-2">
-          Ramyug Group is a growing real estate organization established in 2020 with a vision to create meaningful spaces and lasting value across India's evolving real estate landscape. Explore our responsibilities, philosophy, core capabilities, and lifecycle execution engine.
+        <p
+          class="text-base sm:text-lg text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed pt-2"
+        >
+          Established in 2020, Ramyug Group of Companies is an emerging real estate organization
+          driven by a vision to create purposeful spaces, deliver enduring value, and contribute to
+          India’s evolving real estate landscape. Guided by a commitment to quality, integrity, and
+          thoughtful development, the Group continues to explore opportunities across residential,
+          commercial, and hospitality segments. Discover our guiding philosophy, core capabilities,
+          responsibilities, and integrated project lifecycle approach that drive our vision from
+          concept and planning to execution and delivery.
         </p>
       </div>
 
       <!-- Quick Stats Strip -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-10 border-t border-[#E5DFD5] dark:border-white/10">
-        <div *ngFor="let s of stats" class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-2 border-[#B89358] shadow-xs space-y-1">
-          <span class="font-serif text-2xl sm:text-3xl font-bold text-[#B89358] block">{{ s.value }}</span>
-          <span class="text-[0.68rem] uppercase tracking-wider text-[#6E6962] dark:text-[#C8C0B5] font-medium block">{{ s.label }}</span>
+      <div
+        class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-10 border-t border-[#E5DFD5] dark:border-white/10"
+      >
+        <div
+          *ngFor="let s of stats"
+          class="p-4 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-2 border-[#B89358] shadow-xs space-y-1"
+        >
+          <span class="font-serif text-2xl sm:text-3xl font-bold text-[#B89358] block">{{
+            s.value
+          }}</span>
+          <span
+            class="text-[0.68rem] uppercase tracking-wider text-[#6E6962] dark:text-[#C8C0B5] font-medium block"
+            >{{ s.label }}</span
+          >
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- RESPONSIBILITIES & LONG-TERM VALUE CARDS -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-      
-      <div class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm space-y-3">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Environmental & Social Commitment</span>
-        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Responsibilities</h3>
+      <div
+        class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm space-y-3"
+      >
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+          >Environmental & Social Commitment</span
+        >
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Responsibilities
+        </h3>
         <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
           {{ responsibilitiesText }}
         </p>
       </div>
 
-      <div class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm space-y-3">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Stakeholder Outcomes</span>
-        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Long-Term Value</h3>
+      <div
+        class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] shadow-sm space-y-3"
+      >
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+          >Stakeholder Outcomes</span
+        >
+        <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Long-Term Value
+        </h3>
         <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
           {{ longTermValueText }}
         </p>
       </div>
-
     </div>
   </section>
 
   <!-- MAIN FEATURES / WHY RAMYUG GRID SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[#E5DFD5] dark:border-[#2F2B26] gap-6">
+    <div
+      class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[#E5DFD5] dark:border-[#2F2B26] gap-6"
+    >
       <div class="space-y-2 max-w-2xl">
         <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
           Strategic Differentiators
@@ -92,18 +130,19 @@
           Our Core Differentiators
         </h2>
         <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light m-0">
-          Built on experienced leadership, direct asset development, financial discipline, and deep regional market exposure.
+          Built on experienced leadership, direct asset development, financial discipline, and deep
+          regional market exposure.
         </p>
       </div>
 
       <div class="shrink-0">
-        <a 
+        <a
           routerLink="/contact"
           class="inline-flex items-center gap-2 px-5 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs font-semibold uppercase tracking-[0.18em] transition-colors shadow-sm cursor-pointer"
         >
           <span>Connect With Leadership</span>
           <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
       </div>
@@ -111,32 +150,41 @@
 
     <!-- Responsive Card Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      
-      <div 
+      <div
         *ngFor="let feat of features; let i = index"
         class="bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] dark:hover:border-[#B89358] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl group relative overflow-hidden"
         [ngClass]="{ 'lg:col-span-3 md:col-span-2 bg-[#F4EFE6] dark:bg-[#1A1815]': i === 6 }"
       >
-        <div class="absolute top-0 left-0 right-0 h-1 bg-[#B89358] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+        <div
+          class="absolute top-0 left-0 right-0 h-1 bg-[#B89358] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+        ></div>
 
         <div class="space-y-6">
           <div class="flex items-center justify-between">
-            <div class="w-10 h-10 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#141311] flex items-center justify-center text-[#B89358] group-hover:bg-[#B89358] group-hover:text-white transition-colors duration-300">
+            <div
+              class="w-10 h-10 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#141311] flex items-center justify-center text-[#B89358] group-hover:bg-[#B89358] group-hover:text-white transition-colors duration-300"
+            >
               <svg class="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="feat.icon" />
               </svg>
             </div>
-            
-            <span class="font-serif text-2xl font-bold text-[#B89358]/60 group-hover:text-[#B89358] transition-colors">
+
+            <span
+              class="font-serif text-2xl font-bold text-[#B89358]/60 group-hover:text-[#B89358] transition-colors"
+            >
               {{ feat.number }}
             </span>
           </div>
 
           <div class="space-y-1">
-            <h3 class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors">
+            <h3
+              class="font-serif text-xl sm:text-2xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2] group-hover:text-[#B89358] transition-colors"
+            >
               {{ feat.title }}
             </h3>
-            <span class="text-[0.68rem] uppercase tracking-[0.2em] text-[#B89358] font-semibold block">
+            <span
+              class="text-[0.68rem] uppercase tracking-[0.2em] text-[#B89358] font-semibold block"
+            >
               {{ feat.tagline }}
             </span>
           </div>
@@ -148,7 +196,7 @@
 
         <div class="pt-6 mt-6 border-t border-[#E5DFD5] dark:border-white/10">
           <div class="flex flex-wrap gap-2">
-            <span 
+            <span
               *ngFor="let tag of feat.highlights"
               class="px-2.5 py-1 bg-[#F4EFE6] dark:bg-[#141311] text-[0.65rem] uppercase tracking-wider text-[#1D1C1A]/80 dark:text-[#FAF7F2]/80 font-medium border border-[#E5DFD5] dark:border-[#2F2B26]"
             >
@@ -156,120 +204,154 @@
             </span>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- OUR PHILOSOPHY SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-    <div class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm space-y-8">
-      
+    <div
+      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm space-y-8"
+    >
       <div class="space-y-3">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Strategic Decision-Making</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Our Philosophy</h2>
-        <p class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed max-w-4xl m-0">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+          >Strategic Decision-Making</span
+        >
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          Our Philosophy
+        </h2>
+        <p
+          class="text-sm sm:text-base text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed max-w-4xl m-0"
+        >
           {{ philosophyLead }}
         </p>
       </div>
 
       <!-- 6 Fundamental Principles Flow -->
       <div class="space-y-4 pt-4 border-t border-[#E5DFD5] dark:border-white/10">
-        <h4 class="text-xs uppercase tracking-[0.2em] text-[#B89358] font-bold">Six Fundamental Principles</h4>
-        
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[#B89358] font-bold">
+          Six Fundamental Principles
+        </h4>
+
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          <div 
+          <div
             *ngFor="let step of philosophyPrinciples; let i = index"
             class="p-3.5 bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] text-center space-y-1 relative"
           >
-            <span class="text-[0.6rem] uppercase tracking-widest text-[#B89358] font-bold block">Step 0{{ i + 1 }}</span>
-            <span class="font-serif text-xs font-bold text-[#1D1C1A] dark:text-[#FAF7F2] block">{{ step }}</span>
+            <span class="text-[0.6rem] uppercase tracking-widest text-[#B89358] font-bold block"
+              >Step 0{{ i + 1 }}</span
+            >
+            <span class="font-serif text-xs font-bold text-[#1D1C1A] dark:text-[#FAF7F2] block">{{
+              step
+            }}</span>
           </div>
         </div>
       </div>
 
       <!-- Evaluation Factors Box -->
-      <div class="p-6 bg-[#FAF7F2] dark:bg-[#141311] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26]">
-        <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+      <div
+        class="p-6 bg-[#FAF7F2] dark:bg-[#141311] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26]"
+      >
+        <p
+          class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0"
+        >
           {{ philosophyEvaluation }}
         </p>
       </div>
-
     </div>
   </section>
 
   <!-- OUR CORE BUSINESS & CAPABILITIES SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-    
     <div class="space-y-3 mb-10 pb-4 border-b border-[#E5DFD5] dark:border-[#2F2B26]">
-      <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Domain Expertise</span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Our Core Business & Capabilities</h2>
+      <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+        >Domain Expertise</span
+      >
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+        Our Core Business & Capabilities
+      </h2>
       <p class="text-sm sm:text-base text-[#1D1C1A] dark:text-[#FAF7F2] font-semibold m-0">
         {{ coreBusinessLead }}
       </p>
-      <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed max-w-4xl m-0">
+      <p
+        class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed max-w-4xl m-0"
+      >
         {{ coreBusinessCapabilities }}
       </p>
     </div>
 
     <!-- 4 Capabilities Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-      
-      <div 
+      <div
         *ngFor="let cap of capabilitiesList"
         class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] transition-all duration-300 shadow-sm space-y-4"
       >
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#141311] flex items-center justify-center text-[#B89358]">
+          <div
+            class="w-10 h-10 border border-[#B89358]/40 bg-[#F4EFE6] dark:bg-[#141311] flex items-center justify-center text-[#B89358]"
+          >
             <svg class="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="cap.icon"/>
+              <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="cap.icon" />
             </svg>
           </div>
-          <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">{{ cap.title }}</h3>
+          <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+            {{ cap.title }}
+          </h3>
         </div>
 
-        <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+        <p
+          class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0"
+        >
           {{ cap.description }}
         </p>
 
-        <p *ngIf="cap.objective" class="text-xs text-[#B89358] font-medium italic pt-2 border-t border-[#E5DFD5] dark:border-white/10 m-0">
+        <p
+          *ngIf="cap.objective"
+          class="text-xs text-[#B89358] font-medium italic pt-2 border-t border-[#E5DFD5] dark:border-white/10 m-0"
+        >
           {{ cap.objective }}
         </p>
       </div>
-
     </div>
 
     <!-- Support Note Banner -->
-    <div class="mt-8 p-4 bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light italic">
+    <div
+      class="mt-8 p-4 bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] text-xs text-[#6E6962] dark:text-[#C8C0B5] font-light italic"
+    >
       {{ coreBusinessSupportNote }}
     </div>
-
   </section>
 
   <!-- THE RAMYUG LIFECYCLE SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-    <div class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm space-y-8">
-      
+    <div
+      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm space-y-8"
+    >
       <div class="space-y-3">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Execution Workflow</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">The Ramyug Lifecycle</h2>
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+          >Execution Workflow</span
+        >
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          The Ramyug Lifecycle
+        </h2>
         <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light m-0">
-          Our 12-stage integrated execution lifecycle ensuring complete project coordination across all domains.
+          Our 12-stage integrated execution lifecycle ensuring complete project coordination across
+          all domains.
         </p>
       </div>
 
       <!-- 12 Stage Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div 
+        <div
           *ngFor="let step of lifecycleSteps; let i = index"
           class="p-4 bg-[#FAF7F2] dark:bg-[#141311] border border-[#E5DFD5] dark:border-[#2F2B26] space-y-2 relative group hover:border-[#B89358] transition-colors"
         >
           <div class="flex items-center justify-between">
-            <span class="font-serif text-xs font-bold text-[#B89358]">Stage {{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
+            <span class="font-serif text-xs font-bold text-[#B89358]"
+              >Stage {{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span
+            >
             <svg class="w-3.5 h-3.5 stroke-[#B89358] fill-none stroke-2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </div>
           <p class="text-xs font-semibold text-[#1D1C1A] dark:text-[#FAF7F2] m-0 leading-tight">
@@ -283,46 +365,52 @@
           {{ lifecycleNote }}
         </p>
       </div>
-
     </div>
   </section>
 
   <!-- OUR APPROACH SECTION -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-    
     <div class="space-y-3 mb-10 pb-4 border-b border-[#E5DFD5] dark:border-[#2F2B26]">
-      <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">Methodology & Execution</span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">Our Approach</h2>
+      <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block"
+        >Methodology & Execution</span
+      >
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+        Our Approach
+      </h2>
     </div>
 
     <!-- 5 Approach Steps Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      
-      <div 
+      <div
         *ngFor="let app of approachSteps; let i = index"
         class="p-6 sm:p-8 bg-[#FAF7F2] dark:bg-[#1E1B18] border border-[#E5DFD5] dark:border-[#2F2B26] hover:border-[#B89358] transition-all duration-300 shadow-sm space-y-4"
         [ngClass]="{ 'lg:col-span-2': i === 4 }"
       >
         <div class="flex items-center justify-between">
           <span class="font-serif text-3xl font-bold text-[#B89358]/60">{{ app.number }}</span>
-          <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold">Phase {{ app.number }}</span>
+          <span class="text-[0.65rem] uppercase tracking-widest text-[#B89358] font-bold"
+            >Phase {{ app.number }}</span
+          >
         </div>
 
-        <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">{{ app.title }}</h3>
-        
-        <p class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
+        <h3 class="font-serif text-xl font-bold text-[#1D1C1A] dark:text-[#FAF7F2]">
+          {{ app.title }}
+        </h3>
+
+        <p
+          class="text-xs sm:text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0"
+        >
           {{ app.description }}
         </p>
       </div>
-
     </div>
-
   </section>
 
   <!-- PHILOSOPHY & COMMITMENT BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 sm:pt-20">
-    <div class="bg-[#F4EFE6] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm relative overflow-hidden">
-      
+    <div
+      class="bg-[#F4EFE6] dark:bg-[#1E1B18] border-l-4 border-[#B89358] border-y border-r border-[#E5DFD5] dark:border-[#2F2B26] p-8 sm:p-12 shadow-sm relative overflow-hidden"
+    >
       <div class="max-w-3xl space-y-4 relative z-10">
         <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold block">
           Group Philosophy & Brand Ambition
@@ -331,38 +419,46 @@
           "Building Dreams. Creating Value. Shaping Futures."
         </h3>
         <p class="text-sm text-[#6E6962] dark:text-[#C8C0B5] font-light leading-relaxed m-0">
-          Ramyug's ambition is to evolve from a growing real estate organization into a trusted, professionally managed and focused real estate group, recognized for quality, integrity, innovation, responsible execution, and customer trust.
+          Ramyug's ambition is to evolve from a growing real estate organization into a trusted,
+          professionally managed and focused real estate group, recognized for quality, integrity,
+          innovation, responsible execution, and customer trust.
         </p>
       </div>
-
     </div>
   </section>
 
   <!-- BOTTOM NAVIGATION & CONSULTATION CALLOUT -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16">
-    <div class="bg-[#141311] text-white p-8 sm:p-12 border border-[#B89358]/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+    <div
+      class="bg-[#141311] text-white p-8 sm:p-12 border border-[#B89358]/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl"
+    >
       <div class="space-y-2 text-center md:text-left">
-        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold">Discover More About Ramyug</span>
-        <h4 class="font-serif text-2xl sm:text-3xl font-bold text-white">Explore Group Ventures & Portfolio</h4>
+        <span class="text-xs uppercase tracking-[0.25em] text-[#B89358] font-bold"
+          >Discover More About Ramyug</span
+        >
+        <h4 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+          Explore Group Ventures & Portfolio
+        </h4>
         <p class="text-xs sm:text-sm text-gray-400 font-light max-w-xl">
-          Learn more about our operating entities, partner projects, or get in touch for strategic real estate collaborations.
+          Learn more about our operating entities, partner projects, or get in touch for strategic
+          real estate collaborations.
         </p>
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
-        <a 
+        <a
           routerLink="/office-details"
           class="px-5 py-3 border border-[#B89358] text-[#B89358] hover:bg-[#B89358] hover:text-white text-xs uppercase font-semibold tracking-widest transition-colors cursor-pointer"
         >
           Group Ventures
         </a>
-        <a 
+        <a
           routerLink="/real-estate-portfolio"
           class="px-5 py-3 border border-white/20 text-white hover:border-[#B89358] hover:text-[#B89358] text-xs uppercase font-semibold tracking-widest transition-colors cursor-pointer"
         >
           Real Estate Portfolio
         </a>
-        <a 
+        <a
           routerLink="/contact"
           class="px-6 py-3 bg-[#B89358] hover:bg-[#A88248] text-white text-xs uppercase font-semibold tracking-widest transition-colors shadow-sm cursor-pointer"
         >
@@ -371,5 +467,4 @@
       </div>
     </div>
   </section>
-
 </div>
