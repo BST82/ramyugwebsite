@@ -38,7 +38,9 @@
               <img
                 [src]="director.image"
                 [alt]="director.name"
-                class="w-full h-auto aspect-[3/4] max-h-[380px] sm:max-h-[480px] md:max-h-[540px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                class="w-full h-auto aspect-[3/4] max-h-[380px] sm:max-h-[480px] md:max-h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
+                [style.objectPosition]="director.imagePosition || 'top'"
+                loading="eager"
                 (error)="onImageError($event)"
               />
               <div
@@ -199,7 +201,10 @@
           <img
             [src]="member.image"
             [alt]="member.name"
-            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            [style.objectPosition]="member.imagePosition || 'top'"
+            loading="lazy"
+            decoding="async"
             (error)="onImageError($event)"
           />
           <div

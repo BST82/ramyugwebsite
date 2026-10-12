@@ -25,6 +25,7 @@ export interface TeamMember {
   category: 'senior' | 'main';
   image: string;
   portrait?: string;
+  imagePosition?: string;
   credentials: string;
   experience: string;
   quote: string;
@@ -111,8 +112,9 @@ export class TeamService {
       category: 'senior',
       credentials: 'Director | Builder Floors & Low-Rise Residential Specialist',
       experience: '25+ Years of Experience',
-      image: 'team/mahesh-sharma.jpg',
-      portrait: 'team/mahesh-sharma.jpg',
+      image: 'team/mahesh.jpeg',
+      portrait: 'team/mahesh.jpeg',
+      imagePosition: 'center 20%',
       quote: 'Focusing on quality residential, functional planning, and customer satisfaction creates contemporary living environments that endure.',
       bio: 'Mr. Mahesh Sharma brings more than 20 years of experience in real estate, with particular expertise in builder floors and low-rise residential. His professional experience includes significant exposure to the builder-floor segment in Faridabad, encompassing project planning, residential, market understanding, and customer requirements.',
       fullBio: [

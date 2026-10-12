@@ -48,7 +48,9 @@
             <img
               [src]="profile.image"
               [alt]="profile.name"
-              class="w-full h-auto aspect-[3/4] max-h-[380px] sm:max-h-[500px] md:max-h-[560px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              class="w-full h-auto aspect-[3/4] max-h-[380px] sm:max-h-[500px] md:max-h-[560px] object-cover transition-transform duration-700 group-hover:scale-105"
+              [style.objectPosition]="profile.imagePosition || 'top'"
+              loading="eager"
               (error)="onImageError($event)"
             />
           </div>
@@ -374,7 +376,10 @@
           <img
             [src]="other.image"
             [alt]="other.name"
-            class="w-16 h-16 object-cover object-top border border-[#E5DFD5] dark:border-[#2F2B26] shrink-0"
+            class="w-16 h-16 object-cover border border-[#E5DFD5] dark:border-[#2F2B26] shrink-0"
+            [style.objectPosition]="other.imagePosition || 'top'"
+            loading="lazy"
+            decoding="async"
             (error)="onImageError($event)"
           />
           <div class="overflow-hidden">
